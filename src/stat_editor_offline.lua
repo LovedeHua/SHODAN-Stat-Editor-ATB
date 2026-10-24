@@ -2296,6 +2296,7 @@ MOD.langs = {
       ['Support'] = '支援武器',
       ['Support reload speed'] = '支援武器装填速度',
       ['Support weapon drop; the weapon itself is under Support.'] = '支援武器空投；武器本身列在“支援武器”分类下。',
+      ['Suppressed'] = '消音',
       ['Suppressor'] = '消音器',
       ['Sure?'] = '确定？',
       ['Surplus EAT Allocation'] = '盈余EAT配给',
@@ -2560,6 +2561,7 @@ MOD.langs = {
       ['overcharge'] = '过充',
       ['panels, mines per panel: lower only (more than the default crashes the game)'] = '布雷批次数、每批地雷数：只能调低（高于默认值会使游戏崩溃）',
       ['phalanx'] = '方阵',
+      ['quieter for enemies (the noise of the game\'s suppressed guns); no suppressor model, same firing sound'] = '对敌人更安静（游戏中消音武器的噪音）；无消音器模型，射击声音不变',
       ['read-back check failed'] = '写入后读回校验失败',
       ['read-back differs'] = '读回内容不一致',
       ['resolving weapons and applying saved values'] = '正在解析武器并应用已保存的数值',
@@ -5812,6 +5814,7 @@ MOD.langs = {
       ['Support'] = '支援武器',
       ['Support reload speed'] = '支援武器裝填速度',
       ['Support weapon drop; the weapon itself is under Support.'] = '支援武器空投；武器本身列在「支援武器」分類下。',
+      ['Suppressed'] = '消音',
       ['Suppressor'] = '消音器',
       ['Sure?'] = '確定？',
       ['Surplus EAT Allocation'] = '剩餘EAT配給',
@@ -6076,6 +6079,7 @@ MOD.langs = {
       ['overcharge'] = '過充',
       ['panels, mines per panel: lower only (more than the default crashes the game)'] = '佈雷批次數、每批地雷數：只能調低（高於預設值會使遊戲崩潰）',
       ['phalanx'] = '方陣',
+      ['quieter for enemies (the noise of the game\'s suppressed guns); no suppressor model, same firing sound'] = '對敵人更安靜（遊戲中消音武器的噪音）；無消音器模型，射擊聲音不變',
       ['read-back check failed'] = '寫入後讀回校驗失敗',
       ['read-back differs'] = '讀回內容不一致',
       ['resolving weapons and applying saved values'] = '正在解析武器並應用已儲存的數值',
@@ -9235,6 +9239,7 @@ MOD.langs = {
       ['Support'] = 'Поддерж.',
       ['Support reload speed'] = 'Перезарядка оружия поддержки',
       ['Support weapon drop; the weapon itself is under Support.'] = 'Сброс оружия поддержки; само оружие — во вкладке «Поддержка».',
+      ['Suppressed'] = 'С глушителем',
       ['Suppressor'] = 'Подавитель',
       ['Sure?'] = 'Уверены?',
       ['Surplus EAT Allocation'] = 'Выдача излишков «ОБ»',
@@ -9453,6 +9458,7 @@ MOD.langs = {
       ['overcharge'] = 'перезаряд',
       ['panels, mines per panel: lower only (more than the default crashes the game)'] = 'секции, мины на секцию: только уменьшать (больше значения по умолчанию — вылет игры)',
       ['phalanx'] = 'фаланга',
+      ['quieter for enemies (the noise of the game\'s suppressed guns); no suppressor model, same firing sound'] = 'тише для врагов (шум оружия с глушителем из игры); без модели глушителя, звук выстрела тот же',
       ['scout walker rider'] = 'пилот шатуна-разведчика',
       ['shared with'] = 'общее с',
       ['shotgun'] = 'дробовик',
@@ -13038,6 +13044,15 @@ local function resolve_gun(weapon, key)
         add_row(weapon, 'Handling', 'spread_v', 'Spread (vertical)', 'f32', { w('spread_v', 88) }, 0, 5000, 1, 10)
         add_row(weapon, 'Handling', 'sway', 'Sway multiplier', 'f32', { w('sway', 104) }, 0, 100, 0.1, 0.5)
         add_row(weapon, 'Handling', 'ergonomics', 'Ergonomics', 'f32', { w('ergonomics', 356) }, 0, 1000, 1, 5)
+        -- suppressed (SHODAN Offline Integration): +112 the flag, +132 the firing noise template (the four suppressed
+        -- guns: 1 and 10; others 0 and 0 / 6-9 / 14 / 15); no suppressor model, the firing sound stays
+        local quiet, noise = part('suppressed', T_WEAPON, data + 112, 'flag', 1), part('suppressed_noise', T_WEAPON, data + 132, 'u32', 15)
+        local fv, nv = default_of(quiet.field), default_of(noise.field)
+        if (fv == 0 or fv == 1) and ({ [0] = true, [6] = true, [7] = true, [8] = true, [9] = true, [10] = true, [14] = true, [15] = true })[nv] then
+            local r = add_row(weapon, 'Handling', 'suppressed', 'Suppressed', 'flag', { quiet, noise }, 0, 1, 1, 1)
+            r.lead, r.suppression = true, true
+            r.note = "quieter for enemies (the noise of the game's suppressed guns); no suppressor model, same firing sound"
+        end
         MOD.spin_rows(weapon, data, record(TYPES.windup))
     end
     if weapon.key == key and weapon.slot == 'Support' then
@@ -14522,7 +14537,7 @@ MOD.enemy.GUN_KINDS = { T_WEAPON, T_BEAM_WEAPON, T_SPRAY }
 -- An enemy's weapon page without the rows an AI has no use for (a player gun's handling and resupply; spread
 -- stays). SEAF soldiers carry real player weapons: theirs are kept whole.
 MOD.enemy.GUN_DROP = { recoil_h = true, recoil_v = true, sway = true, ergonomics = true, mags_start = true,
-                       mags_supply = true, mags_max = true }
+                       mags_supply = true, mags_max = true, suppressed = true }
 function MOD.enemy.gun_tidy(weapon)
     if weapon.slot == 'SEAF' then return end
     local kept = {}
@@ -16868,6 +16883,20 @@ local function select_weapon(weapon)
     end
 end
 
+-- Suppressed on / off: the flag, and the noise template the game's suppressed guns use (10; a silent one, 0, stays 0);
+-- off on a gun the game suppresses: a loud template (7). Off on any other: its own again.
+function MOD.suppress(weapon, row, target)
+    local flag, noise = row.parts[1], row.parts[2]
+    local f0, n0 = default_of(flag.field), default_of(noise.field)
+    if f0 == nil or n0 == nil then return end
+    local n = target == 1 and (n0 == 0 and 0 or 10) or (f0 == 1 and 7 or n0)
+    if write_field(noise.field, n) and write_field(flag.field, target) then
+        set_override(weapon, flag, unless_default(target, f0))
+        set_override(weapon, noise, unless_default(n, n0))
+    end
+    ui.version = ui.version + 1
+end
+
 local function change(row, delta_sign, big, exact)
     local weapon = ui.weapon
     local current = row_value(row)
@@ -16875,6 +16904,11 @@ local function change(row, delta_sign, big, exact)
     if row.code then return end   -- (recorded with the arrows: MOD.code.start)
     if not settings.changes then
         ui.message = { text = 'Your changes are off: turn them on in Settings to edit.', till = api.now() + 4 }
+        return
+    end
+    if row.suppression then   -- the flag and the noise template together (MOD.suppress)
+        local target = math.max(0, math.min(1, math.floor((exact or current + delta_sign) + 0.5)))
+        if target ~= current then MOD.suppress(weapon, row, target) end
         return
     end
     if row.choice then
