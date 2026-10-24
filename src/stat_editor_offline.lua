@@ -15384,12 +15384,13 @@ local config_dirty_at = nil
 -- The Settings page's choices, saved in config.txt with the changes. changes: apply the changes
 -- (off: every value is the game's, the changes are kept); block_input: the game gets no keyboard /
 -- mouse input while the panel is open; size: panel height, % of the screen's; side: 'left' / 'right';
--- opacity: background, %; remember: reopen on the last tab / weapon; lang: the panel's language, 'en'
+-- opacity: background, %; last: the tab and page each editor was left on (reopened there; 'stat' / 'enemy'),
+-- enemy_last: the editor left in; lang: the panel's language, 'en'
 -- or the id of a translation: fixed by the build (a language's release, MOD.lang), not a choice; offline (every
 -- language built in) a choice, saved as 'lang'.
 local settings = { changes = true, block_input = true, size = 80, side = 'right', opacity = 90,
-                   remember = true, arc_mp = true, updates = 'ask', update_channel = 'releases', stacks = {}, own_off = {}, hidden = {}, lang = MOD.lang or MOD.offline and rawget(_G, 'SHODAN_OFFLINE_LANG') or 'en',
-                   last_tab = nil, last_weapon = nil,
+                   arc_mp = true, updates = 'ask', update_channel = 'releases', stacks = {}, own_off = {}, hidden = {}, lang = MOD.lang or MOD.offline and rawget(_G, 'SHODAN_OFFLINE_LANG') or 'en',
+                   last = { stat = {}, enemy = {} }, enemy_last = false,
                    GITHUB = 'https://github.com/SHODAN-HORAI/SHODAN-Stat-Editor',
                    RANGE = { size = { 50, 100 }, opacity = { 10, 100 } } }
 
@@ -15521,7 +15522,6 @@ local function save_config()
     for _, line in ipairs({ 'changes ' .. onoff(settings.changes), 'block_input ' .. onoff(settings.block_input),
                             'panel_size ' .. settings.size, 'panel_side ' .. settings.side,
                             'panel_opacity ' .. settings.opacity,
-                            'remember ' .. onoff(settings.remember),
                             'arc_chains_multiplayer ' .. onoff(settings.arc_mp) }) do
         lines[#lines + 1] = line
     end
@@ -15557,8 +15557,13 @@ local function save_config()
     for tab in pairs(settings.hidden) do hidden[#hidden + 1] = tab end
     table.sort(hidden)
     if #hidden > 0 then lines[#lines + 1] = 'hide_tabs ' .. table.concat(hidden, ',') end
-    if settings.remember and settings.last_tab then lines[#lines + 1] = 'last_tab ' .. settings.last_tab end
-    if settings.remember and settings.last_weapon then lines[#lines + 1] = 'last_weapon ' .. settings.last_weapon end
+    -- the tab and page each editor was left on, and the editor (reopened there)
+    local last = settings.last
+    if last.stat.tab then lines[#lines + 1] = 'last_tab ' .. last.stat.tab end
+    if last.stat.weapon then lines[#lines + 1] = 'last_weapon ' .. last.stat.weapon end
+    if last.enemy.tab then lines[#lines + 1] = 'enemy_tab ' .. last.enemy.tab end
+    if last.enemy.weapon then lines[#lines + 1] = 'enemy_page ' .. last.enemy.weapon end
+    lines[#lines + 1] = 'editor ' .. (settings.enemy_last and 'enemy' or 'stat')
     for _, o in ipairs(overrides) do
         local weapon = by_hash[o.hash]
         lines[#lines + 1] = o.hash .. ' ' .. o.id .. ' ' .. number_text(o.value) ..
@@ -15593,8 +15598,10 @@ local function load_config()
         end
         local own = line:match('^%s*passive_own%s+(%d+)%s+off%s*$')
         if own and MOD.offline then settings.own_off[tonumber(own)], known = true, true end
-        if name == 'changes' or name == 'block_input' or name == 'remember' then
+        if name == 'changes' or name == 'block_input' then
             settings[name] = value ~= 'off'
+            known = true
+        elseif name == 'remember' then   -- the old Settings choice: always on now
             known = true
         elseif name == 'check_updates' or name == 'updates' and value == 'off' then   -- test builds' (no Off now)
             known = true
@@ -15618,14 +15625,17 @@ local function load_config()
             known = true
         elseif name == 'panel_lang' then   -- the language choice of PR #52's build and of test builds: gone
             known = true                     -- (each language has its own release)
-        elseif name == 'last_tab' then
-            settings.last_tab = value
+        elseif name == 'last_tab' or name == 'enemy_tab' then
+            settings.last[name == 'enemy_tab' and 'enemy' or 'stat'].tab = value
+            known = true
+        elseif name == 'editor' and (value == 'enemy' or value == 'stat') then
+            settings.enemy_last = value == 'enemy'
             known = true
         elseif name == 'hide_tabs' then
             for tab in value:gmatch('[^,%s]+') do settings.hidden[tab] = true end
             known = true
-        elseif name == 'last_weapon' and value:find('^%x+$') and #value == 16 then
-            settings.last_weapon = value:upper()
+        elseif (name == 'last_weapon' or name == 'enemy_page') and value:find('^%x+$') and #value == 16 then
+            settings.last[name == 'enemy_page' and 'enemy' or 'stat'].weapon = value:upper()
             known = true
         elseif name == 'several_vehicles' then
             MOD.vehicles.on = value == 'on'; MOD.vehicles.apply()
@@ -16485,8 +16495,9 @@ end
 local function select_weapon(weapon)
     ui.weapon = weapon
     ui.row, ui.scroll, ui.settings, ui.binding, ui.stack_pick, ui.code = 1, 1, false, nil, nil, nil
-    if weapon and settings.remember and state.phase == 'ready' and settings.last_weapon ~= weapon.hash then
-        settings.last_tab, settings.last_weapon = weapon.slot, weapon.hash
+    local last = settings.last[MOD.enemy.on and 'enemy' or 'stat']
+    if weapon and state.phase == 'ready' and (last.weapon ~= weapon.hash or last.tab ~= weapon.slot) then
+        last.tab, last.weapon = weapon.slot, weapon.hash
         mark_config_dirty()
     end
     if weapon then
@@ -17583,7 +17594,6 @@ local function draw(width, height)
             choice('Panel side', 'side', { { 'left', 'Left' }, { 'right', 'Right' } }, settings.side)
             percent('Background opacity', 'opacity')
         end
-        choice('Remember last tab and weapon', 'remember', ONOFF, onoff(settings.remember))
         if MOD.offline then   -- wider buttons than choice()'s: 'Automatic', 'Every commit' in every language
             text('Updates', x0, y + 6, 16, WHITE, 270)
             for k, o in ipairs({ { 'ask', 'Ask' }, { 'auto', 'Automatic' } }) do
@@ -17978,6 +17988,20 @@ local function hit(x, y, enabled_only)
     return nil
 end
 
+-- The shown editor's tab and page as it was left (settings.last), else its first tab and that tab's first page.
+function MOD.restore_last()
+    local last = settings.last[MOD.enemy.on and 'enemy' or 'stat']
+    local tabs = settings.shown_tabs()
+    ui.tab, ui.page, ui.search, ui.settings, ui.weapon = tabs[1], 1, { text = '', active = false }, false, nil
+    for _, t in ipairs(tabs) do if t == last.tab then ui.tab = t end end
+    local page = last.weapon and by_hash[last.weapon]
+    if page and page.slot == ui.tab and #page.rows > 0 and (page.enemy ~= nil) == MOD.enemy.on then
+        select_weapon(page)
+    else
+        select_weapon(weapons_in(ui.tab)[1])
+    end
+end
+
 local function click(key)
     if not key then return end
     local weapon = ui.weapon
@@ -17990,13 +18014,16 @@ local function click(key)
     if kind ~= 'set' then ui.binding = nil end
     if kind == 'tab' then
         ui.tab, ui.page, ui.search, ui.settings = arg, 1, { text = '', active = false }, false
-        if settings.remember and state.phase == 'ready' and settings.last_tab ~= arg then
-            settings.last_tab = arg
+        local last = settings.last[MOD.enemy.on and 'enemy' or 'stat']
+        if state.phase == 'ready' and last.tab ~= arg then
+            last.tab = arg
             mark_config_dirty()
         end
-    elseif kind == 'enemy_mode' then
+    elseif kind == 'enemy_mode' then   -- the other editor, on the tab and page it was left on
         MOD.enemy.on = not MOD.enemy.on
-        ui.tab, ui.page, ui.search, ui.settings, ui.weapon = settings.shown_tabs()[1], 1, { text = '', active = false }, false, nil
+        settings.enemy_last = MOD.enemy.on
+        MOD.restore_last()
+        mark_config_dirty()
     elseif kind == 'close' then ui.close_request = true   -- closed by tick, once this frame is done
     elseif kind == 'settings' then ui.settings = not ui.settings
     elseif kind == 'presets' then   -- Presets, or back to the tab before them
@@ -18009,7 +18036,7 @@ local function click(key)
         local name, value = arg:match('^([%w_]+):?(.*)$')
         if name == 'bind' then ui.binding = not ui.binding or nil
         elseif name == 'changes' then settings.set_changes(value == 'on')
-        elseif name == 'block_input' or name == 'remember' then settings[name] = value == 'on'
+        elseif name == 'block_input' then settings[name] = value == 'on'
         elseif name == 'updates' and (value == 'ask' or value == 'auto') then settings.updates = value
         elseif name == 'update_channel' and (value == 'releases' or value == 'commits') then settings.update_channel = value
         elseif name == 'arc_mp' then settings.arc_mp, settings.arc.next_check = value == 'on', 0
@@ -18801,14 +18828,14 @@ local function open_panel(open)
         if state.phase == 'ready' and not tables_intact() then rescan() end
         if not ui.restored and state.phase == 'ready' then
             ui.restored = true
-            local last = settings.remember and settings.last_weapon and by_hash[settings.last_weapon]
-            if last and last.enemy then MOD.enemy.on = true end   -- back in the editor it was left in
-            if last and #last.rows > 0 and not settings.hidden[last.slot] then
-                select_weapon(last)
-            elseif settings.remember and settings.last_tab then
-                for _, t in ipairs(settings.shown_tabs()) do if t == settings.last_tab then ui.tab = t end end
+            -- (configs before the 'editor' line: one last page for both editors)
+            local old = settings.last.stat.weapon and by_hash[settings.last.stat.weapon]
+            if old and old.enemy then
+                settings.last.enemy.tab, settings.last.enemy.weapon = old.slot, old.hash
+                settings.last.stat.tab, settings.last.stat.weapon, settings.enemy_last = nil, nil, true
             end
-            if settings.hidden[ui.tab] then ui.tab = settings.shown_tabs()[1] end
+            MOD.enemy.on = settings.enemy_last   -- back in the editor it was left in
+            MOD.restore_last()
         end
         if not ui.weapon then
             local list = weapons_in(ui.tab)
