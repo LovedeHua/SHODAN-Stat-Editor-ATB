@@ -12878,9 +12878,9 @@ local function resolve_gun(weapon, key)
             -- the game keeps at most 2048 rounds in a magazine (more drops to 2048 at the first shot): rows stop
             -- there, and going past it says why (row.limit)
             for _, m in ipairs(magazine and { { 'capacity', 'Magazine size', 136, 1, 2048, 10 },
-                                              not weapon.sealed and { 'mags_start', 'Starting magazines', 140, 0, 999, 5 } or nil,
-                                              not weapon.sealed and { 'mags_supply', 'Magazines from supply', 144, 0, 999, 5 } or nil,
-                                              not weapon.sealed and { 'mags_max', 'Max spare magazines', 148, 0, 999, 5 } or nil } or {}) do
+                                              not weapon.sealed and { 'mags_start', 'Starting magazines', 140, 0, 100000, 50 } or nil,
+                                              not weapon.sealed and { 'mags_supply', 'Magazines from supply', 144, 0, 100000, 50 } or nil,
+                                              not weapon.sealed and { 'mags_max', 'Max spare magazines', 148, 0, 100000, 50 } or nil } or {}) do
                 local r = row('Ammo', m[1], m[2], 'u32', get(m[1], '5:' .. m[3], T_MAGAZINE, magazine + m[3], 'u32', 100000), m[4], m[5], 1, m[6])
                 if r and m[1] == 'capacity' then r.limit = 'The game holds at most 2048 rounds in a magazine.' end
             end
