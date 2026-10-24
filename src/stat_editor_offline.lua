@@ -601,7 +601,6 @@ MOD.ENEMY_LIST = {
     { 'terminids', 'enemy', 'Warrior', 'Tier 2', '32541FC4EC7C9CDC', '0=face;1=l_rear_leg;2=r_rear_leg;3=r_front_leg;4=l_front_leg;5=r_claw;6=l_claw', '594=Claw;595=Headbutt;596=Stomp' },
     { 'terminids', 'enemy', 'Warrior', 'Tier 2 guard', 'B2A6FA1E4284C7E6', '0=face;1=l_rear_leg;2=r_rear_leg;3=r_front_leg;4=l_front_leg;5=r_claw;6=l_claw', '594=Claw;595=Headbutt;596=Stomp' },
     { 'automatons', 'structure', 'Stratagem Jammer', '', '23C85E970FB46685', '', '' },
-    { 'terminids', 'structure', 'Stratagem Jammer', '', '7BDAA1BB44C3EE1C', '', '' },
     { 'illuminate', 'structure', 'Cognitive Disruptor', '', '3478839C3C9B6646', '', '' },
     { 'automatons', 'structure', 'Stratagem Scrambler (convoy)', '', 'B971B1141E1CBFAC', '', '' },
     { 'seaf', 'enemy', 'SEAF Soldier', 'Variant 1', '75F7E96AF7DCD303', '0=head;1=torso;2=left_arm;3=right_arm;4=left_leg;5=right_leg', '' },
