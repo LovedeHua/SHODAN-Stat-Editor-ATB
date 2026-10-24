@@ -3847,6 +3847,18 @@ MOD.langs = {
       { '^Body part (%d+)$', '身体部位 %1' },
       { '^(.+): weapon$', '%1：武器' },
       { '^(.+): weapon (%d+)$', '%1：武器 %2' },
+      { '^(.+): bile spray$', '%1：胆汁喷射' },
+      { '^(.+): bile spray (%d+)$', '%1：胆汁喷射 %2' },
+      { '^(.+): bile mortar$', '%1：胆汁迫击' },
+      { '^(.+): bile mortar (%d+)$', '%1：胆汁迫击 %2' },
+      { '^(.+): acid spit$', '%1：酸液吐射' },
+      { '^(.+): acid spit (%d+)$', '%1：酸液吐射 %2' },
+      { '^(.+): spore spray$', '%1：孢子喷射' },
+      { '^(.+): spore spray (%d+)$', '%1：孢子喷射 %2' },
+      { '^(.+): fire breath$', '%1：火焰吐息' },
+      { '^(.+): fire breath (%d+)$', '%1：火焰吐息 %2' },
+      { '^(.+): acid spray$', '%1：酸液喷射' },
+      { '^(.+): acid spray (%d+)$', '%1：酸液喷射 %2' },
       { '^(.+): mounted weapon$', '%1：挂载武器' },
       { '^(.+): mounted weapon (%d+)$', '%1：挂载武器 %2' },
       { '^(.+): primary weapon$', '%1：主武器' },
@@ -7303,6 +7315,18 @@ MOD.langs = {
       { '^Body part (%d+)$', '身體部位 %1' },
       { '^(.+): weapon$', '%1：武器' },
       { '^(.+): weapon (%d+)$', '%1：武器 %2' },
+      { '^(.+): bile spray$', '%1：膽汁噴射' },
+      { '^(.+): bile spray (%d+)$', '%1：膽汁噴射 %2' },
+      { '^(.+): bile mortar$', '%1：膽汁迫擊' },
+      { '^(.+): bile mortar (%d+)$', '%1：膽汁迫擊 %2' },
+      { '^(.+): acid spit$', '%1：酸液吐射' },
+      { '^(.+): acid spit (%d+)$', '%1：酸液吐射 %2' },
+      { '^(.+): spore spray$', '%1：孢子噴射' },
+      { '^(.+): spore spray (%d+)$', '%1：孢子噴射 %2' },
+      { '^(.+): fire breath$', '%1：火焰吐息' },
+      { '^(.+): fire breath (%d+)$', '%1：火焰吐息 %2' },
+      { '^(.+): acid spray$', '%1：酸液噴射' },
+      { '^(.+): acid spray (%d+)$', '%1：酸液噴射 %2' },
       { '^(.+): mounted weapon$', '%1：掛載武器' },
       { '^(.+): mounted weapon (%d+)$', '%1：掛載武器 %2' },
       { '^(.+): primary weapon$', '%1：主武器' },
@@ -10020,6 +10044,18 @@ MOD.langs = {
       { '^Body part (%d+)$', 'Часть тела %1' },
       { '^(.+): weapon$', '%1: оружие' },
       { '^(.+): weapon (%d+)$', '%1: оружие %2' },
+      { '^(.+): bile spray$', '%1: струя желчи' },
+      { '^(.+): bile spray (%d+)$', '%1: струя желчи %2' },
+      { '^(.+): bile mortar$', '%1: желчная мортира' },
+      { '^(.+): bile mortar (%d+)$', '%1: желчная мортира %2' },
+      { '^(.+): acid spit$', '%1: кислотный плевок' },
+      { '^(.+): acid spit (%d+)$', '%1: кислотный плевок %2' },
+      { '^(.+): spore spray$', '%1: струя спор' },
+      { '^(.+): spore spray (%d+)$', '%1: струя спор %2' },
+      { '^(.+): fire breath$', '%1: огненное дыхание' },
+      { '^(.+): fire breath (%d+)$', '%1: огненное дыхание %2' },
+      { '^(.+): acid spray$', '%1: струя кислоты' },
+      { '^(.+): acid spray (%d+)$', '%1: струя кислоты %2' },
       { '^(.+): mounted weapon$', '%1: установленное оружие' },
       { '^(.+): mounted weapon (%d+)$', '%1: установленное оружие %2' },
       { '^(.+): primary weapon$', '%1: основное оружие' },
@@ -12259,6 +12295,11 @@ local function resolve_gun(weapon, key)
     if spray then
         local id = read_field(field_at(T_SPRAY, spray + 200, 'u32', 100000))
         drow = id and tables[T_DAMAGE] and tables[T_DAMAGE].index[id]
+        -- none of its own (the enemies' bile and acid sprays): its projectile's (+196 projectile type, that +60)
+        local pt = not drow and read_field(field_at(T_SPRAY, spray + 196, 'u32', 100000))
+        local pr = pt and pt > 0 and tables[T_PROJECTILE] and tables[T_PROJECTILE].index[pt]
+        id = pr and read_field(field_at(T_PROJECTILE, pr + 60, 'u32', 100000))
+        drow = drow or id and id > 0 and tables[T_DAMAGE] and tables[T_DAMAGE].index[id]
     end
     -- melee weapons: melee component (+12 damage row), damage per strike
     local melee = not drow and record(T_MELEE)
@@ -14265,6 +14306,37 @@ end
 -- has it; its rows are a weapon's (resolve_gun). A gun that is the enemy itself gets a page hash of its own
 -- (the entity's halves swapped), so the enemy page keeps its own.
 MOD.enemy.GUN_KINDS = { T_WEAPON, T_BEAM_WEAPON, T_SPRAY }
+-- An enemy's weapon page without the rows an AI has no use for (a player gun's handling and resupply; spread
+-- stays). SEAF soldiers carry real player weapons: theirs are kept whole.
+MOD.enemy.GUN_DROP = { recoil_h = true, recoil_v = true, sway = true, ergonomics = true, mags_start = true,
+                       mags_supply = true, mags_max = true }
+function MOD.enemy.gun_tidy(weapon)
+    if weapon.slot == 'SEAF' then return end
+    local kept = {}
+    for _, r in ipairs(weapon.rows) do
+        if MOD.enemy.GUN_DROP[r.id] then
+            for _, p in ipairs(r.parts) do
+                if weapon.by_id[p.id] == p then weapon.by_id[p.id] = nil end
+                local users = p.field.users
+                for k = #users, 1, -1 do if users[k] == weapon then table.remove(users, k) end end
+            end
+        else kept[#kept + 1] = r end
+    end
+    -- nothing but spread and a magazine (a body's empty gun part): no page
+    local real = false
+    for _, r in ipairs(kept) do if r.section ~= 'Handling' and r.section ~= 'Ammo' then real = true end end
+    weapon.rows = real and kept or {}
+end
+
+-- The Terminids' attacks by their page's first name -> what it is (the page's number stays: saved values keep applying)
+MOD.enemy.GUN_NAMES = {
+    ['Bile Spewer (Base): mounted weapon 1'] = 'bile spray', ['Bile Spewer (Base): mounted weapon 2'] = 'bile mortar',
+    ['Bile Spitter: weapon'] = 'acid spit', ['Bile Titan: weapon'] = 'bile spray', ['Spore Burst Bile Titan: weapon'] = 'spore spray',
+    ['Dragonroach: mounted weapon'] = 'fire breath', ['Hive Lord: mounted weapon 1'] = 'acid spit 1',
+    ['Hive Lord: mounted weapon 2'] = 'acid spit 2', ['Nursing Spewer: mounted weapon 1'] = 'bile spray',
+    ['Predator Hunter: mounted weapon'] = 'acid spray',
+}
+
 function MOD.enemy.guns_build(list)
     local mt, it = tables[TYPES.mount], tables[TYPES.inventory]
     local top = function(t) return t.copies[1] + HEADER_BYTES end
@@ -14324,7 +14396,8 @@ function MOD.enemy.guns_build(list)
                 if g.key == entry.enemy.members[1].key or by_hash[h] then
                     h = h:sub(9) .. h:sub(1, 8)
                 end
-                local page = { name = entry.name .. ': ' .. g.label:lower() .. (count[g.label] > 1 and (' ' .. n[g.label]) or ''),
+                local name = entry.name .. ': ' .. g.label:lower() .. (count[g.label] > 1 and (' ' .. n[g.label]) or '')
+                local page = { name = MOD.enemy.GUN_NAMES[name] and (entry.name .. ': ' .. MOD.enemy.GUN_NAMES[name]) or name,
                                slot = entry.slot, hash = h, key = g.key, rows = {}, by_id = {},
                                enemy = { gun = true, structure = entry.enemy.structure }, users = entry.name }
                 seen[g.key] = page
@@ -14828,7 +14901,7 @@ local function resolve(weapon)
         if weapon.slot == 'Spawning' then MOD.enemy.spawning_resolve(weapon)
         elseif weapon.enemy.faction then MOD.enemy.faction_resolve(weapon)
         elseif weapon.enemy.blasts then MOD.enemy.blasts_resolve(weapon)
-        elseif weapon.enemy.gun then resolve_gun(weapon, weapon.key)
+        elseif weapon.enemy.gun then resolve_gun(weapon, weapon.key); MOD.enemy.gun_tidy(weapon)
         else MOD.enemy.resolve(weapon) end
         return
     end
