@@ -376,6 +376,118 @@ MOD.round_names = {
     [354] = '70mm Laser-Guided Missile Mk2',
     [355] = '85mm High-Explosive Grenade Mk2',
 }
+-- armors: the game's names, by the text id of the armor kit
+MOD.kit_names = {
+    [0x04533C7A] = 'EX-00 Prototype X',
+    [0x04E317CA] = 'CM-21 Trench Paramedic',
+    [0x056E4441] = 'B-22 Model Citizen',
+    [0x09D77183] = 'TG-8 Sharpshooter',
+    [0x0F8B6B05] = 'CM-17 Butcher',
+    [0x10D32856] = 'SA-32 Dynamo',
+    [0x112A1FEE] = 'SS-500 Pale Prosecutor',
+    [0x11644CBD] = 'AF-52 Lockdown',
+    [0x11E71326] = 'EX-03 Prototype 3',
+    [0x15385B49] = 'CW-4 Arctic Ranger',
+    [0x1B1CF8E3] = 'UF-16 Inspector',
+    [0x1D305570] = 'SA-8 Ram',
+    [0x1E0BABAE] = 'SA-25 Steel Trooper',
+    [0x1F5B4D7A] = 'CM-09 Bonesnapper',
+    [0x2064551F] = 'RS-20 Constrictor',
+    [0x23A903AE] = 'GS-11 Democracy\'s Deputy',
+    [0x249D7091] = 'CE-27 Ground Breaker',
+    [0x27825499] = 'TR-40 Gold Eagle',
+    [0x282F3770] = 'I-92 Fire Fighter',
+    [0x2BF1345D] = 'I-09 Heatseeker',
+    [0x2D487598] = 'BP-20 Correct Officer',
+    [0x2EF383C1] = 'SA-7 Headfirst',
+    [0x366B891B] = 'RS-40 Beast of Prey',
+    [0x38168B90] = 'FS-55 Devastator',
+    [0x38298D27] = 'RS-6 Fiend Destroyer',
+    [0x3E9C501E] = 'B-24 Enforcer',
+    [0x4269DD2F] = 'AD-26 Bleeding Edge',
+    [0x43BD29BB] = 'TR-62 Knight',
+    [0x44DC4579] = 'SC-34 Infiltrator',
+    [0x49225B9A] = 'EX-16 Prototype 16',
+    [0x4B6FD4A6] = 'CE-35 Trench Engineer',
+    [0x4FD99C0F] = 'B-16 Battle-Scarred Veteran',
+    [0x523BA461] = 'FS-23 Battle Master',
+    [0x538E1ED3] = 'BP-77 Grand Juror',
+    [0x540BA0B2] = 'CE-74 Breaker',
+    [0x56D77FAC] = 'A-9 Helljumper',
+    [0x56ECCA5C] = 'SA-12 Servo-Assisted',
+    [0x57B55E42] = 'AF-91 Field Chemist',
+    [0x59DBA404] = 'GS-66 Lawmaker',
+    [0x5A1E06D4] = 'O-2 Heavy Operator',
+    [0x5A24D0D0] = 'SR-64 Cinderblock',
+    [0x5DD5E780] = 'BFM-77 Reformer',
+    [0x606233AB] = 'CW-36 Winter Warrior',
+    [0x620A18C5] = 'PH-9 Predator',
+    [0x62EA456F] = 'IE-12 Righteous',
+    [0x6857AC79] = 'UF-84 Doubt Killer',
+    [0x6CCC59A7] = 'SA-04 Combat Technician',
+    [0x6E531B9A] = 'BP-32 Jackboot',
+    [0x70CF3B78] = 'FS-61 Dreadnought',
+    [0x7523B88D] = 'SS-15 Focal Point',
+    [0x779C24F9] = 'KDM-763 Pacesetter',
+    [0x780CCA87] = 'CE-67 Titan',
+    [0x7834520F] = 'SR-18 Roadblock',
+    [0x78755FA1] = 'B-01 Tactical',
+    [0x791E13F7] = 'PH-202 Twigsnapper',
+    [0x795C12F4] = 'DP-8 Mountain-Scaled',
+    [0x7EF0D18B] = 'B-08 Light Gunner',
+    [0x7FEF5D6D] = 'TR-9 Cavalier of Democracy',
+    [0x83C41D03] = 'AF-50 Noxious Ranger',
+    [0x83D0BBDC] = 'DP-00 Tactical',
+    [0x87F6B239] = 'DS-10 Big Game Hunter',
+    [0x893271F8] = 'TR-117 Alpha Commander',
+    [0x8A22602B] = 'SC-15 Drone Master',
+    [0x8F2D7126] = 'CM-14 Physician',
+    [0x90D5F96F] = 'IE-57 Hell-Bent',
+    [0x94DE5F89] = 'SS-33 Mimetic Marshal',
+    [0x996FDD44] = 'B-27 Fortified Commando',
+    [0x9EBCAD7F] = 'I-44 Salamander',
+    [0xA1653599] = 'KDM-73 Dragoon',
+    [0xA23CABAE] = 'FS-37 Ravager',
+    [0xA270CA6E] = 'RE-1861 Parade Commander',
+    [0xA2D73A98] = 'O-3 Free Spirit',
+    [0xA3222D58] = 'DS-191 Scorpion',
+    [0xA3536DD3] = 'DP-11 Champion of the People',
+    [0xA4E420FB] = 'UF-50 Bloodhound',
+    [0xA5972E25] = 'CM-10 Clinician',
+    [0xAA028EAF] = 'RE-2310 Honorary Guard',
+    [0xAA21A238] = 'CE-101 Guerilla Gorilla ',
+    [0xAD028A55] = 'FS-11 Executioner',
+    [0xAD456275] = 'CE-81 Juggernaut',
+    [0xAD6A4B44] = 'CE-07 Demolition Specialist',
+    [0xB4FE6545] = 'A-35 Recon',
+    [0xB70378BC] = 'FS-05 Marksman',
+    [0xBC776BF1] = 'SC-30 Trailblazer Scout',
+    [0xBEB90174] = 'AF-02 Haz-Master',
+    [0xC25D4D98] = 'CW-9 White Wolf',
+    [0xC692CC5E] = 'AC-1 Dutiful',
+    [0xC7D6E5ED] = 'AD-11 Livewire',
+    [0xD1923A46] = 'CW-22 Kodiak',
+    [0xD3DED852] = 'DP-40 Hero of the Federation',
+    [0xD54B8082] = 'RS-67 Null Cipher',
+    [0xDA47855A] = 'CE-64 Grenadier',
+    [0xDD009AD7] = 'SC-37 Legionnaire',
+    [0xDD05CD51] = 'SR-24 Street Scout',
+    [0xDD537C15] = 'TR-7 Ambassador of the Brand',
+    [0xE060E14F] = 'AD-49 Apollonian',
+    [0xE333B56E] = 'DS-42 Federation\'s Blade',
+    [0xE4D5B461] = 'PH-56 Jaguar',
+    [0xE8162B4A] = 'TG-122 Demo-Trooper',
+    [0xE85249F5] = 'BFM-220 Ironclad',
+    [0xE85E6600] = 'AC-2 Obedient',
+    [0xE867121D] = 'CPR-80 Bulwark',
+    [0xE9248FAC] = 'GS-17 Frontier Marshall',
+    [0xECA42A1F] = '',
+    [0xECB02294] = 'I-102 Draconaught',
+    [0xEE8E36D3] = 'DP-53 Saviour of the Free',
+    [0xF0ABC83F] = 'FS-38 Eradicator',
+    [0xF5787144] = 'IE-3 Martyr',
+    [0xFE5E96BE] = 'FS-34 Exterminator',
+}
 -- vehicle parts (damage zones): their names, by hash
 MOD.vehicle_parts = {
     [0x04361A85] = 'Left box 0',
@@ -636,6 +748,7 @@ MOD.langs = {
       ['+ Throwables (start, max)'] = '投掷物数量（初始 / 上限）',
       ['- / + steps through the stratagems by name (-- / ++: 10 at a time).'] = '- / + 按名称切换战略配备（-- / ++ 每次切换 10 项）。',
       ['0 = normal projectile; - / + selects a throwable grenade by name above.'] = '0 = 常规弹丸；- / + 按上方名称选择投掷手雷。',
+      ['0 light, 1 medium, 2 heavy'] = '0 轻型，1 中型，2 重型',
       ['0: hits deal their normal damage, 1: their durable damage (the weapon\'s lower one)'] = '0：命中造成普通伤害，1：造成耐久伤害（武器较低的那个）',
       ['0: no patrols'] = '0：没有巡逻',
       ['100kg Bomb'] = '100KG炸弹',
@@ -898,6 +1011,7 @@ MOD.langs = {
       ['Armor pen. (large angle)'] = '穿甲等级（大角度）',
       ['Armor pen. (slight angle)'] = '穿甲等级（小角度）',
       ['Armor penetration'] = '穿甲',
+      ['Armor weight'] = '护甲重量',
       ['Armors'] = '护甲',
       ['Ask'] = '询问',
       ['Assassinate'] = '刺杀',
@@ -1422,6 +1536,7 @@ MOD.langs = {
       ['Heavy Devastator shield'] = '重型蹂躏者盾牌',
       ['Heavy Fusion Cannon'] = '重型聚变炮',
       ['Heavy Machine Gun'] = '重机枪',
+      ['Heavy armor'] = '重型护甲',
       ['Heavy burning'] = '重度燃烧',
       ['Heavycannon'] = '重炮',
       ['Hellbomb'] = '地狱火炸弹',
@@ -1638,6 +1753,8 @@ MOD.langs = {
       ['Liberator Legacy'] = '“解放者”传承',
       ['Liberator Penetrator'] = '穿甲“解放者”',
       ['Lifetime (s)'] = '存续时间(秒)',
+      ['Light armor'] = '轻型护甲',
+      ['Light, medium or heavy, per armor (every armor set with that name).'] = '每件护甲的轻型、中型或重型（同名的所有护甲套装）。',
       ['Limb health'] = '四肢生命值',
       ['Limb injury avoidance'] = '避免肢体受伤的几率',
       ['Load'] = '读取',
@@ -1704,6 +1821,7 @@ MOD.langs = {
       ['Med-Kit'] = '急救包',
       ['Medic Backpack'] = '医疗背包',
       ['Medium Plasma Bolt'] = '中型等离子弹',
+      ['Medium armor'] = '中型护甲',
       ['Melee damage'] = '近战伤害',
       ['Melta Mine'] = '热熔地雷',
       ['Meltagun'] = '热熔枪',
@@ -3958,6 +4076,9 @@ MOD.langs = {
       { '^Updated to (.+)%.$', '已更新到 %1。' },
       { '^Add a passive to (.+)$', '为 %1 添加被动' },
       { '^Zoom level (%d) follow speed$', '倍率等级 %1 跟随速度' },
+      { '^(.+): Light$', '%1：轻型' },
+      { '^(.+): Medium$', '%1：中型' },
+      { '^(.+): Heavy$', '%1：重型' },
       { '^Heat level (%d+)$', '热量等级 %1' },
       { '^(.+); ammo type shared with (.+)$', '%1；弹种与以下共用：%L2' },
       { '^fires: (.+)%. The rows above stay its own$', '发射：%1。上方各行仍为其自身数值' },
@@ -4159,6 +4280,7 @@ MOD.langs = {
       ['+ Throwables (start, max)'] = '投擲物數量（初始 / 上限）',
       ['- / + steps through the stratagems by name (-- / ++: 10 at a time).'] = '- / + 按名稱切換戰略配備（-- / ++ 每次切換 10 項）。',
       ['0 = normal projectile; - / + selects a throwable grenade by name above.'] = '0 = 常規射彈；- / + 按上方名稱選擇投擲手雷。',
+      ['0 light, 1 medium, 2 heavy'] = '0 輕型，1 中型，2 重型',
       ['0: hits deal their normal damage, 1: their durable damage (the weapon\'s lower one)'] = '0：命中造成普通傷害，1：造成耐久傷害（武器較低的那個）',
       ['0: no patrols'] = '0：沒有巡邏',
       ['100kg Bomb'] = '100KG炸彈',
@@ -4421,6 +4543,7 @@ MOD.langs = {
       ['Armor pen. (large angle)'] = '穿甲等級（大角度）',
       ['Armor pen. (slight angle)'] = '穿甲等級（小角度）',
       ['Armor penetration'] = '穿甲',
+      ['Armor weight'] = '護甲重量',
       ['Armors'] = '護甲',
       ['Ask'] = '詢問',
       ['Assassinate'] = '刺殺',
@@ -4945,6 +5068,7 @@ MOD.langs = {
       ['Heavy Devastator shield'] = '重型蹂躪者盾牌',
       ['Heavy Fusion Cannon'] = '重型聚變炮',
       ['Heavy Machine Gun'] = '重機槍',
+      ['Heavy armor'] = '重型護甲',
       ['Heavy burning'] = '重度燃燒',
       ['Heavycannon'] = '重炮',
       ['Hellbomb'] = '地獄火炸彈',
@@ -5161,6 +5285,8 @@ MOD.langs = {
       ['Liberator Legacy'] = '解放者「榮光」',
       ['Liberator Penetrator'] = '穿甲解放者',
       ['Lifetime (s)'] = '存續時間(秒)',
+      ['Light armor'] = '輕型護甲',
+      ['Light, medium or heavy, per armor (every armor set with that name).'] = '每件護甲的輕型、中型或重型（同名的所有護甲套裝）。',
       ['Limb health'] = '四肢生命值',
       ['Limb injury avoidance'] = '避免肢體受傷的機率',
       ['Load'] = '讀取',
@@ -5227,6 +5353,7 @@ MOD.langs = {
       ['Med-Kit'] = '醫療套組',
       ['Medic Backpack'] = '醫療背包',
       ['Medium Plasma Bolt'] = '中型電漿彈',
+      ['Medium armor'] = '中型護甲',
       ['Melee damage'] = '近戰傷害',
       ['Melta Mine'] = '熱熔地雷',
       ['Meltagun'] = '熱熔槍',
@@ -7481,6 +7608,9 @@ MOD.langs = {
       { '^Updated to (.+)%.$', '已更新到 %1。' },
       { '^Add a passive to (.+)$', '為 %1 新增被動' },
       { '^Zoom level (%d) follow speed$', '倍率等級 %1 跟隨速度' },
+      { '^(.+): Light$', '%1：輕型' },
+      { '^(.+): Medium$', '%1：中型' },
+      { '^(.+): Heavy$', '%1：重型' },
       { '^Heat level (%d+)$', '熱量等級 %1' },
       { '^(.+); ammo type shared with (.+)$', '%1；彈種與以下共用：%L2' },
       { '^fires: (.+)%. The rows above stay its own$', '發射：%1。上方各行仍為其自身數值' },
@@ -7679,6 +7809,7 @@ MOD.langs = {
       ['+ Stims (start, max)'] = '+ Стимы (в начале, макс.)',
       ['+ Throwables (start, max)'] = '+ Метательное (в начале, макс.)',
       ['0 = normal projectile; - / + selects a throwable grenade by name above.'] = '0 = обычный снаряд; - / + выбирает гранату по названию выше.',
+      ['0 light, 1 medium, 2 heavy'] = '0 лёгкая, 1 средняя, 2 тяжёлая',
       ['0: hits deal their normal damage, 1: their durable damage (the weapon\'s lower one)'] = '0: попадания наносят обычный урон, 1: урон по прочным целям (меньший у оружия)',
       ['0: no patrols'] = '0: без патрулей',
       ['100kg Bomb'] = 'Бомба (100 кг)',
@@ -7936,6 +8067,7 @@ MOD.langs = {
       ['Armor pen. (large angle)'] = 'Пробив. брони (большой угол)',
       ['Armor pen. (slight angle)'] = 'Пробив. брони (малый угол)',
       ['Armor penetration'] = 'Бронепробиваемость',
+      ['Armor weight'] = 'Вес брони',
       ['Armors'] = 'Броня',
       ['Ask'] = 'Спрашивать',
       ['Assassinate'] = 'убийца',
@@ -8425,6 +8557,7 @@ MOD.langs = {
       ['Heavy Devastator shield'] = 'Щит тяжелого разрушителя',
       ['Heavy Fusion Cannon'] = 'Тяжелая термоядерная пушка',
       ['Heavy Machine Gun'] = '«Тяжелый пулемет»',
+      ['Heavy armor'] = 'Тяжёлая броня',
       ['Heavy burning'] = 'Сильное горение',
       ['Heavycannon'] = 'тяжелая пушка',
       ['Helldiver'] = 'Адский десантник',
@@ -8629,6 +8762,8 @@ MOD.langs = {
       ['Liberator Legacy'] = '«Классический освободитель»',
       ['Liberator Penetrator'] = '«Пробойный освободитель»',
       ['Lifetime (s)'] = 'Время жизни (с)',
+      ['Light armor'] = 'Лёгкая броня',
+      ['Light, medium or heavy, per armor (every armor set with that name).'] = 'Лёгкая, средняя или тяжёлая, для каждой брони (все комплекты с этим названием).',
       ['Limb health'] = 'Здоровье конечностей',
       ['Limb injury avoidance'] = 'Защита конечностей от ранений',
       ['Load'] = 'Загрузить',
@@ -8693,6 +8828,7 @@ MOD.langs = {
       ['Mechas'] = 'Техника',
       ['Med-Kit'] = 'Аптечка',
       ['Medium Plasma Bolt'] = 'Средний заряд плазмы',
+      ['Medium armor'] = 'Средняя броня',
       ['Melee damage'] = 'Урон в ближнем бою',
       ['Melta Mine'] = 'Плавкомина',
       ['Meltagun'] = 'Плавкопушка',
@@ -10260,6 +10396,9 @@ MOD.langs = {
       { '^Add a passive to (.+)$', 'Добавить пассивный эффект к %1' },
       { '^Not installed: the armor passives could not be stacked %((.+)%)%. Nothing was changed%.$', 'Не установлено: не удалось объединить пассивные эффекты брони (%1). Ничего не изменено.' },
       { '^Zoom level (%d) follow speed$', 'Увеличение, уровень %1: скорость следования' },
+      { '^(.+): Light$', '%1: лёгкая' },
+      { '^(.+): Medium$', '%1: средняя' },
+      { '^(.+): Heavy$', '%1: тяжёлая' },
       { '^Heat level (%d+)$', 'Уровень нагрева %1' },
       { '^(.+); ammo type shared with (.+)$', '%1; тип боеприпасов общий с: %L2' },
       { '^fires: (.+)%. The rows above stay its own$', 'стреляет: %1. Строки выше остаются его собственными' },
@@ -11392,9 +11531,39 @@ TYPES.drown, TYPES.hellpod, TYPES.payload = 0x726A4F6B, 0x7EF5CC55, 0xDDB5C03F
 KINDS[TYPES.drown] = { name = 'drownable', stride = 64, keyed = true }
 KINDS[TYPES.hellpod] = { name = 'hellpod', stride = 104, keyed = true }
 KINDS[TYPES.payload] = { name = 'hellpod payload', stride = 12, keyed = true }
--- EquipmentComponentData (232 bytes): +196 one-handed (bool byte)
-TYPES.equipment = 0x5357A825
+-- EquipmentComponentData (232 bytes): +196 one-handed (bool byte). HelldiverCustomizationKit (one block per
+-- armor, helmet or cape): +16 name (text id), +40 kit type (0 armor), +48 body types (pointer, count; 24 bytes:
+-- +8 pieces, pointer, count; 112 bytes: +8 slot (2 torso), +12 piece type, +16 weight 0 light / 1 medium / 2 heavy)
+TYPES.equipment, TYPES.kit = 0x5357A825, 0xD9A55AA0
 KINDS[TYPES.equipment] = { name = 'equipment', stride = 232, keyed = true }
+KINDS[TYPES.kit] = { name = 'armor kit', stride = 1, groups = true, list = {} }
+KINDS[TYPES.kit].group_key = function(blob)
+    return string.format('armor kit %08X %08X %08X %d', u32(blob, 0) or 0, u32(blob, 4) or 0, u32(blob, 16) or 0, #blob)
+end
+KINDS[TYPES.kit].parse = function(blob, stride, spec, address)
+    local function at(o)   -- a pointer: an offset in the payload (offline), or an address (in game)
+        local lo, hi = u32(blob, o), u32(blob, o + 4)
+        local v = lo and hi and lo + hi * 4294967296
+        if v and v >= #blob then v = v - address - HEADER_BYTES end
+        return v and v >= 0 and v < #blob and v or nil
+    end
+    local index = { name = u32(blob, 16), type = u32(blob, 40), pieces = {} }
+    local bodies, count = at(48), u32(blob, 56)
+    if not (index.name and index.type and count) or count > 8 then return nil, 'armor kit layout does not match this build' end
+    if index.type ~= 0 or count == 0 then return index, 0 end
+    if not bodies then return nil, 'armor kit layout does not match this build' end
+    for b = 0, count - 1 do
+        local list, n = at(bodies + b * 24 + 8), u32(blob, bodies + b * 24 + 16)
+        if not (list and n) or n > 64 or list + n * 112 > #blob then return nil, 'armor kit layout does not match this build' end
+        for q = 0, n - 1 do
+            local piece = list + q * 112
+            local slot, weight = u32(blob, piece + 8), u32(blob, piece + 16)
+            if not weight or weight > 2 then return nil, 'armor kit layout does not match this build' end
+            index.pieces[#index.pieces + 1] = { offset = piece + 16, torso = slot == 2 and u32(blob, piece + 12) == 0, weight = weight }
+        end
+    end
+    return index, #index.pieces
+end
 -- the tables the panel waits for (stratagem groups are taken as they come)
 local KIND_ORDER = { T_WEAPON, T_MAGAZINE, T_ROUNDS, T_FIRE, T_PROJECTILE, T_DAMAGE, T_BEAM_WEAPON, T_BEAM,
                      T_EXPLOSION, T_ORBITAL, T_HEAT, T_SPRAY, T_STATUS, T_MELEE, TYPES.arc_weapon, TYPES.arc,
@@ -12193,6 +12362,57 @@ KINDS[TYPES.passive].build = function()
     table.sort(list, function(a, b) return a.name:lower() < b.name:lower() end)
     for _, entry in ipairs(list) do weapons[#weapons + 1] = entry end
     log('armor passives: ' .. #list .. ' listed')
+end
+
+-- Armor weight: one page on the Armors tab, a row per armor (every armor set of that name), its weight on every
+-- piece of it (the torso's shown); speed and stamina follow it (tested in game, issue #89).
+MOD.kits = { HASH = 'FFFFFFF900000001', NAMES = { [0] = 'Light', [1] = 'Medium', [2] = 'Heavy' } }
+function MOD.kits.build()
+    local old = by_hash[MOD.kits.HASH]
+    for k = #weapons, 1, -1 do if weapons[k] == old then table.remove(weapons, k) end end
+    by_hash[MOD.kits.HASH] = nil
+    local any = false
+    for _, group in ipairs(KINDS[TYPES.kit].list) do any = any or #tables[group].index.pieces > 0 end
+    if not any then return end
+    by_hash[MOD.kits.HASH] = { name = 'Armor weight', slot = 'Armors', hash = MOD.kits.HASH, key = hash_key(MOD.kits.HASH),
+                               rows = {}, by_id = {}, kits = true,
+                               note = 'Light, medium or heavy, per armor (every armor set with that name).' }
+    weapons[#weapons + 1] = by_hash[MOD.kits.HASH]
+end
+function MOD.kits.resolve(entry)
+    local by_name, order = {}, {}
+    for _, group in ipairs(KINDS[TYPES.kit].list) do
+        local index = tables[group].index
+        if #index.pieces > 0 and MOD.kit_names and MOD.kit_names[index.name] then   -- (unnamed: not in the game yet)
+            if not by_name[index.name] then by_name[index.name] = {}; order[#order + 1] = index.name end
+            table.insert(by_name[index.name], { group = group, index = index })
+        end
+    end
+    local function name_of(id) return MOD.kit_names[id] end
+    table.sort(order, function(a, b) return name_of(a):lower() < name_of(b):lower() end)
+    local rows = { {}, {}, {} }
+    for _, id in ipairs(order) do
+        local row_id, parts, first = string.format('weight_%08X', id), {}, nil
+        for _, kit in ipairs(by_name[id]) do
+            for _, piece in ipairs(kit.index.pieces) do
+                local p = part(row_id .. '_' .. (#parts + 1), kit.group, piece.offset, 'u32', 2)
+                if piece.torso and not first then first = #parts + 1 end
+                parts[#parts + 1] = p
+            end
+        end
+        if first then table.insert(parts, 1, table.remove(parts, first)) end
+        parts[1].id = row_id
+        local w = default_of(parts[1].field)
+        if w and rows[w + 1] then rows[w + 1][#rows[w + 1] + 1] = { row_id, name_of(id), parts } end
+    end
+    for w, list in ipairs(rows) do
+        for _, r in ipairs(list) do
+            local row = add_row(entry, MOD.kits.NAMES[w - 1] .. ' armor', r[1], r[2], 'u32', r[3], 0, 2, 1, 1)
+            row.choice = 'weight'
+            row.label_of = function() return r[2] .. ': ' .. (MOD.kits.NAMES[read_field(r[3][1].field) or -1] or '?') end
+            row.note = '0 light, 1 medium, 2 heavy'
+        end
+    end
 end
 
 -- The helldiver: its health component (main health +0, each named zone's health +232; zones of 552 bytes from +520,
@@ -15161,6 +15381,7 @@ local function resolve(weapon)
         return
     end
     if weapon.passive then KINDS[TYPES.passive].resolve(weapon); return end
+    if weapon.kits then MOD.kits.resolve(weapon); return end
     if weapon.player then KINDS[TYPES.avatar].resolve(weapon); return end
     if weapon.stratagem then resolve_stratagem(weapon); return end
     if weapon.attachment then
@@ -16430,6 +16651,7 @@ local function become_ready(final)
         { 'stratagems', build_stratagems, 'stratagems: not listed: ' },
         { 'attachments', KINDS[TYPES.items].build, 'attachments: not listed: ' },
         { 'passives', KINDS[TYPES.passive].build, 'armor passives: not listed: ' },
+        { 'armor weight', MOD.kits.build, 'armor weight: not listed: ' },
         { 'boosters', MOD.boosters.build, 'boosters: not listed: ' },
         { 'enemies', MOD.enemy.build, 'enemies: not listed: ' },
     }
@@ -16584,6 +16806,7 @@ local function rescan()
     tables, parsed_blocks, stratagem_groups = {}, {}, {}
     KINDS[TYPES.items].list = {}
     KINDS[TYPES.passive].list = {}
+    KINDS[TYPES.kit].list = {}
     KINDS[TYPES.destruction].found, KINDS[TYPES.destruction].told = {}, nil
     state.tables = 0
     set_status('searching', 'a table moved; scanning again')
@@ -16995,6 +17218,21 @@ local function change(row, delta_sign, big, exact)
                 else ok, err = false, why end
             end
             if not ok then ui.message = { text = err, till = api.now() + 4 } end
+            ui.version = ui.version + 1
+            return
+        end
+        if row.choice == 'weight' then
+            -- 0 light, 1 medium, 2 heavy, on every piece of the armor (back to the default: each piece's own)
+            local target = math.max(0, math.min(2, exact and math.floor(exact + 0.5) or current + delta_sign))
+            if target == nil or target == current then return end
+            local back = target == default_of(row.parts[1].field)
+            for _, p in ipairs(row.parts) do
+                local d = default_of(p.field)
+                local new = back and d or target
+                local ok, why = write_field(p.field, new)
+                if ok then set_override(weapon, p, unless_default(new, d))
+                else log('write refused: ' .. weapon.name .. ' ' .. p.id .. ': ' .. why) end
+            end
             ui.version = ui.version + 1
             return
         end
