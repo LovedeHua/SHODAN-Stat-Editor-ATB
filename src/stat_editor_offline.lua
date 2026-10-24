@@ -2376,6 +2376,7 @@ MOD.langs = {
       ['Time between bombs (s)'] = '投弹间隔(秒)',
       ['Time between salvos (s)'] = '齐射间隔(秒)',
       ['Time between shells (s)'] = '炮弹发射间隔（秒）',
+      ['Time deployed (s)'] = '部署持续时间（秒）',
       ['Top'] = '顶部',
       ['Top left hatch'] = '左上舱盖',
       ['Top right hatch'] = '右上舱盖',
@@ -5894,6 +5895,7 @@ MOD.langs = {
       ['Time between bombs (s)'] = '投彈間隔(秒)',
       ['Time between salvos (s)'] = '齊射間隔(秒)',
       ['Time between shells (s)'] = '炮彈發射間隔（秒）',
+      ['Time deployed (s)'] = '部署持續時間（秒）',
       ['Top'] = '頂部',
       ['Top left hatch'] = '左上艙蓋',
       ['Top right hatch'] = '右上艙蓋',
@@ -9310,6 +9312,7 @@ MOD.langs = {
       ['Time between bombs (s)'] = 'Время между бомбами (с)',
       ['Time between salvos (s)'] = 'Время между залпами (с)',
       ['Time between shells (s)'] = 'Время между снарядами (с)',
+      ['Time deployed (s)'] = 'Время работы (с)',
       ['Top'] = 'сверху',
       ['Top left hatch'] = 'Верхний левый люк',
       ['Top right hatch'] = 'Верхний правый люк',
@@ -15160,6 +15163,14 @@ local function resolve(weapon)
         if weapon.sentry_defs[1] then MOD.callin_rows(weapon, weapon.sentry_defs) end
         if weapon.sentry_defs[1] then MOD.extra.row(weapon, weapon.sentry_defs[1]) end
         unit_rows(weapon, KINDS[TYPES.health].body(weapon.key) or weapon.key, weapon.name:find('^E/') and 'Emplacement' or 'Sentry', 'unit_')
+        -- how long it stays once deployed (HellpodPayloadComponentData +4; SHODAN Offline Integration)
+        local pt = tables[TYPES.payload]
+        local pat = pt and pt.index[weapon.key]
+        local life = pat and default_of(field_at(TYPES.payload, pat + 4, 'f32', 100000))
+        if life and life > 0 and life <= 7200 then
+            add_row(weapon, weapon.name:find('^E/') and 'Emplacement' or 'Sentry', 'unit_lifetime', 'Time deployed (s)', 'f32',
+                    { part('unit_lifetime', TYPES.payload, pat + 4, 'f32', 100000) }, 1, 7200, 5, 30)
+        end
     end
     -- Separate EXO mounted-arm durability and the Breakthrough physical shield.
     local exo, arm_name = weapon.name:match('^(EXO%-%d%d .+): (.+)$')
