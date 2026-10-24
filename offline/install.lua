@@ -222,9 +222,25 @@ function M.originals(game)
 end
 
 -- ---------------------------------------------------------------- writing
--- writes: name -> bytes (a changed file, or the original for one going back); originals: name -> original bytes
-function M.write_files(game, writes, originals)
+-- writes: name -> bytes (a changed file, or the original for one going back); originals: name -> original bytes.
+-- A game file another tool changed after this editor read it (neither its original nor written by an install,
+-- issue #90) is never written over: skip_changed (Restore) leaves it be and returns its name, Install stops.
+function M.write_files(game, writes, originals, skip_changed)
     if M.game_running() then return nil, 'Helldivers 2 is running: close it first.' end
+    local list, changed = load_list(), {}
+    for name in pairs(writes) do
+        local current = read(game .. '/' .. name)
+        if current and current ~= originals[name] and not (list[name] and list[name][hash_of(current)]) then
+            changed[#changed + 1] = name
+        end
+    end
+    table.sort(changed)
+    if #changed > 0 and not skip_changed then
+        return nil, 'another tool changed ' .. table.concat(changed, ', ') .. ' after this editor opened. '
+                    .. 'Close and reopen the editor, then Install.'
+    end
+    for _, name in ipairs(changed) do writes[name] = nil end
+    if not next(writes) then return true, changed end
     mkdirs(M.originals_dir)
     for name in pairs(writes) do
         local path = M.originals_dir .. '/' .. name
@@ -233,7 +249,6 @@ function M.write_files(game, writes, originals)
             if not ok then return nil, 'could not keep the original of ' .. name .. ': ' .. tostring(why) end
         end
     end
-    local list = load_list()
     local staged = {}
     for name, data in pairs(writes) do
         local tmp = game .. '/' .. name .. '.shodan-new'
@@ -266,7 +281,7 @@ function M.write_files(game, writes, originals)
     end
     save_list(list)
     if #failed > 0 then return nil, 'could not replace ' .. table.concat(failed, ', ') end
-    return true
+    return true, changed
 end
 
 -- the files written by an install (now in the game)

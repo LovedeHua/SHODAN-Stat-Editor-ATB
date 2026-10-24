@@ -302,13 +302,23 @@ local function main()
         for name, mine in pairs(ours) do if mine then writes[name] = originals[name] end end
         if not next(writes) then say('The game\'s own files are already in place.', GOOD); return end
         busy('Restoring the game\'s files...')
-        local done, why = I.write_files(game, writes, originals)
+        local names = {}
+        for name in pairs(writes) do names[#names + 1] = name end
+        local done, why = I.write_files(game, writes, originals, true)
         bar.busy = nil
         if not done then say('Not restored: ' .. tostring(why), WARN); return end
-        for name in pairs(writes) do ours[name] = false end
+        -- files another tool changed since: left as they are (theirs now); files another mod had changed before
+        -- this editor: back to that mod's version, which Steam's file check replaces (issue #90)
+        local modded = 0
+        for _, name in ipairs(names) do
+            ours[name] = false
+            if writes[name] and D.modded[name] then modded = modded + 1 end
+        end
+        for _, name in ipairs(why) do log('restore skipped ' .. name .. ': another tool changed it since') end
         bar.base = nil
         log('restored the originals')
-        say('The game\'s own files are back. Your values stay saved here (Install puts them in again).', GOOD)
+        say('The game\'s files are back as they were before this editor. Your values stay saved here (Install puts them in again).'
+            .. (modded > 0 and string.format(' %d of them still hold another mod\'s changes: Steam\'s "Verify integrity of game files" puts back the game\'s own.', modded) or ''), GOOD)
     end
 
     -- ------------------------------------------------------------ updates (update.lua)
