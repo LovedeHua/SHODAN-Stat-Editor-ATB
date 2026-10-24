@@ -1133,6 +1133,7 @@ MOD.langs = {
       ['Damage passed to the body (x)'] = '传递给身体的伤害 (x)',
       ['Damage taken (multiplier)'] = '受到伤害（倍率）',
       ['Damage tick (s)'] = '伤害间隔(秒)',
+      ['Damage ticks per minute'] = '每分钟伤害次数',
       ['Damage to you'] = '对你造成的伤害',
       ['Dark Fluid Backpack'] = '暗液背包',
       ['Dark Fluid burst'] = '暗流体爆裂',
@@ -2529,6 +2530,7 @@ MOD.langs = {
       ['how long it keeps after you once you break line of sight'] = '脱离视线后它继续追击你的时长',
       ['how much gas it takes to confuse it'] = '使其混乱所需的毒气量',
       ['how much stun it takes to stun it'] = '使其眩晕所需的眩晕量',
+      ['how often the beam deals its damage while it touches'] = '光束接触时造成伤害的频率',
       ['its height above its flight route; lower flies closer to the ground (terrain still holds it up)'] = '高于飞行路线的高度；越低越贴近地面（地形仍会托住它）',
       ['its own. - / + : fire another weapon\'s'] = '自身弹丸。- / +：改为发射其他武器的弹丸',
       ['ivory legion assault'] = '象牙军团突击',
@@ -4647,6 +4649,7 @@ MOD.langs = {
       ['Damage passed to the body (x)'] = '傳遞給身體的傷害 (x)',
       ['Damage taken (multiplier)'] = '受到傷害（倍率）',
       ['Damage tick (s)'] = '傷害間隔(秒)',
+      ['Damage ticks per minute'] = '每分鐘傷害次數',
       ['Damage to you'] = '對你造成的傷害',
       ['Dark Fluid Backpack'] = '暗液背包',
       ['Dark Fluid burst'] = '暗流體爆裂',
@@ -6043,6 +6046,7 @@ MOD.langs = {
       ['how long it keeps after you once you break line of sight'] = '脫離視線後它繼續追擊你的時長',
       ['how much gas it takes to confuse it'] = '使其混亂所需的毒氣量',
       ['how much stun it takes to stun it'] = '使其眩暈所需的眩暈量',
+      ['how often the beam deals its damage while it touches'] = '光束接觸時造成傷害的頻率',
       ['its height above its flight route; lower flies closer to the ground (terrain still holds it up)'] = '高於飛行路線的高度；越低越貼近地面（地形仍會托住它）',
       ['its own. - / + : fire another weapon\'s'] = '自身射彈。- / +：改為發射其他武器的射彈',
       ['ivory legion assault'] = '象牙軍團突擊',
@@ -8143,6 +8147,7 @@ MOD.langs = {
       ['Damage passed to the body (x)'] = 'Урон, передаваемый телу (x)',
       ['Damage taken (multiplier)'] = 'Получаемый урон (множитель)',
       ['Damage tick (s)'] = 'Такт урона (с)',
+      ['Damage ticks per minute'] = 'Тиков урона в минуту',
       ['Damage to you'] = 'Урон вам',
       ['Dark Fluid burst'] = 'Выплеск тёмной жидкости',
       ['De-Escalator'] = 'Деэскалатор',
@@ -9427,6 +9432,7 @@ MOD.langs = {
       ['how long it keeps after you once you break line of sight'] = 'как долго он преследует вас после потери из виду',
       ['how much gas it takes to confuse it'] = 'сколько газа нужно, чтобы его дезориентировать',
       ['how much stun it takes to stun it'] = 'сколько оглушения нужно, чтобы его оглушить',
+      ['how often the beam deals its damage while it touches'] = 'как часто луч наносит урон при касании',
       ['its height above its flight route; lower flies closer to the ground (terrain still holds it up)'] = 'высота над маршрутом полёта; ниже — ближе к земле (рельеф всё равно не даёт опуститься)',
       ['its own. - / + : fire another weapon\'s'] = 'свой. - / + : стрелять снарядом другого оружия',
       ['ivory legion assault'] = 'Костяной легион, штурм',
@@ -12519,6 +12525,15 @@ local function resolve_gun(weapon, key)
         damage_rows(weapon, 'Damage', '', drow)
     end
     if drow then status_rows(weapon, 'Damage', '', drow, 'hit') end
+    -- a beam's damage ticks per minute (BeamWeaponComponentData +104; SHODAN Offline Integration: 60 on the Laser
+    -- Cannon and Laser Sentry)
+    local tick = beam and field_at(T_BEAM_WEAPON, beam + 104, 'u32', 6000)
+    local ticks = tick and default_of(tick)
+    if ticks and ticks > 0 and ticks <= 6000 then
+        add_row(weapon, 'Damage', 'beam_ticks', 'Damage ticks per minute', 'u32',
+                { part('beam_ticks', T_BEAM_WEAPON, beam + 104, 'u32', 6000) }, 1, 6000, 10, 60).note =
+            'how often the beam deals its damage while it touches'
+    end
     local damage_to = #weapon.rows
     if arow then
         add_row(weapon, 'Arc', 'arc_range', 'Range (m)', 'f32', { part('arc_range', TYPES.arc, arow + 8, 'f32', 100000) },
