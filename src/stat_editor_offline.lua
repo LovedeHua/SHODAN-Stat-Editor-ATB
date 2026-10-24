@@ -1772,6 +1772,7 @@ MOD.langs = {
       ['On: your rockets, launcher rounds and stratagem ordnance fly through tree canopies and bushes.'] = '开启：你的火箭弹、发射器弹药和战略配备弹药可穿过树冠和灌木。',
       ['One True Flag'] = '唯一真旗',
       ['One-Two'] = '幺二',
+      ['One-handed'] = '单手持握',
       ['Open'] = '打开',
       ['Open / close key'] = '打开 / 关闭热键',
       ['Opened the GitHub page in your browser.'] = '已在浏览器中打开 GitHub 页面。',
@@ -2508,6 +2509,7 @@ MOD.langs = {
       ['backpack charges'] = '背包使用次数',
       ['beam weapon'] = '光束武器',
       ['body parts without their own armor use this'] = '没有自身护甲的身体部位使用此值',
+      ['breaks the hip-fire animations on two-handed weapons'] = '会破坏双手武器的腰射动画',
       ['bull'] = '公牛',
       ['clip'] = '弹夹',
       ['could not start the download'] = '无法开始下载',
@@ -5293,6 +5295,7 @@ MOD.langs = {
       ['On: your rockets, launcher rounds and stratagem ordnance fly through tree canopies and bushes.'] = '開啟：你的火箭彈、發射器彈藥和戰略配備彈藥可穿過樹冠和灌木。',
       ['One True Flag'] = '唯一真旗',
       ['One-Two'] = '雙響',
+      ['One-handed'] = '單手持握',
       ['Open'] = '開啟',
       ['Open / close key'] = '開啟 / 關閉熱鍵',
       ['Opened the GitHub page in your browser.'] = '已在瀏覽器中開啟 GitHub 頁面。',
@@ -6029,6 +6032,7 @@ MOD.langs = {
       ['backpack charges'] = '背包使用次數',
       ['beam weapon'] = '光束武器',
       ['body parts without their own armor use this'] = '沒有自身護甲的身體部位使用此值',
+      ['breaks the hip-fire animations on two-handed weapons'] = '會破壞雙手武器的腰射動畫',
       ['bull'] = '公牛',
       ['clip'] = '彈夾',
       ['could not start the download'] = '無法開始下載',
@@ -8752,6 +8756,7 @@ MOD.langs = {
       ['On: your rockets, launcher rounds and stratagem ordnance fly through tree canopies and bushes.'] = 'Вкл.: ваши ракеты, снаряды и боеприпасы стратагем пролетают сквозь кроны деревьев и кусты.',
       ['One True Flag'] = 'Один истинный флаг',
       ['One-Two'] = 'Двоечка',
+      ['One-handed'] = 'Одной рукой',
       ['Open'] = 'Открыть',
       ['Open / close key'] = 'Клавиша открытия / закрытия',
       ['Opened the GitHub page in your browser.'] = 'Страница GitHub открыта в браузере.',
@@ -9430,6 +9435,7 @@ MOD.langs = {
       ['assassinate'] = 'убийца',
       ['assault'] = 'штурм',
       ['body parts without their own armor use this'] = 'используется частями тела без своей брони',
+      ['breaks the hip-fire animations on two-handed weapons'] = 'ломает анимации стрельбы от бедра у двуручного оружия',
       ['bull'] = 'бык',
       ['clip'] = 'обойма',
       ['damage: the same as the other rounds (Damage above)'] = 'урон: как у остальных выстрелов («Урон» выше)',
@@ -11386,6 +11392,9 @@ TYPES.drown, TYPES.hellpod, TYPES.payload = 0x726A4F6B, 0x7EF5CC55, 0xDDB5C03F
 KINDS[TYPES.drown] = { name = 'drownable', stride = 64, keyed = true }
 KINDS[TYPES.hellpod] = { name = 'hellpod', stride = 104, keyed = true }
 KINDS[TYPES.payload] = { name = 'hellpod payload', stride = 12, keyed = true }
+-- EquipmentComponentData (232 bytes): +196 one-handed (bool byte)
+TYPES.equipment = 0x5357A825
+KINDS[TYPES.equipment] = { name = 'equipment', stride = 232, keyed = true }
 -- the tables the panel waits for (stratagem groups are taken as they come)
 local KIND_ORDER = { T_WEAPON, T_MAGAZINE, T_ROUNDS, T_FIRE, T_PROJECTILE, T_DAMAGE, T_BEAM_WEAPON, T_BEAM,
                      T_EXPLOSION, T_ORBITAL, T_HEAT, T_SPRAY, T_STATUS, T_MELEE, TYPES.arc_weapon, TYPES.arc,
@@ -13063,6 +13072,15 @@ local function resolve_gun(weapon, key)
             r.note = "quieter for enemies (the noise of the game's suppressed guns); no suppressor model, same firing sound"
         end
         MOD.spin_rows(weapon, data, record(TYPES.windup))
+    end
+    local equipment = weapon.key == key and record(TYPES.equipment)
+    if equipment then
+        local p = part('one_handed', TYPES.equipment, equipment + 196, 'flag', 1)
+        local v = default_of(p.field)
+        if v == 0 or v == 1 then
+            add_row(weapon, 'Handling', 'one_handed', 'One-handed', 'flag', { p }, 0, 1, 1, 1).note =
+                'breaks the hip-fire animations on two-handed weapons'
+        end
     end
     if weapon.key == key and weapon.slot == 'Support' then
         local pack = KINDS[TYPES.rack].pack(key)
