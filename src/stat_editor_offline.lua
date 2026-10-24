@@ -833,6 +833,7 @@ MOD.langs = {
       ['Accelerator Rifle'] = '加速步枪',
       ['Acclimated'] = '应变自如',
       ['Acid'] = '酸液',
+      ['Acid (experimental)'] = '酸液（实验性）',
       ['Acid damage taken (x)'] = '受到的酸液伤害（x）',
       ['Adjudicator'] = '审判者',
       ['Adreno-Defibrillator'] = '肾上腺素除颤器',
@@ -960,6 +961,7 @@ MOD.langs = {
       ['Blast delay (s)'] = '起爆延迟（秒）',
       ['Blast proximity (m)'] = '近炸触发距离（米）',
       ['Blast radius'] = '爆炸半径',
+      ['Bleed (experimental)'] = '流血（实验性）',
       ['Bleed-out health'] = '流血状态生命值',
       ['Blitzer'] = '雷霆',
       ['Block game input while open'] = '打开时屏蔽游戏输入',
@@ -981,6 +983,9 @@ MOD.langs = {
       ['Boss'] = '核心',
       ['Boss back'] = '核心后部',
       ['Bottom wing'] = '下翼',
+      ['Braking height (m)'] = '制动高度（米）',
+      ['Braking speed (m/s)'] = '制动速度（米/秒）',
+      ['Braking time (s)'] = '制动时间（秒）',
       ['Brawler'] = '乱斗者',
       ['Breacher'] = '爆破者',
       ['Breaching Hammer'] = '破门锤',
@@ -1070,6 +1075,7 @@ MOD.langs = {
       ['Climb multiplier (vertical)'] = '枪口上扬倍率（垂直）',
       ['Climb speed (m/s)'] = '爬升速度(米/秒)',
       ['Climb time limit (s)'] = '爬升时限(秒)',
+      ['Climbing and sliding'] = '攀爬与滑行',
       ['Cluster Bomb'] = '集束炸弹',
       ['Cognitive Disruptor'] = '感知干扰器',
       ['Collision'] = '碰撞体',
@@ -1161,6 +1167,7 @@ MOD.langs = {
       ['Dropship'] = '运输舰',
       ['Dropship death (air)'] = '运输艇毁灭（空中）',
       ['Dropship death (ground)'] = '运输艇毁灭（地面）',
+      ['Drowning depth offset (m)'] = '溺水深度偏移（米）',
       ['Drum Magazine'] = '弹鼓',
       ['Dune Walker Sniper Scope 10x'] = '10倍狙击瞄准镜',
       ['Duo Sniper Scope 10x'] = '“杜奥”10倍狙击瞄准镜',
@@ -1200,6 +1207,7 @@ MOD.langs = {
       ['Effect'] = '效果',
       ['Egg'] = '虫卵',
       ['Egg cluster'] = '虫卵簇',
+      ['Electric (experimental)'] = '电击（实验性）',
       ['Electric damage taken (x)'] = '受到的电击伤害（x）',
       ['Electrical Conduit'] = '电路导管',
       ['Elevated Overseer'] = '崇高监视者',
@@ -1288,6 +1296,7 @@ MOD.langs = {
       ['Flight height (m)'] = '飞行高度（米）',
       ['Flinch'] = '受击瞄准抖动',
       ['Flinch (0 prevents it)'] = '受击瞄准抖动（0 为免疫）',
+      ['Floating depth offset (m)'] = '漂浮深度偏移（米）',
       ['Folder'] = '文件夹',
       ['Folder path copied.'] = '已复制文件夹路径。',
       ['Foliage pass-through'] = '穿透植被',
@@ -1412,12 +1421,15 @@ MOD.langs = {
       ['Helldivers 2 is running: close it, then Install.'] = '《绝地潜兵 2》正在运行：请先关闭游戏，再点击“写入游戏”。',
       ['Helldivers 2 is running: close it, then restore.'] = 'Helldivers 2 正在运行：请先关闭游戏，再恢复。',
       ['Helldivers 2 is running: you can edit, but close it before you Install.'] = '《绝地潜兵 2》正在运行：可以编辑，但写入前必须关闭游戏。',
+      ['Hellpod: initial drop'] = '地狱舱：初始空投',
+      ['Hellpod: reinforcement'] = '地狱舱：增援',
       ['Helmet'] = '头盔',
       ['Hexagon'] = '六边形',
       ['High Capacity Heatsink'] = '高容量散热器',
       ['High Dissipation Heatsink'] = '高功率散热器',
       ['High Explosive'] = '高爆弹',
       ['High-Velocity Shrapnel'] = '高速破片',
+      ['Highest ledge it climbs (m)'] = '可攀爬的最高边缘（米）',
       ['Hijack Tech Hub Nexus Machine'] = '技术中心枢纽机器',
       ['Hips'] = '腰部',
       ['Hips armor'] = '髋部装甲',
@@ -2159,6 +2171,8 @@ MOD.langs = {
       ['Size'] = '体型',
       ['Size (x)'] = '体型 (x)',
       ['Slide speed / duration'] = '滑行速度 / 持续时间',
+      ['Slope slide ends at (degrees)'] = '斜坡滑行结束角度（度）',
+      ['Slope slide starts at (degrees)'] = '斜坡滑行起始角度（度）',
       ['Slot (choice)'] = '栏位（选择）',
       ['Slot: 1 primary or 3 secondary.'] = '栏位：1 主武器或 3 副武器。',
       ['Slot: Primary'] = '栏位：主武器',
@@ -2174,6 +2188,7 @@ MOD.langs = {
       ['Sniper crosshair in third person'] = '第三人称狙击步枪准星',
       ['Solo Silo'] = '单兵导弹发射井',
       ['Sos Beacon'] = '求救信标',
+      ['Spawn height (m)'] = '生成高度（米）',
       ['Spawner death'] = '刷怪点毁灭',
       ['Spawning'] = '敌人生成',
       ['Spawning limits every faction shares.'] = '所有阵营共用的生成限制。',
@@ -2225,6 +2240,7 @@ MOD.langs = {
       ['Starting heatsinks'] = '初始备用散热器数',
       ['Starting magazines'] = '初始备用弹匣数',
       ['Starting rounds'] = '初始备用弹数',
+      ['Starting speed (m/s)'] = '初始速度（米/秒）',
       ['Starts at heat'] = '初始热量',
       ['Stat Editor'] = '属性编辑器',
       ['Stationary Shroud'] = '静止隐匿',
@@ -2246,6 +2262,7 @@ MOD.langs = {
       ['Stun'] = '眩晕弹',
       ['Stun (large)'] = '眩晕弹（大）',
       ['Stun (massive)'] = '眩晕弹（极大）',
+      ['Stun (massive) (experimental)'] = '眩晕弹（巨大）（实验性）',
       ['Stun (medium)'] = '眩晕弹（中）',
       ['Stun (small)'] = '眩晕弹（小）',
       ['Stun Baton'] = '眩晕短棍',
@@ -2323,6 +2340,7 @@ MOD.langs = {
       ['The support hammer delivered by hellpod. The game data files it next to the Machete.'] = '由空投舱投送的支援锤。游戏数据将它列在砍刀旁边。',
       ['The support weapon. The CQC-73 is listed under Secondary.'] = '支援武器。CQC-73 列在“副武器”下。',
       ['Thermite'] = '铝热弹',
+      ['Thermite (experimental)'] = '铝热（实验性）',
       ['Throw range'] = '投掷距离',
       ['Throw spread (degrees)'] = '投掷散布(度)',
       ['Throw velocity, max (m/s)'] = '投掷速度上限(米/秒)',
@@ -2336,6 +2354,7 @@ MOD.langs = {
       ['Tier 2'] = '2 级',
       ['Tier 2 guard'] = '2级守卫',
       ['Tier2'] = '2 级',
+      ['Time before drowning (s)'] = '溺水前时间（秒）',
       ['Time between bombs (s)'] = '投弹间隔(秒)',
       ['Time between salvos (s)'] = '齐射间隔(秒)',
       ['Time between shells (s)'] = '炮弹发射间隔（秒）',
@@ -2436,6 +2455,7 @@ MOD.langs = {
       ['Warrior'] = '武士',
       ['Warrior acid burst'] = '战士酸液爆裂',
       ['Watcher'] = '守望者',
+      ['Water'] = '水',
       ['Weapon stats'] = '武器数值',
       ['Weaves'] = '蛇形飞行',
       ['What goes off when they die. Each explosion is shared by every enemy that uses it.'] = '它们死亡时引发的爆炸。每种爆炸由所有使用它的敌人共用。',
@@ -2501,6 +2521,7 @@ MOD.langs = {
       ['listing stratagems, attachments and armor passives'] = '正在列出战略配备、配件和护甲被动',
       ['loaded into an empty weapon, from your spare rounds'] = '装入空枪时，从备用弹药中补充',
       ['loadout package'] = '配装包',
+      ['lower (more negative): you go deeper before drowning starts'] = '越低（越负）：开始溺水前可以潜得越深',
       ['melee weapon'] = '近战武器',
       ['melee, guns and death explosions, shared ones included'] = '近战、武器与死亡爆炸，含共用的',
       ['min charge'] = '最少充能',
@@ -3705,6 +3726,7 @@ MOD.langs = {
       ['stun'] = '眩晕弹',
       ['stun (large)'] = '眩晕弹（大）',
       ['stun (massive)'] = '眩晕弹（极大）',
+      ['stun (massive) (experimental)'] = '眩晕弹（巨大）（实验性）',
       ['stun (medium)'] = '眩晕弹（中）',
       ['stun (small)'] = '眩晕弹（小）',
       ['stun baton'] = '眩晕短棍',
@@ -4306,6 +4328,7 @@ MOD.langs = {
       ['Accelerator Rifle'] = '加速步槍',
       ['Acclimated'] = '適應自如',
       ['Acid'] = '酸液',
+      ['Acid (experimental)'] = '酸液（實驗性）',
       ['Acid damage taken (x)'] = '受到的酸液傷害（x）',
       ['Adjudicator'] = '審判者',
       ['Adreno-Defibrillator'] = '腎上腺素除顫器',
@@ -4433,6 +4456,7 @@ MOD.langs = {
       ['Blast delay (s)'] = '起爆延遲（秒）',
       ['Blast proximity (m)'] = '近炸觸發距離（米）',
       ['Blast radius'] = '爆炸半徑',
+      ['Bleed (experimental)'] = '流血（實驗性）',
       ['Bleed-out health'] = '流血狀態生命值',
       ['Blitzer'] = '閃擊者',
       ['Block game input while open'] = '開啟時遮蔽遊戲輸入',
@@ -4454,6 +4478,9 @@ MOD.langs = {
       ['Boss'] = '核心',
       ['Boss back'] = '核心後部',
       ['Bottom wing'] = '下翼',
+      ['Braking height (m)'] = '制動高度（米）',
+      ['Braking speed (m/s)'] = '制動速度（米/秒）',
+      ['Braking time (s)'] = '制動時間（秒）',
       ['Brawler'] = '鬥士',
       ['Breacher'] = '突破者',
       ['Breaching Hammer'] = '破門戰錘',
@@ -4543,6 +4570,7 @@ MOD.langs = {
       ['Climb multiplier (vertical)'] = '槍口上揚倍率（垂直）',
       ['Climb speed (m/s)'] = '爬升速度(米/秒)',
       ['Climb time limit (s)'] = '爬升時限(秒)',
+      ['Climbing and sliding'] = '攀爬與滑行',
       ['Cluster Bomb'] = '集束炸彈',
       ['Cognitive Disruptor'] = '認知干擾器',
       ['Collision'] = '碰撞體',
@@ -4634,6 +4662,7 @@ MOD.langs = {
       ['Dropship'] = '空降艇',
       ['Dropship death (air)'] = '運輸艇毀滅（空中）',
       ['Dropship death (ground)'] = '運輸艇毀滅（地面）',
+      ['Drowning depth offset (m)'] = '溺水深度偏移（米）',
       ['Drum Magazine'] = '彈鼓',
       ['Dune Walker Sniper Scope 10x'] = '10倍狙擊鏡',
       ['Duo Sniper Scope 10x'] = '「杜奧」10倍狙擊瞄準鏡',
@@ -4673,6 +4702,7 @@ MOD.langs = {
       ['Effect'] = '效果',
       ['Egg'] = '蟲卵',
       ['Egg cluster'] = '蟲卵簇',
+      ['Electric (experimental)'] = '電擊（實驗性）',
       ['Electric damage taken (x)'] = '受到的電擊傷害（x）',
       ['Electrical Conduit'] = '電氣管線',
       ['Elevated Overseer'] = '高級監督者',
@@ -4761,6 +4791,7 @@ MOD.langs = {
       ['Flight height (m)'] = '飛行高度（米）',
       ['Flinch'] = '受擊瞄準抖動',
       ['Flinch (0 prevents it)'] = '受擊瞄準抖動（0 為免疫）',
+      ['Floating depth offset (m)'] = '漂浮深度偏移（米）',
       ['Folder'] = '資料夾',
       ['Folder path copied.'] = '已複製資料夾路徑。',
       ['Foliage pass-through'] = '穿透植被',
@@ -4885,12 +4916,15 @@ MOD.langs = {
       ['Helldivers 2 is running: close it, then Install.'] = '《絕地潛兵 2》正在執行：請先關閉遊戲，再點選「寫入遊戲」。',
       ['Helldivers 2 is running: close it, then restore.'] = 'Helldivers 2 正在執行：請先關閉遊戲，再恢復。',
       ['Helldivers 2 is running: you can edit, but close it before you Install.'] = '《絕地潛兵 2》正在執行：可以編輯，但寫入前必須關閉遊戲。',
+      ['Hellpod: initial drop'] = '地獄艙：初始空投',
+      ['Hellpod: reinforcement'] = '地獄艙：增援',
       ['Helmet'] = '頭盔',
       ['Hexagon'] = '六邊形',
       ['High Capacity Heatsink'] = '大容量散熱器',
       ['High Dissipation Heatsink'] = '高效能散熱器',
       ['High Explosive'] = '高爆彈',
       ['High-Velocity Shrapnel'] = '高速破片',
+      ['Highest ledge it climbs (m)'] = '可攀爬的最高邊緣（米）',
       ['Hijack Tech Hub Nexus Machine'] = '技術中心樞紐機器',
       ['Hips'] = '腰部',
       ['Hips armor'] = '髖部裝甲',
@@ -5632,6 +5666,8 @@ MOD.langs = {
       ['Size'] = '體型',
       ['Size (x)'] = '體型 (x)',
       ['Slide speed / duration'] = '滑行速度 / 持續時間',
+      ['Slope slide ends at (degrees)'] = '斜坡滑行結束角度（度）',
+      ['Slope slide starts at (degrees)'] = '斜坡滑行起始角度（度）',
       ['Slot (choice)'] = '欄位（選擇）',
       ['Slot: 1 primary or 3 secondary.'] = '欄位：1 主武器或 3 副武器。',
       ['Slot: Primary'] = '欄位：主武器',
@@ -5647,6 +5683,7 @@ MOD.langs = {
       ['Sniper crosshair in third person'] = '第三人稱狙擊步槍準星',
       ['Solo Silo'] = '單發導彈筒',
       ['Sos Beacon'] = '求救信標',
+      ['Spawn height (m)'] = '生成高度（米）',
       ['Spawner death'] = '刷怪點毀滅',
       ['Spawning'] = '敵人生成',
       ['Spawning limits every faction shares.'] = '所有陣營共用的生成限制。',
@@ -5698,6 +5735,7 @@ MOD.langs = {
       ['Starting heatsinks'] = '初始備用散熱器數',
       ['Starting magazines'] = '初始備用彈匣數',
       ['Starting rounds'] = '初始備用彈數',
+      ['Starting speed (m/s)'] = '初始速度（米/秒）',
       ['Starts at heat'] = '初始熱量',
       ['Stat Editor'] = '屬性編輯器',
       ['Stationary Shroud'] = '定點匿蹤',
@@ -5719,6 +5757,7 @@ MOD.langs = {
       ['Stun'] = '暈眩彈',
       ['Stun (large)'] = '暈眩彈（大）',
       ['Stun (massive)'] = '暈眩彈（極大）',
+      ['Stun (massive) (experimental)'] = '暈眩彈（巨大）（實驗性）',
       ['Stun (medium)'] = '暈眩彈（中）',
       ['Stun (small)'] = '暈眩彈（小）',
       ['Stun Baton'] = '暈眩棍',
@@ -5796,6 +5835,7 @@ MOD.langs = {
       ['The support hammer delivered by hellpod. The game data files it next to the Machete.'] = '由空投艙投送的支援錘。遊戲資料將它列在砍刀旁邊。',
       ['The support weapon. The CQC-73 is listed under Secondary.'] = '支援武器。CQC-73 列在「副武器」下。',
       ['Thermite'] = '鋁熱彈',
+      ['Thermite (experimental)'] = '鋁熱（實驗性）',
       ['Throw range'] = '投擲距離',
       ['Throw spread (degrees)'] = '投擲散佈(度)',
       ['Throw velocity, max (m/s)'] = '投擲速度上限(米/秒)',
@@ -5809,6 +5849,7 @@ MOD.langs = {
       ['Tier 2'] = '2 級',
       ['Tier 2 guard'] = '2級守衛',
       ['Tier2'] = '2 級',
+      ['Time before drowning (s)'] = '溺水前時間（秒）',
       ['Time between bombs (s)'] = '投彈間隔(秒)',
       ['Time between salvos (s)'] = '齊射間隔(秒)',
       ['Time between shells (s)'] = '炮彈發射間隔（秒）',
@@ -5909,6 +5950,7 @@ MOD.langs = {
       ['Warrior'] = '戰士',
       ['Warrior acid burst'] = '戰士酸液爆裂',
       ['Watcher'] = '看守者',
+      ['Water'] = '水',
       ['Weapon stats'] = '武器數值',
       ['Weaves'] = '蛇形飛行',
       ['What goes off when they die. Each explosion is shared by every enemy that uses it.'] = '它們死亡時引發的爆炸。每種爆炸由所有使用它的敵人共用。',
@@ -5974,6 +6016,7 @@ MOD.langs = {
       ['listing stratagems, attachments and armor passives'] = '正在列出戰略配備、配件和護甲被動',
       ['loaded into an empty weapon, from your spare rounds'] = '裝入空槍時，從備用彈藥中補充',
       ['loadout package'] = '配裝包',
+      ['lower (more negative): you go deeper before drowning starts'] = '越低（越負）：開始溺水前可以潛得越深',
       ['melee weapon'] = '近戰武器',
       ['melee, guns and death explosions, shared ones included'] = '近戰、武器與死亡爆炸，含共用的',
       ['min charge'] = '最少充能',
@@ -7178,6 +7221,7 @@ MOD.langs = {
       ['stun'] = '暈眩彈',
       ['stun (large)'] = '暈眩彈（大）',
       ['stun (massive)'] = '暈眩彈（極大）',
+      ['stun (massive) (experimental)'] = '暈眩彈（巨大）（實驗性）',
       ['stun (medium)'] = '暈眩彈（中）',
       ['stun (small)'] = '暈眩彈（小）',
       ['stun baton'] = '暈眩棍',
@@ -7775,6 +7819,7 @@ MOD.langs = {
       ['Accelerator Rifle'] = 'Акселераторная винтовка',
       ['Acclimated'] = 'Акклиматизированный',
       ['Acid'] = 'Кислота',
+      ['Acid (experimental)'] = 'Кислота (эксперимент.)',
       ['Acid damage taken (x)'] = 'Получаемый урон от кислоты (x)',
       ['Adjudicator'] = '«Эксперт»',
       ['Adreno-Defibrillator'] = 'Адрено-дефибрилятор',
@@ -7898,6 +7943,7 @@ MOD.langs = {
       ['Blast delay (s)'] = 'Задержка взрыва (с)',
       ['Blast proximity (m)'] = 'Дистанция подрыва (м)',
       ['Blast radius'] = 'Радиус взрыва',
+      ['Bleed (experimental)'] = 'Кровотечение (эксперимент.)',
       ['Bleed-out health'] = 'Здоровье при истекании кровью',
       ['Blitzer'] = '«Налетчик»',
       ['Block game input while open'] = 'Блокировать ввод в игре',
@@ -7919,6 +7965,9 @@ MOD.langs = {
       ['Boss'] = 'Ядро',
       ['Boss back'] = 'Задняя часть ядра',
       ['Bottom wing'] = 'Нижнее крыло',
+      ['Braking height (m)'] = 'Высота торможения (м)',
+      ['Braking speed (m/s)'] = 'Скорость торможения (м/с)',
+      ['Braking time (s)'] = 'Время торможения (с)',
       ['Brawler'] = 'Буян',
       ['Breacher'] = 'Прорывник',
       ['Breaching Hammer'] = 'Штурмовой молот',
@@ -8002,6 +8051,7 @@ MOD.langs = {
       ['Climb multiplier (vertical)'] = 'Множитель подъема (по вертикали)',
       ['Climb speed (m/s)'] = 'Скорость подъема (м/с)',
       ['Climb time limit (s)'] = 'Предел времени подъема (с)',
+      ['Climbing and sliding'] = 'Лазание и скольжение',
       ['Cluster Bomb'] = 'Кластерная бомба',
       ['Cognitive Disruptor'] = 'Искажатель разума',
       ['Collision'] = 'Корпус',
@@ -8084,6 +8134,7 @@ MOD.langs = {
       ['Dropship'] = 'Десантный корабль',
       ['Dropship death (air)'] = 'Гибель десантного корабля (в воздухе)',
       ['Dropship death (ground)'] = 'Гибель десантного корабля (на земле)',
+      ['Drowning depth offset (m)'] = 'Смещение глубины утопления (м)',
       ['Drum Magazine'] = 'Барабанный магазин',
       ['Dune Walker Sniper Scope 10x'] = 'Снайперский прицел (10х)',
       ['Durable damage'] = 'Урон по прочным целям',
@@ -8121,6 +8172,7 @@ MOD.langs = {
       ['Effect'] = 'Эффект',
       ['Egg'] = 'Яйцо',
       ['Egg cluster'] = 'Кладка яиц',
+      ['Electric (experimental)'] = 'Электричество (эксперимент.)',
       ['Electric damage taken (x)'] = 'Получаемый урон от электричества (x)',
       ['Electrical Conduit'] = 'Электропроводник',
       ['Elevated Overseer'] = 'Возвышенный надзиратель',
@@ -8200,6 +8252,7 @@ MOD.langs = {
       ['Flight height (m)'] = 'Высота полёта (м)',
       ['Flinch'] = 'Вздрагивание',
       ['Flinch (0 prevents it)'] = 'Вздрагивание (0 — нет)',
+      ['Floating depth offset (m)'] = 'Смещение глубины всплытия (м)',
       ['Folder'] = 'Папка',
       ['Folder path copied.'] = 'Путь к папке скопирован.',
       ['Foliage pass-through'] = 'Пролёт сквозь листву',
@@ -8313,12 +8366,15 @@ MOD.langs = {
       ['Helldivers 2 is running: close it, then Install.'] = 'Helldivers 2 запущена: закройте её, затем нажмите «Установить в игру».',
       ['Helldivers 2 is running: close it, then restore.'] = 'Helldivers 2 запущена: закройте её, затем верните файлы.',
       ['Helldivers 2 is running: you can edit, but close it before you Install.'] = 'Helldivers 2 запущена: редактировать можно, но перед установкой закройте её.',
+      ['Hellpod: initial drop'] = 'Адская капсула: первая высадка',
+      ['Hellpod: reinforcement'] = 'Адская капсула: подкрепление',
       ['Helmet'] = 'Шлем',
       ['Hexagon'] = 'шестигранник',
       ['High Capacity Heatsink'] = 'Высокоемкий радиатор',
       ['High Dissipation Heatsink'] = 'Высокоэффективный радиатор',
       ['High Explosive'] = '«Фугасная»',
       ['High-Velocity Shrapnel'] = 'Высокоскоростной снаряд со шрапнелью',
+      ['Highest ledge it climbs (m)'] = 'Макс. высота уступа для подъёма (м)',
       ['Hijack Tech Hub Nexus Machine'] = 'Машина узла техцентра',
       ['Hips'] = 'Таз',
       ['Hips armor'] = 'Броня бёдер',
@@ -9018,6 +9074,8 @@ MOD.langs = {
       ['Size'] = 'Размер',
       ['Size (x)'] = 'Размер (x)',
       ['Slide speed / duration'] = 'Скорость / длительность скольжения',
+      ['Slope slide ends at (degrees)'] = 'Скольжение по склону до (градусов)',
+      ['Slope slide starts at (degrees)'] = 'Скольжение по склону с (градусов)',
       ['Slot (choice)'] = 'Слот (выбор)',
       ['Slot: 1 primary or 3 secondary.'] = 'Слот: 1 основное или 3 дополнительное.',
       ['Slot: Primary'] = 'Слот: основное',
@@ -9032,6 +9090,7 @@ MOD.langs = {
       ['Sniper Scope 10x Helghast'] = 'Снайперский прицел (10х)',
       ['Sniper crosshair in third person'] = 'Снайперский прицел от 3-го лица',
       ['Solo Silo'] = 'Одиночная пусковая шахта',
+      ['Spawn height (m)'] = 'Высота появления (м)',
       ['Spawner death'] = 'Гибель источника врагов',
       ['Spawning'] = 'Появление врагов',
       ['Spawning limits every faction shares.'] = 'Ограничения появления, общие для всех фракций.',
@@ -9081,6 +9140,7 @@ MOD.langs = {
       ['Starting heatsinks'] = 'Радиаторы в начале',
       ['Starting magazines'] = 'Магазины в начале',
       ['Starting rounds'] = 'Патроны в начале',
+      ['Starting speed (m/s)'] = 'Начальная скорость (м/с)',
       ['Starts at heat'] = 'Начинается при нагреве',
       ['Stat Editor'] = 'Характеристики',
       ['Stationary Shroud'] = 'Неподвижный покров',
@@ -9100,6 +9160,7 @@ MOD.langs = {
       ['Stun'] = '«Оглушающая»',
       ['Stun (large)'] = 'Оглушение (сильное)',
       ['Stun (massive)'] = 'Оглушение (огромное)',
+      ['Stun (massive) (experimental)'] = 'Оглушение (огромное) (эксперимент.)',
       ['Stun (medium)'] = 'Оглушение (среднее)',
       ['Stun (small)'] = 'Оглушение (слабое)',
       ['Stun Baton'] = 'Оглушающая дубинка',
@@ -9167,6 +9228,7 @@ MOD.langs = {
       ['The support hammer delivered by hellpod. The game data files it next to the Machete.'] = 'Молот поддержки, доставляемый Адской капсулой. В данных игры он лежит рядом с Мачете.',
       ['The support weapon. The CQC-73 is listed under Secondary.'] = 'Оружие поддержки. CQC-73 — во вкладке «Дополнительное».',
       ['Thermite'] = '«Термитная»',
+      ['Thermite (experimental)'] = 'Термит (эксперимент.)',
       ['Throw range'] = 'Дальность броска',
       ['Throw spread (degrees)'] = 'Разброс броска (град.)',
       ['Throw velocity, max (m/s)'] = 'Скорость броска, макс. (м/с)',
@@ -9180,6 +9242,7 @@ MOD.langs = {
       ['Tier 2'] = 'уровень 2',
       ['Tier 2 guard'] = 'уровень 2, охрана',
       ['Tier2'] = 'уровень 2',
+      ['Time before drowning (s)'] = 'Время до утопления (с)',
       ['Time between bombs (s)'] = 'Время между бомбами (с)',
       ['Time between salvos (s)'] = 'Время между залпами (с)',
       ['Time between shells (s)'] = 'Время между снарядами (с)',
@@ -9273,6 +9336,7 @@ MOD.langs = {
       ['Warrior'] = 'Воин',
       ['Warrior acid burst'] = 'Кислотный выплеск воина',
       ['Watcher'] = 'Смотритель',
+      ['Water'] = 'Вода',
       ['Weapon stats'] = 'Характеристики оружия',
       ['Weaves'] = 'Петляет',
       ['What goes off when they die. Each explosion is shared by every enemy that uses it.'] = 'Что взрывается при их гибели. Каждый взрыв общий для всех врагов, которые его используют.',
@@ -9314,6 +9378,7 @@ MOD.langs = {
       ['jammer'] = 'глушилка',
       ['jump'] = 'прыжок',
       ['loaded into an empty weapon, from your spare rounds'] = 'заряжается в пустое оружие из запасных патронов',
+      ['lower (more negative): you go deeper before drowning starts'] = 'ниже (отрицательнее): глубже, прежде чем начнёте тонуть',
       ['melee, guns and death explosions, shared ones included'] = 'ближний бой, оружие и взрывы при гибели, включая общие',
       ['min charge'] = 'мин. заряд',
       ['no shrapnel'] = 'без осколков',
@@ -11236,6 +11301,14 @@ KINDS[TYPES.seeking] = { name = 'seeking missile', stride = 272, keyed = true }
 KINDS[TYPES.laser] = { name = 'laser designator', stride = 64, keyed = true }
 -- AvatarComponentData (the helldiver's): its move info's speeds and stamina (offsets in MOVE)
 KINDS[TYPES.avatar] = { name = 'avatar', stride = 852, keyed = true }
+-- (from SHODAN Offline Integration, ayakamods 5593) DrownableComponentData: the helldiver's drowning (+4 drowning
+-- depth offset, +8 floating offset, +12 time before drowning); HellpodComponentData (104 bytes): the player pods'
+-- descent (+8 spawn height, +20 initial speed, +24 braking height, +28 braking speed, +32 braking time);
+-- HellpodPayloadComponentData (12 bytes): a deployed payload's +4 life time (the sentries')
+TYPES.drown, TYPES.hellpod, TYPES.payload = 0x726A4F6B, 0x7EF5CC55, 0xDDB5C03F
+KINDS[TYPES.drown] = { name = 'drownable', stride = 64, keyed = true }
+KINDS[TYPES.hellpod] = { name = 'hellpod', stride = 104, keyed = true }
+KINDS[TYPES.payload] = { name = 'hellpod payload', stride = 12, keyed = true }
 -- the tables the panel waits for (stratagem groups are taken as they come)
 local KIND_ORDER = { T_WEAPON, T_MAGAZINE, T_ROUNDS, T_FIRE, T_PROJECTILE, T_DAMAGE, T_BEAM_WEAPON, T_BEAM,
                      T_EXPLOSION, T_ORBITAL, T_HEAT, T_SPRAY, T_STATUS, T_MELEE, TYPES.arc_weapon, TYPES.arc,
@@ -12059,7 +12132,13 @@ KINDS[TYPES.avatar].MOVE = {
     { 'Stamina', 'recover_prone', 'Refills prone in (s)', 68, 600, 0.5, 2 },
     { 'Stamina', 'recover_delay', 'Refill starts after (s)', 72, 60, 0.1, 0.5 },
     { 'Stamina', 'cost_jump', 'Jump cost (share of stamina)', 76, 1, 0.05, 0.1 },
-    { 'Stamina', 'cost_dive', 'Dive cost (share of stamina)', 80, 1, 0.05, 0.1 } }
+    { 'Stamina', 'cost_dive', 'Dive cost (share of stamina)', 80, 1, 0.05, 0.1 },
+    -- (Consistent Vaulting's fields, via SHODAN Offline Integration)
+    { 'Climbing and sliding', 'slide_enter', 'Slope slide starts at (degrees)', 152, 89, 1, 5 },
+    { 'Climbing and sliding', 'slide_exit', 'Slope slide ends at (degrees)', 172, 89, 1, 5 },
+    { 'Climbing and sliding', 'climb_height', 'Highest ledge it climbs (m)', 260, 10, 0.05, 0.25 } }
+-- the player hellpods (initial drop, reinforcements): entity, label
+KINDS[TYPES.avatar].PODS = { { 'E58163E71928D3E2', 'Initial drop' }, { 'EF9EB729A9D6D849', 'Reinforcement' } }
 KINDS[TYPES.avatar].resolve = function(entry)
     local A, ht, at = KINDS[TYPES.avatar], tables[TYPES.health], tables[TYPES.avatar]
     local h = ht and ht.index[entry.key]
@@ -12083,6 +12162,40 @@ KINDS[TYPES.avatar].resolve = function(entry)
     if m then
         for _, f in ipairs(A.MOVE) do
             add_row(entry, f[1], f[2], f[3], 'f32', { part(f[2], TYPES.avatar, m + f[4], 'f32', 100000) }, 0, f[5], f[6], f[7])
+        end
+    end
+    -- water (Shallow Water Diving's fields): the two depth offsets are below the water line (negative)
+    local dt = tables[TYPES.drown]
+    local d = dt and dt.index[entry.key]
+    if d then
+        for _, f in ipairs({ { 'drown_depth', 'Drowning depth offset (m)', 4, -5, 0 }, { 'float_depth', 'Floating depth offset (m)', 8, -5, 0 },
+                             { 'drown_time', 'Time before drowning (s)', 12, 0.1, 3600 } }) do
+            local p = part(f[1], TYPES.drown, d + f[3], 'f32', 3600)
+            p.field.signed = f[4] < 0 or nil   -- (before the first read: negative values are refused otherwise)
+            local v = default_of(p.field)
+            if v and v >= f[4] and v <= f[5] then
+                local r = add_row(entry, 'Water', f[1], f[2], 'f32', { p }, f[4], f[5], 0.1, f[3] == 12 and 5 or 0.5)
+                if f[3] == 4 then r.note = 'lower (more negative): you go deeper before drowning starts' end
+            end
+        end
+    end
+    -- the hellpods' descent (Hellpod Control's fields: higher and slower gives more time to steer)
+    local hp = tables[TYPES.hellpod]
+    for _, pod in ipairs(hp and A.PODS or {}) do
+        local at = hp.index[hash_key(pod[1])]
+        if at then
+            local section = 'Hellpod: ' .. pod[2]:lower()
+            local prefix = 'pod' .. (pod[2] == 'Initial drop' and 1 or 2) .. '_'
+            for _, f in ipairs({ { 'height', 'Spawn height (m)', 8, 10000, 10, 50 }, { 'speed', 'Starting speed (m/s)', 20, 10000, 5, 25 },
+                                 { 'brake_height', 'Braking height (m)', 24, 10000, 5, 25 }, { 'brake_speed', 'Braking speed (m/s)', 28, 10000, 1, 5 },
+                                 { 'brake_time', 'Braking time (s)', 32, 60, 0.1, 0.5 } }) do
+                local p = part(prefix .. f[1], TYPES.hellpod, at + f[3], 'f32', 100000)
+                local v = default_of(p.field)
+                if v and v == v and math.abs(v) < 100000 then
+                    p.field.signed = v < 0 or nil
+                    add_row(entry, section, prefix .. f[1], f[2], 'f32', { p }, v < 0 and -f[4] or 0, f[4], f[5], f[6])
+                end
+            end
         end
     end
 end
