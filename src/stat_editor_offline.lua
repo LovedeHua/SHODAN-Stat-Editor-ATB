@@ -749,6 +749,7 @@ MOD.langs = {
       ['- / + steps through the stratagems by name (-- / ++: 10 at a time).'] = '- / + 按名称切换战略配备（-- / ++ 每次切换 10 项）。',
       ['0 = normal projectile; - / + selects a throwable grenade by name above.'] = '0 = 常规弹丸；- / + 按上方名称选择投掷手雷。',
       ['0 light, 1 medium, 2 heavy'] = '0 轻型，1 中型，2 重型',
+      ['0: at once. The RL-77 waits 0.2 s, the P-34 Breacher (it sticks and burns first) 1 s.'] = '0：立即。RL-77 等待 0.2 秒，P-34 Breacher（先粘附燃烧）1 秒。',
       ['0: hits deal their normal damage, 1: their durable damage (the weapon\'s lower one)'] = '0：命中造成普通伤害，1：造成耐久伤害（武器较低的那个）',
       ['0: no patrols'] = '0：没有巡逻',
       ['100kg Bomb'] = '100KG炸弹',
@@ -1571,7 +1572,10 @@ MOD.langs = {
       ['Hover time, full-speed climb (s)'] = '悬停时间：全速爬升(秒)',
       ['Hover time, holding height (s)'] = '悬停时间：保持高度(秒)',
       ['Hoverpack Backpack'] = '悬浮背包',
+      ['How close this zoom step looks: 1 is the normal view, 2 twice as close, 4 four times.'] = '这一档的放大程度：1 为正常视野，2 拉近两倍，4 拉近四倍。',
       ['How far away the jet starts its run. With its speed, it sets how long the Eagle takes to arrive.'] = '飞鹰开始攻击航线时距目标的距离，与飞行速度共同决定抵达时间。',
+      ['How long the round waits after the hit (or after the blast proximity trips) before it goes off.'] = '射弹命中后（或近炸距离触发后）等待多久才爆炸。',
+      ['How quickly the scoped view catches up when you move your aim at this zoom (0.6 on most optics).'] = '此倍率下移动瞄准时，瞄准镜视野跟上的速度（大多数瞄具为 0.6）。',
       ['Hulk'] = '巨型者',
       ['Hulk Bruiser'] = '巨型碾压者',
       ['Hulk Firebomber'] = '巨型烈焰轰炸者',
@@ -1765,6 +1769,7 @@ MOD.langs = {
       ['Logs and Presets'] = '日志与预设',
       ['Loses its target past (deg)'] = '超出此角度丢失目标(度)',
       ['Lower back'] = '下背部',
+      ['Lower it if a high zoom spins the view.'] = '如果高倍率时视野旋转，请调低。',
       ['Lower spine'] = '下脊椎',
       ['Lowest patrol frequency (x)'] = '最低巡逻频率 (x)',
       ['Lowest rates'] = '最低频率',
@@ -1891,6 +1896,7 @@ MOD.langs = {
       ['One True Flag'] = '唯一真旗',
       ['One-Two'] = '幺二',
       ['One-handed'] = '单手持握',
+      ['Only works with the blast angle at 360, and the distance has to be larger than one step of the round:'] = '只在爆炸角为 360 时生效，且距离要大于射弹每帧的位移：',
       ['Open'] = '打开',
       ['Open / close key'] = '打开 / 关闭热键',
       ['Opened the GitHub page in your browser.'] = '已在浏览器中打开 GitHub 页面。',
@@ -2462,6 +2468,7 @@ MOD.langs = {
       ['The beacon\'s countdown before the delivery is sent.'] = '信标启动后、开始投送前的倒计时。',
       ['The beacon\'s timer still counts down the usual time (tested).'] = '信标仍显示原本的倒计时（已由作者测试）。',
       ['The charge backpack, the charge and its blast. Cooldown: Stratagems tab.'] = '炸药背包、炸药包及其爆炸。冷却时间见“战略配备”页。',
+      ['The explosion the round sets off when it hits something. 0: no explosion.'] = '射弹命中物体时引发的爆炸。0：不爆炸。',
       ['The flamethrower you carry.'] = '你携带的火焰喷射器。',
       ['The game holds at most 2048 rounds in a magazine.'] = '游戏中一个弹匣最多容纳 2048 发。',
       ['The game\'s own files are already in place.'] = '当前已是游戏原始文件。',
@@ -2471,9 +2478,11 @@ MOD.langs = {
       ['The one you carry. The CQC-20 Breaching Hammer is listed under Support.'] = '你携带的那一把。CQC-20 破拆锤列在“支援武器”下。',
       ['The one you carry. The CQC-72 support version is listed under Support.'] = '你携带的那一把。CQC-72 支援版本列在“支援武器”下。',
       ['The pistol you carry. The One-Two\'s launcher is listed under the One-Two.'] = '你携带的手枪。“幺二”的发射器列在“幺二”下。',
+      ['The range the sights are set for at this step (you switch steps in game). At that range the shot lands'] = '这一档瞄具归零的距离（在游戏中切换档位）。在该距离子弹正好',
       ['The recharge time is 0: set it above 0 first.'] = '充能时间为 0：请先设为大于 0 的值。',
       ['The rifle you carry. The grenade launcher is listed separately.'] = '你携带的步枪。榴弹发射器单独列出。',
       ['The rifle you carry. The underbarrel shotgun is listed separately.'] = '你携带的步枪。下挂霰弹枪单独列出。',
+      ['The round goes off when it passes this close to an enemy, without hitting it. 0: off (the RL-77 uses 2 m).'] = '射弹从敌人这么近的距离经过时即使没有命中也会爆炸。0：关闭（RL-77 为 2 米）。',
       ['The support hammer delivered by hellpod. The game data files it next to the Machete.'] = '由空投舱投送的支援锤。游戏数据将它列在砍刀旁边。',
       ['The support weapon. The CQC-73 is listed under Secondary.'] = '支援武器。CQC-73 列在“副武器”下。',
       ['Thermite'] = '铝热弹',
@@ -2660,6 +2669,7 @@ MOD.langs = {
       ['ivory legion tier 2'] = '象牙军团2级',
       ['jammer'] = '干扰器',
       ['jump'] = '跳跃',
+      ['keep it above about speed / frame rate.'] = '建议大于「初速/游戏帧率」。',
       ['laser designator'] = '激光指示器',
       ['listing stratagems, attachments and armor passives'] = '正在列出战略配备、配件和护甲被动',
       ['loaded into an empty weapon, from your spare rounds'] = '装入空枪时，从备用弹药中补充',
@@ -2677,8 +2687,8 @@ MOD.langs = {
       ['normal projectile'] = '常规弹丸',
       ['not a finite number'] = '不是有限数值',
       ['nothing to vary for the hash (edit a value with decimals in this file)'] = '没有可用于校正校验值的数据（请修改此文件中的一个小数值）',
+      ['on the crosshair; closer or farther it lands a bit high or low. Does not change the zoom.'] = '落在准星上；更近或更远会略高或略低。不改变放大倍率。',
       ['one kind of stratagem cannot be called within this distance while it stands'] = '在其被摧毁前，此范围内无法呼叫某一类战略配备',
-      ['only works with the blast angle at 360, and the radius has to be larger than one step of the round: keep it above about speed / frame rate.'] = '只在爆炸角为 360 时生效；半径要大于射弹每帧的位移，建议大于「初速/游戏帧率」。',
       ['outcast'] = '流放者',
       ['overcharge'] = '过充',
       ['panels, mines per panel: lower only (more than the default crashes the game)'] = '布雷批次数、每批地雷数：只能调低（高于默认值会使游戏崩溃）',
@@ -4281,6 +4291,7 @@ MOD.langs = {
       ['- / + steps through the stratagems by name (-- / ++: 10 at a time).'] = '- / + 按名稱切換戰略配備（-- / ++ 每次切換 10 項）。',
       ['0 = normal projectile; - / + selects a throwable grenade by name above.'] = '0 = 常規射彈；- / + 按上方名稱選擇投擲手雷。',
       ['0 light, 1 medium, 2 heavy'] = '0 輕型，1 中型，2 重型',
+      ['0: at once. The RL-77 waits 0.2 s, the P-34 Breacher (it sticks and burns first) 1 s.'] = '0：立即。RL-77 等待 0.2 秒，P-34 Breacher（先粘附燃燒）1 秒。',
       ['0: hits deal their normal damage, 1: their durable damage (the weapon\'s lower one)'] = '0：命中造成普通傷害，1：造成耐久傷害（武器較低的那個）',
       ['0: no patrols'] = '0：沒有巡邏',
       ['100kg Bomb'] = '100KG炸彈',
@@ -5103,7 +5114,10 @@ MOD.langs = {
       ['Hover time, full-speed climb (s)'] = '懸停時間：全速爬升(秒)',
       ['Hover time, holding height (s)'] = '懸停時間：保持高度(秒)',
       ['Hoverpack Backpack'] = '懸浮背包',
+      ['How close this zoom step looks: 1 is the normal view, 2 twice as close, 4 four times.'] = '這一檔的放大程度：1 為正常視野，2 拉近兩倍，4 拉近四倍。',
       ['How far away the jet starts its run. With its speed, it sets how long the Eagle takes to arrive.'] = '飛鷹開始攻擊航線時距目標的距離，與飛行速度共同決定抵達時間。',
+      ['How long the round waits after the hit (or after the blast proximity trips) before it goes off.'] = '射彈命中後（或近炸距離觸發後）等待多久才爆炸。',
+      ['How quickly the scoped view catches up when you move your aim at this zoom (0.6 on most optics).'] = '此倍率下移動瞄準時，瞄準鏡視野跟上的速度（大多數瞄具為 0.6）。',
       ['Hulk'] = '巨型者',
       ['Hulk Bruiser'] = '巨型殲滅者',
       ['Hulk Firebomber'] = '巨型火焰炸彈兵',
@@ -5297,6 +5311,7 @@ MOD.langs = {
       ['Logs and Presets'] = '日誌與預設',
       ['Loses its target past (deg)'] = '超出此角度丟失目標(度)',
       ['Lower back'] = '下背部',
+      ['Lower it if a high zoom spins the view.'] = '如果高倍率時視野旋轉，請調低。',
       ['Lower spine'] = '下脊椎',
       ['Lowest patrol frequency (x)'] = '最低巡邏頻率 (x)',
       ['Lowest rates'] = '最低頻率',
@@ -5423,6 +5438,7 @@ MOD.langs = {
       ['One True Flag'] = '唯一真旗',
       ['One-Two'] = '雙響',
       ['One-handed'] = '單手持握',
+      ['Only works with the blast angle at 360, and the distance has to be larger than one step of the round:'] = '只在爆炸角為 360 時生效，且距離要大於射彈每幀的位移：',
       ['Open'] = '開啟',
       ['Open / close key'] = '開啟 / 關閉熱鍵',
       ['Opened the GitHub page in your browser.'] = '已在瀏覽器中開啟 GitHub 頁面。',
@@ -5994,6 +6010,7 @@ MOD.langs = {
       ['The beacon\'s countdown before the delivery is sent.'] = '信標啟動後、開始投送前的倒計時。',
       ['The beacon\'s timer still counts down the usual time (tested).'] = '信標仍顯示原本的倒計時（已由作者測試）。',
       ['The charge backpack, the charge and its blast. Cooldown: Stratagems tab.'] = '炸藥背包、炸藥包及其爆炸。冷卻時間見「戰略配備」頁。',
+      ['The explosion the round sets off when it hits something. 0: no explosion.'] = '射彈命中物體時引發的爆炸。0：不爆炸。',
       ['The flamethrower you carry.'] = '你攜帶的火焰噴射器。',
       ['The game holds at most 2048 rounds in a magazine.'] = '遊戲中一個彈匣最多容納 2048 發。',
       ['The game\'s own files are already in place.'] = '當前已是遊戲原始檔案。',
@@ -6003,9 +6020,11 @@ MOD.langs = {
       ['The one you carry. The CQC-20 Breaching Hammer is listed under Support.'] = '你攜帶的那一把。CQC-20 破拆錘列在「支援武器」下。',
       ['The one you carry. The CQC-72 support version is listed under Support.'] = '你攜帶的那一把。CQC-72 支援版本列在「支援武器」下。',
       ['The pistol you carry. The One-Two\'s launcher is listed under the One-Two.'] = '你攜帶的手槍。「么二」的發射器列在「么二」下。',
+      ['The range the sights are set for at this step (you switch steps in game). At that range the shot lands'] = '這一檔瞄具歸零的距離（在遊戲中切換檔位）。在該距離子彈正好',
       ['The recharge time is 0: set it above 0 first.'] = '充能時間為 0：請先設為大於 0 的值。',
       ['The rifle you carry. The grenade launcher is listed separately.'] = '你攜帶的步槍。榴彈發射器單獨列出。',
       ['The rifle you carry. The underbarrel shotgun is listed separately.'] = '你攜帶的步槍。下掛霰彈槍單獨列出。',
+      ['The round goes off when it passes this close to an enemy, without hitting it. 0: off (the RL-77 uses 2 m).'] = '射彈從敵人這麼近的距離經過時即使沒有命中也會爆炸。0：關閉（RL-77 為 2 米）。',
       ['The support hammer delivered by hellpod. The game data files it next to the Machete.'] = '由空投艙投送的支援錘。遊戲資料將它列在砍刀旁邊。',
       ['The support weapon. The CQC-73 is listed under Secondary.'] = '支援武器。CQC-73 列在「副武器」下。',
       ['Thermite'] = '鋁熱彈',
@@ -6192,6 +6211,7 @@ MOD.langs = {
       ['ivory legion tier 2'] = '象牙軍團2級',
       ['jammer'] = '干擾器',
       ['jump'] = '跳躍',
+      ['keep it above about speed / frame rate.'] = '建議大於「初速/遊戲幀率」。',
       ['laser designator'] = '雷射指示器',
       ['listing stratagems, attachments and armor passives'] = '正在列出戰略配備、配件和護甲被動',
       ['loaded into an empty weapon, from your spare rounds'] = '裝入空槍時，從備用彈藥中補充',
@@ -6209,8 +6229,8 @@ MOD.langs = {
       ['normal projectile'] = '常規射彈',
       ['not a finite number'] = '不是有限數值',
       ['nothing to vary for the hash (edit a value with decimals in this file)'] = '沒有可用於校正校驗值的資料（請修改此檔案中的一個小數值）',
+      ['on the crosshair; closer or farther it lands a bit high or low. Does not change the zoom.'] = '落在準星上；更近或更遠會略高或略低。不改變放大倍率。',
       ['one kind of stratagem cannot be called within this distance while it stands'] = '在其被摧毀前，此範圍內無法呼叫某一類戰略配備',
-      ['only works with the blast angle at 360, and the radius has to be larger than one step of the round: keep it above about speed / frame rate.'] = '只在爆炸角為 360 時生效；半徑要大於射彈每幀的位移，建議大於「初速/遊戲幀率」。',
       ['outcast'] = '流放者',
       ['overcharge'] = '過充',
       ['panels, mines per panel: lower only (more than the default crashes the game)'] = '佈雷批次數、每批地雷數：只能調低（高於預設值會使遊戲崩潰）',
@@ -7810,6 +7830,7 @@ MOD.langs = {
       ['+ Throwables (start, max)'] = '+ Метательное (в начале, макс.)',
       ['0 = normal projectile; - / + selects a throwable grenade by name above.'] = '0 = обычный снаряд; - / + выбирает гранату по названию выше.',
       ['0 light, 1 medium, 2 heavy'] = '0 лёгкая, 1 средняя, 2 тяжёлая',
+      ['0: at once. The RL-77 waits 0.2 s, the P-34 Breacher (it sticks and burns first) 1 s.'] = '0: сразу. RL-77 ждёт 0,2 с, P-34 Breacher (сначала прилипает и горит) 1 с.',
       ['0: hits deal their normal damage, 1: their durable damage (the weapon\'s lower one)'] = '0: попадания наносят обычный урон, 1: урон по прочным целям (меньший у оружия)',
       ['0: no patrols'] = '0: без патрулей',
       ['100kg Bomb'] = 'Бомба (100 кг)',
@@ -8589,6 +8610,9 @@ MOD.langs = {
       ['Hover speed (m/s)'] = 'Скорость парения (м/с)',
       ['Hover time, full-speed climb (s)'] = 'Парение: быстрый подъем (с)',
       ['Hover time, holding height (s)'] = 'Парение: удержание высоты (с)',
+      ['How close this zoom step looks: 1 is the normal view, 2 twice as close, 4 four times.'] = 'Насколько приближает эта ступень: 1 обычный вид, 2 в два раза ближе, 4 в четыре раза.',
+      ['How long the round waits after the hit (or after the blast proximity trips) before it goes off.'] = 'Сколько снаряд ждёт после попадания (или после срабатывания дистанции подрыва), прежде чем взорваться.',
+      ['How quickly the scoped view catches up when you move your aim at this zoom (0.6 on most optics).'] = 'Как быстро вид в прицеле догоняет наведение на этом увеличении (0,6 у большинства прицелов).',
       ['Hulk'] = 'Глыба',
       ['Hulk Bruiser'] = 'Глыба-крушитель',
       ['Hulk Firebomber'] = 'Огненная глыба',
@@ -8774,6 +8798,7 @@ MOD.langs = {
       ['Logs and Presets'] = 'Журналы и пресеты',
       ['Loses its target past (deg)'] = 'Теряет цель за пределами (град.)',
       ['Lower back'] = 'Нижняя спина',
+      ['Lower it if a high zoom spins the view.'] = 'Уменьшите, если на большом увеличении вид крутится.',
       ['Lower spine'] = 'Нижний хребет',
       ['Lowest patrol frequency (x)'] = 'Минимальная частота патрулей (x)',
       ['Lowest rates'] = 'Нижние пределы частоты',
@@ -8893,6 +8918,7 @@ MOD.langs = {
       ['One True Flag'] = 'Один истинный флаг',
       ['One-Two'] = 'Двоечка',
       ['One-handed'] = 'Одной рукой',
+      ['Only works with the blast angle at 360, and the distance has to be larger than one step of the round:'] = 'Работает только при угле взрыва 360, и дистанция должна быть больше шага снаряда за кадр:',
       ['Open'] = 'Открыть',
       ['Open / close key'] = 'Клавиша открытия / закрытия',
       ['Opened the GitHub page in your browser.'] = 'Страница GitHub открыта в браузере.',
@@ -9424,6 +9450,7 @@ MOD.langs = {
       ['The Stoker\'s underbarrel flamer, not the SMG itself.'] = 'Подствольный огнемет «Топки», а не сам пистолет-пулемет.',
       ['The armor passives could not be stacked'] = 'Не удалось объединить пассивные эффекты брони',
       ['The charge backpack, the charge and its blast. Cooldown: Stratagems tab.'] = 'Рюкзак с зарядом, сам заряд и его взрыв. Перезарядка: вкладка «Стратагемы».',
+      ['The explosion the round sets off when it hits something. 0: no explosion.'] = 'Взрыв, который снаряд вызывает при попадании во что-либо. 0: без взрыва.',
       ['The flamethrower you carry.'] = 'Огнемет, который вы носите.',
       ['The game holds at most 2048 rounds in a magazine.'] = 'Игра вмещает в магазин не более 2048 патронов.',
       ['The game\'s own files are already in place.'] = 'Исходные файлы игры уже на месте.',
@@ -9433,9 +9460,11 @@ MOD.langs = {
       ['The one you carry. The CQC-20 Breaching Hammer is listed under Support.'] = 'То, что вы носите. CQC-20 Штурмовой молот — во вкладке «Поддержка».',
       ['The one you carry. The CQC-72 support version is listed under Support.'] = 'То, что вы носите. Версия поддержки CQC-72 — во вкладке «Поддержка».',
       ['The pistol you carry. The One-Two\'s launcher is listed under the One-Two.'] = 'Пистолет, который вы носите. Гранатомет «Двоечки» указан у «Двоечки».',
+      ['The range the sights are set for at this step (you switch steps in game). At that range the shot lands'] = 'Дальность, на которую выставлен прицел на этой ступени (ступени переключаются в игре). На этой дальности',
       ['The recharge time is 0: set it above 0 first.'] = 'Время восстановления равно 0: сначала задайте больше 0.',
       ['The rifle you carry. The grenade launcher is listed separately.'] = 'Винтовка, которую вы носите. Гранатомет указан отдельно.',
       ['The rifle you carry. The underbarrel shotgun is listed separately.'] = 'Винтовка, которую вы носите. Подствольный дробовик указан отдельно.',
+      ['The round goes off when it passes this close to an enemy, without hitting it. 0: off (the RL-77 uses 2 m).'] = 'Снаряд взрывается, когда пролетает так близко от врага, не попав в него. 0: выкл. (у RL-77 2 м).',
       ['The support hammer delivered by hellpod. The game data files it next to the Machete.'] = 'Молот поддержки, доставляемый Адской капсулой. В данных игры он лежит рядом с Мачете.',
       ['The support weapon. The CQC-73 is listed under Secondary.'] = 'Оружие поддержки. CQC-73 — во вкладке «Дополнительное».',
       ['Thermite'] = '«Термитная»',
@@ -9594,6 +9623,7 @@ MOD.langs = {
       ['ivory legion tier 2'] = 'Костяной легион, уровень 2',
       ['jammer'] = 'глушилка',
       ['jump'] = 'прыжок',
+      ['keep it above about speed / frame rate.'] = 'держите её выше примерно скорости / частоты кадров.',
       ['loaded into an empty weapon, from your spare rounds'] = 'заряжается в пустое оружие из запасных патронов',
       ['lower (more negative): you go deeper before drowning starts'] = 'ниже (отрицательнее): глубже, прежде чем начнёте тонуть',
       ['melee, guns and death explosions, shared ones included'] = 'ближний бой, оружие и взрывы при гибели, включая общие',
@@ -9602,8 +9632,8 @@ MOD.langs = {
       ['none (no explosion)'] = 'нет (без взрыва)',
       ['none (no projectile)'] = 'нет (без снаряда)',
       ['normal projectile'] = 'обычный снаряд',
+      ['on the crosshair; closer or farther it lands a bit high or low. Does not change the zoom.'] = 'выстрел попадает в перекрестие; ближе или дальше чуть выше или ниже. Не меняет увеличение.',
       ['one kind of stratagem cannot be called within this distance while it stands'] = 'пока объект цел, в этом радиусе нельзя вызывать стратагемы одного типа',
-      ['only works with the blast angle at 360, and the radius has to be larger than one step of the round: keep it above about speed / frame rate.'] = 'работает только при угле взрыва 360; радиус должен быть больше шага снаряда за кадр — держите его выше скорости / частоты кадров.',
       ['outcast'] = 'изгой',
       ['overcharge'] = 'перезаряд',
       ['panels, mines per panel: lower only (more than the default crashes the game)'] = 'секции, мины на секцию: только уменьшать (больше значения по умолчанию — вылет игры)',
@@ -12841,13 +12871,14 @@ local function resolve_gun(weapon, key)
         local impact_row = impact and blast_id('impact_explosion', 'Impact explosion (id)', 144)
         if impact_row then
             impact_row.note = function() return 'sets off: ' .. MOD.records.label(T_EXPLOSION, read_field(impact_row.parts[1].field)) end
+            impact_row.tip = MOD.records.TIPS.impact
         end
         if impact and impact > 0 then
             for _, f in ipairs({ { 'fuse_proximity', 'Blast proximity (m)', 148, 200, 0.1, 1 },
                                  { 'fuse_delay', 'Blast delay (s)', 152, 30, 0.05, 0.5 } }) do
                 local row = add_row(weapon, idsec, idp .. f[1], f[2], 'f32', { part(idp .. f[1], T_PROJECTILE, p + f[3], 'f32', 100000) },
                                     0, f[4], f[5], f[6])
-                if f[1] == 'fuse_proximity' then row.note = MOD.records.NOTES.proximity end
+                row.tip = f[1] == 'fuse_proximity' and MOD.records.TIPS.proximity or MOD.records.TIPS.delay
             end
             -- the blast angle (+136): 80 or 90 on most rounds, 360 on the airburst ones (RL-77, the large plasma bolt)
             local angle = add_row(weapon, idsec, idp .. 'blast_angle', 'Blast angle (deg)', 'f32',
@@ -15389,11 +15420,18 @@ local function resolve(weapon)
         local scope = weapon.attachment.scope   -- zoom: 1 = normal view, 2 = half the field of view; zeroing in m
         for k = 1, 3 do
             local z = scope and scope['236:' .. (112 + k * 4)]
-            if z then add_row(weapon, 'Scope', 'zoom' .. k, 'Zoom level ' .. k .. ' (x)', 'f32', { { id = 'zoom' .. k, field = field_at(TYPES.deltas, z, 'f32', 1000) } }, 0.1, 100, 0.1, 1) end
+            if z then
+                add_row(weapon, 'Scope', 'zoom' .. k, 'Zoom level ' .. k .. ' (x)', 'f32', { { id = 'zoom' .. k, field = field_at(TYPES.deltas, z, 'f32', 1000) } }, 0.1, 100, 0.1, 1).tip =
+                    { 'How close this zoom step looks: 1 is the normal view, 2 twice as close, 4 four times.' }
+            end
         end
         for k = 1, 3 do
             local z = scope and scope['236:' .. (336 + k * 4)]
-            if z then add_row(weapon, 'Scope', 'zero' .. k, 'Zeroing distance ' .. k .. ' (m)', 'f32', { { id = 'zero' .. k, field = field_at(TYPES.deltas, z, 'f32', 100000) } }, 0, 5000, 5, 50) end
+            if z then
+                add_row(weapon, 'Scope', 'zero' .. k, 'Zeroing distance ' .. k .. ' (m)', 'f32', { { id = 'zero' .. k, field = field_at(TYPES.deltas, z, 'f32', 100000) } }, 0, 5000, 5, 50).tip =
+                    { 'The range the sights are set for at this step (you switch steps in game). At that range the shot lands',
+                      'on the crosshair; closer or farther it lands a bit high or low. Does not change the zoom.' }
+            end
         end
         -- per zoom level: how quickly the view follows your aim (+316; 0.6 on most optics, the 10x sniper scopes'
         -- 0.8 / 1 / 1.25; high zoom with a high follow speed spins the view, issue #89)
@@ -15401,7 +15439,8 @@ local function resolve(weapon)
             local z = scope and scope['236:' .. (312 + k * 4)]
             if z then
                 local r = add_row(weapon, 'Scope', 'follow' .. k, 'Zoom level ' .. k .. ' follow speed', 'f32', { { id = 'follow' .. k, field = field_at(TYPES.deltas, z, 'f32', 1000) } }, 0.01, 10, 0.05, 0.25)
-                r.note = 'how quickly the view follows your aim at this zoom; lower it if a high zoom spins the view'
+                r.tip = { 'How quickly the scoped view catches up when you move your aim at this zoom (0.6 on most optics).',
+                          'Lower it if a high zoom spins the view.' }
             end
         end
         return
@@ -15611,8 +15650,15 @@ MOD.records = { pages = {}, list = nil, cache = nil, KINDS = { T_PROJECTILE, T_E
 -- smaller than one step of the round is stepped over
 MOD.records.NOTES = {
     angle = '360 fires from any side; with a blast proximity above 0 the round becomes a proximity fuse (measured: 360 and 6 m on the crossbow).',
-    proximity = 'only works with the blast angle at 360, and the radius has to be larger than one step of the round: keep it above about speed / frame rate.',
     weapon_angle = '360 with a proximity above 0: a proximity fuse, off from any side.' }
+-- the (?) tips of the fuse rows: what they do (RL-77 Flak 2 m and 0.2 s, the P-34 Breacher's sticky round 1 s)
+MOD.records.TIPS = {
+    impact = { 'The explosion the round sets off when it hits something. 0: no explosion.' },
+    proximity = { 'The round goes off when it passes this close to an enemy, without hitting it. 0: off (the RL-77 uses 2 m).',
+                  'Only works with the blast angle at 360, and the distance has to be larger than one step of the round:',
+                  'keep it above about speed / frame rate.' },
+    delay = { 'How long the round waits after the hit (or after the blast proximity trips) before it goes off.',
+              '0: at once. The RL-77 waits 0.2 s, the P-34 Breacher (it sticks and burns first) 1 s.' } }
 function MOD.records.ids(kind)
     local ids = {}
     for id in pairs(tables[kind] and tables[kind].index or {}) do
@@ -15748,8 +15794,9 @@ function MOD.records.rows(page)
         impact.note = function()
             return 'sets off: ' .. MOD.records.label(T_EXPLOSION, read_field(impact.parts[1].field))
         end
-        num('Explosion id', 'fuse_proximity', 'Blast proximity (m)', 148, 'f32', 200, 0.1, 1).note = MOD.records.NOTES.proximity
-        num('Explosion id', 'fuse_delay', 'Blast delay (s)', 152, 'f32', 30, 0.05, 0.5)
+        impact.tip = MOD.records.TIPS.impact
+        num('Explosion id', 'fuse_proximity', 'Blast proximity (m)', 148, 'f32', 200, 0.1, 1).tip = MOD.records.TIPS.proximity
+        num('Explosion id', 'fuse_delay', 'Blast delay (s)', 152, 'f32', 30, 0.05, 0.5).tip = MOD.records.TIPS.delay
         local expiry = add_row(page, 'Explosion id', 'expiry_explosion', 'Expiry explosion (id)', 'u32',
                                { part('expiry_explosion', kind, at + 156, 'u32', 100000) }, 0, 100000, 1, 10)
         expiry.choice = 'explosion'
