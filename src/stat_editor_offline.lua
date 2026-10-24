@@ -789,6 +789,7 @@ MOD.langs = {
       ['A mounted copy. Not the one you carry.'] = '固定版本。不是你携带的那把。',
       ['A preset keeps every change you have made as one set, under a name you choose.'] = '预设会把你所有的修改作为一组保存，并取一个你指定的名字。',
       ['A preset keeps every enemy and spawning change as one custom difficulty, under a name you choose. Your weapon changes are kept apart.'] = '预设会把所有敌人与生成的改动保存为一个自定义难度，名称由你决定。武器改动单独保存。',
+      ['A value changed on an enemy\'s own page stays red: this page leaves it as it is.'] = '在敌人自己页面上更改的数值保持红色：此页面不会改动它。',
       ['A/AC-8 Autocannon Sentry'] = 'A/AC-8 自动哨戒炮',
       ['A/ARC-3 Tesla Tower'] = 'A/ARC-3 特斯拉塔',
       ['A/FLAM-40 Flame Sentry'] = 'A/FLAM-40 火焰喷射哨戒炮',
@@ -1203,6 +1204,7 @@ MOD.langs = {
       ['Emplacement'] = '炮台',
       ['Emplacement: its cooldown, its body, then its weapon.'] = '炮台：依次为冷却时间、本体、武器。',
       ['Emplacements'] = '部署设施',
+      ['Enemies and values this page changes are marked in blue in the list and on their pages.'] = '此页面更改的敌人和数值在列表和其页面中以蓝色标出。',
       ['Enemy Editor'] = '敌人编辑器',
       ['Enemy cap (x)'] = '敌人数量上限 (x)',
       ['Enemy detection range'] = '敌人侦测范围',
@@ -4243,6 +4245,7 @@ MOD.langs = {
       ['A mounted copy. Not the one you carry.'] = '固定版本。不是你攜帶的那把。',
       ['A preset keeps every change you have made as one set, under a name you choose.'] = '預設會把你所有的修改作為一組儲存，並取一個你指定的名字。',
       ['A preset keeps every enemy and spawning change as one custom difficulty, under a name you choose. Your weapon changes are kept apart.'] = '預設會把所有敵人與生成的改動儲存為一個自定義難度，名稱由你決定。武器改動單獨儲存。',
+      ['A value changed on an enemy\'s own page stays red: this page leaves it as it is.'] = '在敵人自己頁面上更改的數值保持紅色：此頁面不會改動它。',
       ['A/AC-8 Autocannon Sentry'] = 'A/AC-8 哨戒機炮',
       ['A/ARC-3 Tesla Tower'] = 'A/ARC-3 特斯拉塔',
       ['A/FLAM-40 Flame Sentry'] = 'A/FLAM-40 火焰火箭炮',
@@ -4657,6 +4660,7 @@ MOD.langs = {
       ['Emplacement'] = '炮台',
       ['Emplacement: its cooldown, its body, then its weapon.'] = '炮台：依次為冷卻時間、本體、武器。',
       ['Emplacements'] = '部署設施',
+      ['Enemies and values this page changes are marked in blue in the list and on their pages.'] = '此頁面更改的敵人和數值在列表和其頁面中以藍色標出。',
       ['Enemy Editor'] = '敵人編輯器',
       ['Enemy cap (x)'] = '敵人數量上限 (x)',
       ['Enemy detection range'] = '敵人偵測範圍',
@@ -7693,6 +7697,7 @@ MOD.langs = {
       ['A mounted copy. Not the one you carry.'] = 'Станковая копия. Не то, что вы носите.',
       ['A preset keeps every change you have made as one set, under a name you choose.'] = 'Пресет хранит все ваши изменения одним набором под выбранным вами именем.',
       ['A preset keeps every enemy and spawning change as one custom difficulty, under a name you choose. Your weapon changes are kept apart.'] = 'Пресет хранит все изменения врагов и их появления как свой уровень сложности под выбранным вами именем. Изменения оружия хранятся отдельно.',
+      ['A value changed on an enemy\'s own page stays red: this page leaves it as it is.'] = 'Значение, изменённое на странице самого врага, остаётся красным: эта страница его не трогает.',
       ['A/AC-8 Autocannon Sentry'] = 'A/AC-8 «Турель с автопушкой»',
       ['A/ARC-3 Tesla Tower'] = 'A/ARC-3 «Тесла-башня»',
       ['A/FLAM-40 Flame Sentry'] = 'A/FLAM-40 Турель-огнемет',
@@ -8084,6 +8089,7 @@ MOD.langs = {
       ['Emancipator Exosuit'] = 'Экзокостюм «Благодетель»',
       ['Emplacement'] = 'Огневая позиция',
       ['Emplacement: its cooldown, its body, then its weapon.'] = 'Огневая позиция: перезарядка, корпус, затем оружие.',
+      ['Enemies and values this page changes are marked in blue in the list and on their pages.'] = 'Враги и значения, изменённые этой страницей, отмечены синим в списке и на их страницах.',
       ['Enemy Editor'] = 'Редактор врагов',
       ['Enemy cap (x)'] = 'Предел числа врагов (x)',
       ['Enemy detection range'] = 'Дальность обнаружения врагов',
@@ -14727,6 +14733,11 @@ function MOD.enemy.faction_resolve(entry)
                           add and 1 or 0.05, add and 1 or 0.25)
         r.faction, r.add, r.note = s, add or nil, s[6]
         lead.field.signed = add or nil
+        if s == MOD.enemy.FACTION_STATS[#MOD.enemy.FACTION_STATS] then   -- under the last row: the blue marks
+            r.after = { 'Enemies and values this page changes are marked in blue in the list and on their pages.',
+                        "A value changed on an enemy's own page stays red: this page leaves it as it is." }
+            r.after_h = #r.after * 16 + 6
+        end
     end
 end
 
@@ -15693,7 +15704,7 @@ end
 -- saved values are applied and after every change (MOD.enemy.refresh_due).
 function MOD.enemy.faction_refresh()
     MOD.enemy.refresh_due = nil
-    local owned = {}
+    local owned, by_all, covered = {}, {}, {}
     for _, o in ipairs(overrides) do
         local page = by_hash[o.hash]
         local p = page and not (page.enemy and page.enemy.faction) and page.by_id[o.id]
@@ -15726,24 +15737,85 @@ function MOD.enemy.faction_refresh()
                 local v = read_field(r.parts[1].field) or (r.add and 0 or 1)
                 for _, f in ipairs(page.enemy.targets[r.id].list) do
                     local d = default_of(f)
-                    if d ~= nil and not owned[f.key] then
-                        local new = d * v
-                        if r.add then new = math.max(0, math.min(10, d + v)) end
-                        if f.storage == 'u32' then new = math.floor(new + 0.5) end
-                        if f.limit then new = math.min(new, f.limit) end
+                    local new = d and d * v
+                    if d and r.add then new = math.max(0, math.min(10, d + v)) end
+                    if new and f.storage == 'u32' then new = math.floor(new + 0.5) end
+                    if new and f.limit then new = math.min(new, f.limit) end
+                    local moved = new and math.abs(new - d) > 1e-4 * math.max(1, math.abs(d))
+                    if moved then covered[f.key] = true end
+                    if new and not owned[f.key] then
                         local now = read_field(f)
                         if now == nil or math.abs(now - new) > 1e-4 * math.max(1, math.abs(new)) then write_field(f, new) end
+                        if moved then by_all[f.key] = true end
                     end
                 end
             end
         end
     end
+    -- the pages with a value only a faction-wide row changed (their name in the list: MOD.enemy.ALL_INK)
+    local pages = {}
+    for _, page in ipairs(weapons) do
+        if page.enemy and not page.enemy.faction then
+            for _, r in ipairs(page.rows) do
+                if MOD.enemy.by_all_value(r, by_all, owned) then pages[page.hash] = true; break end
+            end
+        end
+    end
+    MOD.enemy.by_all, MOD.enemy.owned, MOD.enemy.by_all_pages, MOD.enemy.covered = by_all, owned, pages, covered
+    -- a page's value kept at the game's own (MOD.enemy.keep_own) once no faction-wide row moves it: dropped
+    local kept = {}
+    for _, o in ipairs(overrides) do
+        local page = by_hash[o.hash]
+        local p = page and page.enemy and not page.enemy.faction and page.by_id[o.id]
+        local d = p and p.field and default_of(p.field)
+        if not (d and not covered[p.field.key] and math.abs(o.value - d) < 1e-4) then kept[#kept + 1] = o end
+    end
+    if #kept < #overrides then overrides = kept; mark_config_dirty() end
+end
+
+-- A row's value when only a faction-wide row changed it (none of its fields has a change of a page's own), else
+-- nil. A multiplier row: the factor its fields got (its own value stays the game's 1).
+function MOD.enemy.by_all_value(row, by_all, owned)
+    by_all, owned = by_all or MOD.enemy.by_all, owned or MOD.enemy.owned
+    if not by_all then return nil end
+    local hit = nil
+    for _, p in ipairs(row.parts) do
+        if p.field and owned[p.field.key] then return nil end
+        if p.field and by_all[p.field.key] then hit = hit or p end
+    end
+    if not hit then return nil end
+    if row.lead then
+        if row.parts[1] == hit then return row_value(row) end
+        local d, v = default_of(hit.field), read_field(hit.field)
+        if not (d and v) or d == 0 or v == 0 then return nil end
+        return row.inverse and d / v or v / d
+    end
+    return row_value(row)
 end
 
 -- The value to keep as a change: nil when it is the game's own.
 local function unless_default(value, default)
     if default ~= nil and math.abs(value - default) < 1e-4 then return nil end
     return value
+end
+
+-- The value to keep as a page's own change: its game value too where an 'All <faction>' row moves the field
+-- (set back to the game's value on purpose: kept, so the faction-wide row leaves it), else unless_default's.
+function MOD.enemy.keep_own(weapon, p, value, default)
+    if weapon.enemy and not weapon.enemy.faction and p.field and MOD.enemy.covered and MOD.enemy.covered[p.field.key] then
+        return value
+    end
+    return unless_default(value, default)
+end
+
+-- Whether a row holds a page's own change at the game's value where a faction-wide row moves it (shown as changed)
+function MOD.enemy.pinned(row)
+    local covered, owned = MOD.enemy.covered, MOD.enemy.owned
+    if not (covered and owned) then return false end
+    for _, p in ipairs(row.parts) do
+        if p.field and covered[p.field.key] and owned[p.field.key] then return true end
+    end
+    return false
 end
 
 -- A multiplier row's fields written from its own value (a preset holding only that: the examples).
@@ -16673,7 +16745,7 @@ local function change(row, delta_sign, big, exact)
         if new ~= nil then ok, why = write_field(p.field, new) end
         local d = defaults[p.field.key]
         if ok then
-            set_override(weapon, p, unless_default(new, d))
+            set_override(weapon, p, MOD.enemy.keep_own(weapon, p, new, d))
         else
             log('write refused: ' .. weapon.name .. ' ' .. p.id .. ': ' .. why)
         end
@@ -17035,7 +17107,8 @@ do
             for _, p in ipairs(row.parts) do
                 local v, d = p.field.pending_value or read_field(p.field), default_of(p.field)   -- a grenade still loading counts
                 local own = mine[p.field.key]
-                if own and v and d and math.abs(v - d) > 1e-4 then out[#out + 1] = { id = p.id, value = own } end
+                local pin = weapon.enemy and MOD.enemy.covered and MOD.enemy.covered[p.field.key]   -- (a faction-wide row's exception)
+                if own and v and d and (pin or math.abs(v - d) > 1e-4) then out[#out + 1] = { id = p.id, value = own } end
             end
         end
         return out
@@ -17205,7 +17278,8 @@ do
                 local d = default_of(p.field)
                 ok, why = write_field(p.field, o.value)
                 if p.field.storage == 'grenade' and why == 'grenade assets loading' then ok = true end   -- applied once loaded
-                if ok then set_override(weapon, p, unless_default(o.value, d)) end
+                -- (an enemy page's value at the game's own: kept, as a faction-wide row's exception)
+                if ok then set_override(weapon, p, (weapon.enemy and not weapon.enemy.faction) and o.value or unless_default(o.value, d)) end
                 if ok and #parts == 1 and p.row and p.row.mult and p.row.parts[1] == p then MOD.enemy.mult_fields(weapon, p.row, o.value) end
             end
             if not ok then refused = refused + 1; log('preset "' .. preset.name .. '": ' .. (weapon and weapon.name or o.hash) .. ' ' .. o.id .. ': ' .. tostring(why)) end
@@ -17269,6 +17343,7 @@ local function draw(width, height)
         return nil
     end
     local GOLD, WHITE, MUTED, DIM = MOD.enemy.on and color(255, 72, 60) or color(255, 213, 0), color(238, 242, 246), color(153, 171, 184), color(95, 108, 120)
+    MOD.enemy.ALL_INK = MOD.enemy.ALL_INK or color(120, 200, 255)   -- a value only an 'All <faction>' row changed
     local WARN, GOOD = color(255, 150, 60), color(120, 220, 140)
 
     local function rect(x, y, w, h, c, z)
@@ -17481,6 +17556,8 @@ local function draw(width, height)
         if selected then rect(16, y, 318, 25, (MOD.enemy.on and color(96, 20, 16) or color(90, 74, 8)), 951)
         elseif ui.hover == key then rect(16, y, 318, 25, color(40, 52, 64), 951) end
         local changed = modified(weapon)
+        local ink = changed and GOLD or WHITE
+        if not changed and MOD.enemy.by_all_pages and MOD.enemy.by_all_pages[weapon.hash] then changed, ink = true, MOD.enemy.ALL_INK end
         -- a stratagem: its number as an extra stratagem after its name
         if (weapon.stratagem or weapon.sentry_defs) and not MOD.extra.list then MOD.extra.choices() end
         local id = weapon.extra_id and ' (' .. weapon.extra_id .. ')' or ''
@@ -17498,9 +17575,9 @@ local function draw(width, height)
             rest = rest:gsub('^%l', string.upper)
                        :gsub('^\208([\176-\191])', function(c) return '\208' .. string.char(c:byte() - 32) end)   -- а-п
                        :gsub('^\209([\128-\143])', function(c) return '\208' .. string.char(c:byte() + 32) end)   -- р-я
-            text((changed and '* ' or '') .. rest .. id, 44, y + 5, 14, changed and GOLD or WHITE, searching and 206 or 282)
+            text((changed and '* ' or '') .. rest .. id, 44, y + 5, 14, ink, searching and 206 or 282)
         else
-            text((changed and '* ' or '') .. settings.tr(weapon.name) .. id, 24, y + 4, 16, changed and GOLD or WHITE, searching and 226 or 302)
+            text((changed and '* ' or '') .. settings.tr(weapon.name) .. id, 24, y + 4, 16, ink, searching and 226 or 302)
         end
         region(key, 16, y, 318, 25)
     end
@@ -17761,6 +17838,14 @@ local function draw(width, height)
                 end
                 local value, default = row_value(row), row_value(row, true)
                 local changed = value ~= nil and default ~= nil and math.abs(value - default) > 1e-4
+                -- changed only by an 'All <faction>' row: its value in that colour, no Reset (nothing of its own)
+                local by_all = weapon.enemy and not weapon.enemy.faction and MOD.enemy.by_all_value(row)
+                local ink = changed and GOLD or WHITE
+                if by_all and default ~= nil and math.abs(by_all - default) > 1e-4 then
+                    value, ink, changed = by_all, MOD.enemy.ALL_INK, false
+                end
+                local was = value ~= nil and default ~= nil and math.abs(value - default) > 1e-4
+                if not changed and weapon.enemy and MOD.enemy.pinned(row) then changed, ink = true, GOLD end
                 local focus = n == ui.row
                 local bh = pitch - 3
                 if focus then rect(x0 - 6, y - 1, W - x0 - 10, pitch - 1, color(30, 38, 48), 951) end
@@ -17789,7 +17874,7 @@ local function draw(width, height)
                     region('row:' .. n, x0 - 6, y - 1, 430, pitch - 1)
                     region('value:' .. n, 572, y, 212, bh, value ~= nil)
                 else
-                    text(changed and ('was ' .. fmt(default, row.storage)) or '', 690, y + bh / 2 - 7, 14, DIM, 90, true)
+                    text(was and ('was ' .. fmt(default, row.storage)) or '', 690, y + bh / 2 - 7, 14, DIM, 90, true)
                     local typing = ui.value and ui.value.n == n and ui.value.weapon == weapon
                     if typing or (ui.hover == 'value:' .. n and value ~= nil) then
                         rect(696, y, 88, bh, typing and color(20, 26, 34) or color(40, 52, 64), 951)
@@ -17798,7 +17883,7 @@ local function draw(width, height)
                     if typing then
                         text(ui.value.text .. '_', 780, y + bh / 2 - 8, 17, WHITE, 84, true)
                     else
-                        text(fmt(value, row.storage), 780, y + bh / 2 - 8, 17, changed and GOLD or WHITE, 84, true)
+                        text(fmt(value, row.storage), 780, y + bh / 2 - 8, 17, ink, 84, true)
                     end
                     local ok = value ~= nil
                     button('dec_big:' .. n, '--', 790, y, 40, bh, ok)
