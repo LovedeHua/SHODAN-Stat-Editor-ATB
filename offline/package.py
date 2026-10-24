@@ -40,6 +40,16 @@ HOW TO USE
 After a game update, or Steam's "Verify integrity of game files", the game's own files are back:
 start SSEO and press Install again.
 
+OTHER MODS
+SSEO should work alongside mods that change the same game files (other stat or stratagem tools) without
+conflict, as long as they go in first: SSEO keeps their changes and adds yours on top. This is not
+thoroughly tested yet.
+1. Install or apply the other mod.
+2. Start SSEO and press Install.
+3. To change or remove the other mod later, press Restore in SSEO first, change the other mod, then
+   press Install in SSEO again.
+Where both change the same stat, SSEO's value wins.
+
 UPDATES
 At start SSEO asks GitHub for its latest release. When there is a newer one, "Update to v..." appears at the
 top right: it downloads the release, swaps the new files in next to the program and restarts it. Your values,
