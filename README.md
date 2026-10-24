@@ -128,6 +128,9 @@ Give an armor passive the effects of any other passives, as many as you like. On
   not let one armor be changed alone.
 - **Reset passive** clears its stack and turns its own effects back on.
 
+**Armor weight**: on the Armors tab, make any armor light, medium or heavy. Speed and stamina
+follow the weight you pick.
+
 **Helldiver**: first on the Armors tab: health, each body part's health, movement speeds and
 stamina. It changes every helldiver in your game: restore the game's files before joining other
 players' lobbies.
