@@ -2533,6 +2533,7 @@ MOD.langs = {
       ['how much gas it takes to confuse it'] = '使其混乱所需的毒气量',
       ['how much stun it takes to stun it'] = '使其眩晕所需的眩晕量',
       ['how often the beam deals its damage while it touches'] = '光束接触时造成伤害的频率',
+      ['how quickly the view follows your aim at this zoom; lower it if a high zoom spins the view'] = '此倍率下视野跟随瞄准的速度；如果高倍率时视野旋转，请调低',
       ['its height above its flight route; lower flies closer to the ground (terrain still holds it up)'] = '高于飞行路线的高度；越低越贴近地面（地形仍会托住它）',
       ['its own. - / + : fire another weapon\'s'] = '自身弹丸。- / +：改为发射其他武器的弹丸',
       ['ivory legion assault'] = '象牙军团突击',
@@ -3954,6 +3955,7 @@ MOD.langs = {
       { '^Updating: installing (.+)%.%.%.$', '正在更新：安装 %1...' },
       { '^Updated to (.+)%.$', '已更新到 %1。' },
       { '^Add a passive to (.+)$', '为 %1 添加被动' },
+      { '^Zoom level (%d) follow speed$', '倍率等级 %1 跟随速度' },
       { '^Heat level (%d+)$', '热量等级 %1' },
       { '^(.+); ammo type shared with (.+)$', '%1；弹种与以下共用：%L2' },
       { '^fires: (.+)%. The rows above stay its own$', '发射：%1。上方各行仍为其自身数值' },
@@ -6052,6 +6054,7 @@ MOD.langs = {
       ['how much gas it takes to confuse it'] = '使其混亂所需的毒氣量',
       ['how much stun it takes to stun it'] = '使其眩暈所需的眩暈量',
       ['how often the beam deals its damage while it touches'] = '光束接觸時造成傷害的頻率',
+      ['how quickly the view follows your aim at this zoom; lower it if a high zoom spins the view'] = '此倍率下視野跟隨瞄準的速度；如果高倍率時視野旋轉，請調低',
       ['its height above its flight route; lower flies closer to the ground (terrain still holds it up)'] = '高於飛行路線的高度；越低越貼近地面（地形仍會托住它）',
       ['its own. - / + : fire another weapon\'s'] = '自身射彈。- / +：改為發射其他武器的射彈',
       ['ivory legion assault'] = '象牙軍團突擊',
@@ -7473,6 +7476,7 @@ MOD.langs = {
       { '^Updating: installing (.+)%.%.%.$', '正在更新：安裝 %1...' },
       { '^Updated to (.+)%.$', '已更新到 %1。' },
       { '^Add a passive to (.+)$', '為 %1 新增被動' },
+      { '^Zoom level (%d) follow speed$', '倍率等級 %1 跟隨速度' },
       { '^Heat level (%d+)$', '熱量等級 %1' },
       { '^(.+); ammo type shared with (.+)$', '%1；彈種與以下共用：%L2' },
       { '^fires: (.+)%. The rows above stay its own$', '發射：%1。上方各行仍為其自身數值' },
@@ -9441,6 +9445,7 @@ MOD.langs = {
       ['how much gas it takes to confuse it'] = 'сколько газа нужно, чтобы его дезориентировать',
       ['how much stun it takes to stun it'] = 'сколько оглушения нужно, чтобы его оглушить',
       ['how often the beam deals its damage while it touches'] = 'как часто луч наносит урон при касании',
+      ['how quickly the view follows your aim at this zoom; lower it if a high zoom spins the view'] = 'как быстро прицел следует за наведением на этом увеличении; уменьшите, если на большом увеличении прицел крутится',
       ['its height above its flight route; lower flies closer to the ground (terrain still holds it up)'] = 'высота над маршрутом полёта; ниже — ближе к земле (рельеф всё равно не даёт опуститься)',
       ['its own. - / + : fire another weapon\'s'] = 'свой. - / + : стрелять снарядом другого оружия',
       ['ivory legion assault'] = 'Костяной легион, штурм',
@@ -10248,6 +10253,7 @@ MOD.langs = {
       { '^Updated to (.+)%.$', 'Обновлено до %1.' },
       { '^Add a passive to (.+)$', 'Добавить пассивный эффект к %1' },
       { '^Not installed: the armor passives could not be stacked %((.+)%)%. Nothing was changed%.$', 'Не установлено: не удалось объединить пассивные эффекты брони (%1). Ничего не изменено.' },
+      { '^Zoom level (%d) follow speed$', 'Увеличение, уровень %1: скорость следования' },
       { '^Heat level (%d+)$', 'Уровень нагрева %1' },
       { '^(.+); ammo type shared with (.+)$', '%1; тип боеприпасов общий с: %L2' },
       { '^fires: (.+)%. The rows above stay its own$', 'стреляет: %1. Строки выше остаются его собственными' },
@@ -11931,8 +11937,8 @@ KINDS[TYPES.items].words = function(t, r)
                 local offset, size, data = peek4(d + at[3] + x * 12), peek4(d + at[3] + x * 12 + 4), peek4(d + at[3] + x * 12 + 8)
                 if renumbered and comp == 236 and offset >= 488 then offset = offset - 8 end
                 for w = 0, size - 4, 4 do
-                    local o = offset + w   -- the weapon's: stat bonuses (+956), and an optic's zoom (+116) and zeroing (+340)
-                    if (comp ~= 236 or (o >= 956 and o < 1020) or (o >= 116 and o <= 124) or (o >= 340 and o <= 348))
+                    local o = offset + w   -- the weapon's: stat bonuses (+956), and an optic's zoom (+116), follow speed (+316) and zeroing (+340)
+                    if (comp ~= 236 or (o >= 956 and o < 1020) or (o >= 116 and o <= 124) or (o >= 316 and o <= 324) or (o >= 340 and o <= 348))
                        and (comp ~= 113 or o == 56) then
                         out[comp .. ':' .. (offset + w)] = at[4] + data + w
                     end
@@ -15149,6 +15155,15 @@ local function resolve(weapon)
         for k = 1, 3 do
             local z = scope and scope['236:' .. (336 + k * 4)]
             if z then add_row(weapon, 'Scope', 'zero' .. k, 'Zeroing distance ' .. k .. ' (m)', 'f32', { { id = 'zero' .. k, field = field_at(TYPES.deltas, z, 'f32', 100000) } }, 0, 5000, 5, 50) end
+        end
+        -- per zoom level: how quickly the view follows your aim (+316; 0.6 on most optics, the 10x sniper scopes'
+        -- 0.8 / 1 / 1.25; high zoom with a high follow speed spins the view, issue #89)
+        for k = 1, 3 do
+            local z = scope and scope['236:' .. (312 + k * 4)]
+            if z then
+                local r = add_row(weapon, 'Scope', 'follow' .. k, 'Zoom level ' .. k .. ' follow speed', 'f32', { { id = 'follow' .. k, field = field_at(TYPES.deltas, z, 'f32', 1000) } }, 0.01, 10, 0.05, 0.25)
+                r.note = 'how quickly the view follows your aim at this zoom; lower it if a high zoom spins the view'
+            end
         end
         return
     end
