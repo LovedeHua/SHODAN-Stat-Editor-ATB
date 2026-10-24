@@ -2007,6 +2007,7 @@ MOD.langs = {
       ['Pyro Trooper'] = '炙焰装甲兵',
       ['Pyrotech'] = '烟花术',
       ['Quasar Cannon'] = '类星体加农炮',
+      ['Quieter for enemies: the noise of the game\'s suppressed guns. No suppressor model, same firing sound.'] = '对敌人更安静：游戏中消音武器的噪音。无消音器模型，射击声音不变。',
       ['R-2 Amendment'] = 'R-2 修正',
       ['R-2124 Constitution'] = 'R-2124 宪法',
       ['R-36 Eruptor'] = 'R-36 爆裂铳',
@@ -2471,6 +2472,7 @@ MOD.langs = {
       ['The explosion the round sets off when it hits something. 0: no explosion.'] = '射弹命中物体时引发的爆炸。0：不爆炸。',
       ['The flamethrower you carry.'] = '你携带的火焰喷射器。',
       ['The game holds at most 2048 rounds in a magazine.'] = '游戏中一个弹匣最多容纳 2048 发。',
+      ['The game treats the weapon as one-handed. On two-handed weapons it breaks the hip-fire animations.'] = '游戏将该武器视为单手武器。双手武器会因此破坏腰射动画。',
       ['The game\'s own files are already in place.'] = '当前已是游戏原始文件。',
       ['The game\'s own files are back. Your values stay saved here (Install puts them in again).'] = '已恢复游戏原始文件。你的数值仍保存在此，点击“写入游戏”可再次写入。',
       ['The game\'s own files are in place. Close the game, then Install to play with your values.'] = '当前为游戏原始文件。关闭游戏后点击“写入游戏”，即可使用修改后的数值。',
@@ -2636,7 +2638,6 @@ MOD.langs = {
       ['backpack charges'] = '背包使用次数',
       ['beam weapon'] = '光束武器',
       ['body parts without their own armor use this'] = '没有自身护甲的身体部位使用此值',
-      ['breaks the hip-fire animations on two-handed weapons'] = '会破坏双手武器的腰射动画',
       ['bull'] = '公牛',
       ['clip'] = '弹夹',
       ['could not start the download'] = '无法开始下载',
@@ -2693,7 +2694,6 @@ MOD.langs = {
       ['overcharge'] = '过充',
       ['panels, mines per panel: lower only (more than the default crashes the game)'] = '布雷批次数、每批地雷数：只能调低（高于默认值会使游戏崩溃）',
       ['phalanx'] = '方阵',
-      ['quieter for enemies (the noise of the game\'s suppressed guns); no suppressor model, same firing sound'] = '对敌人更安静（游戏中消音武器的噪音）；无消音器模型，射击声音不变',
       ['read-back check failed'] = '写入后读回校验失败',
       ['read-back differs'] = '读回内容不一致',
       ['resolving weapons and applying saved values'] = '正在解析武器并应用已保存的数值',
@@ -5549,6 +5549,7 @@ MOD.langs = {
       ['Pyro Trooper'] = '焰火騎兵',
       ['Pyrotech'] = '煙火表演',
       ['Quasar Cannon'] = '類星體大砲',
+      ['Quieter for enemies: the noise of the game\'s suppressed guns. No suppressor model, same firing sound.'] = '對敵人更安靜：遊戲中消音武器的噪音。無消音器模型，射擊聲音不變。',
       ['R-2 Amendment'] = 'R-2 修正',
       ['R-2124 Constitution'] = 'R-2124 憲法',
       ['R-36 Eruptor'] = 'R-36 噴發者',
@@ -6013,6 +6014,7 @@ MOD.langs = {
       ['The explosion the round sets off when it hits something. 0: no explosion.'] = '射彈命中物體時引發的爆炸。0：不爆炸。',
       ['The flamethrower you carry.'] = '你攜帶的火焰噴射器。',
       ['The game holds at most 2048 rounds in a magazine.'] = '遊戲中一個彈匣最多容納 2048 發。',
+      ['The game treats the weapon as one-handed. On two-handed weapons it breaks the hip-fire animations.'] = '遊戲將該武器視為單手武器。雙手武器會因此破壞腰射動畫。',
       ['The game\'s own files are already in place.'] = '當前已是遊戲原始檔案。',
       ['The game\'s own files are back. Your values stay saved here (Install puts them in again).'] = '已恢復遊戲原始檔案。你的數值仍儲存在此，點選「寫入遊戲」可再次寫入。',
       ['The game\'s own files are in place. Close the game, then Install to play with your values.'] = '當前為遊戲原始檔案。關閉遊戲後點選「寫入遊戲」，即可使用修改後的數值。',
@@ -6178,7 +6180,6 @@ MOD.langs = {
       ['backpack charges'] = '背包使用次數',
       ['beam weapon'] = '光束武器',
       ['body parts without their own armor use this'] = '沒有自身護甲的身體部位使用此值',
-      ['breaks the hip-fire animations on two-handed weapons'] = '會破壞雙手武器的腰射動畫',
       ['bull'] = '公牛',
       ['clip'] = '彈夾',
       ['could not start the download'] = '無法開始下載',
@@ -6235,7 +6236,6 @@ MOD.langs = {
       ['overcharge'] = '過充',
       ['panels, mines per panel: lower only (more than the default crashes the game)'] = '佈雷批次數、每批地雷數：只能調低（高於預設值會使遊戲崩潰）',
       ['phalanx'] = '方陣',
-      ['quieter for enemies (the noise of the game\'s suppressed guns); no suppressor model, same firing sound'] = '對敵人更安靜（遊戲中消音武器的噪音）；無消音器模型，射擊聲音不變',
       ['read-back check failed'] = '寫入後讀回校驗失敗',
       ['read-back differs'] = '讀回內容不一致',
       ['resolving weapons and applying saved values'] = '正在解析武器並應用已儲存的數值',
@@ -9022,6 +9022,7 @@ MOD.langs = {
       ['Pyro Trooper'] = 'Пирокавалерист',
       ['Pyrotech'] = 'Пиротех',
       ['Quasar Cannon'] = 'Пушка «Квазар»',
+      ['Quieter for enemies: the noise of the game\'s suppressed guns. No suppressor model, same firing sound.'] = 'Тише для врагов: шум оружия с глушителем из игры. Без модели глушителя, звук выстрела тот же.',
       ['R-2 Amendment'] = 'R-2 Поправка',
       ['R-2124 Constitution'] = 'R-2124 «Конституция»',
       ['R-36 Eruptor'] = 'R-36 «Извергатель»',
@@ -9453,6 +9454,7 @@ MOD.langs = {
       ['The explosion the round sets off when it hits something. 0: no explosion.'] = 'Взрыв, который снаряд вызывает при попадании во что-либо. 0: без взрыва.',
       ['The flamethrower you carry.'] = 'Огнемет, который вы носите.',
       ['The game holds at most 2048 rounds in a magazine.'] = 'Игра вмещает в магазин не более 2048 патронов.',
+      ['The game treats the weapon as one-handed. On two-handed weapons it breaks the hip-fire animations.'] = 'Игра считает оружие одноручным. У двуручного оружия ломает анимации стрельбы от бедра.',
       ['The game\'s own files are already in place.'] = 'Исходные файлы игры уже на месте.',
       ['The game\'s own files are back. Your values stay saved here (Install puts them in again).'] = 'Исходные файлы игры возвращены. Ваши значения сохранены здесь («Установить в игру» вернёт их в игру).',
       ['The game\'s own files are in place. Close the game, then Install to play with your values.'] = 'Сейчас стоят исходные файлы игры. Закройте игру и нажмите «Установить в игру», чтобы играть с вашими значениями.',
@@ -9600,7 +9602,6 @@ MOD.langs = {
       ['assassinate'] = 'убийца',
       ['assault'] = 'штурм',
       ['body parts without their own armor use this'] = 'используется частями тела без своей брони',
-      ['breaks the hip-fire animations on two-handed weapons'] = 'ломает анимации стрельбы от бедра у двуручного оружия',
       ['bull'] = 'бык',
       ['clip'] = 'обойма',
       ['damage: the same as the other rounds (Damage above)'] = 'урон: как у остальных выстрелов («Урон» выше)',
@@ -9638,7 +9639,6 @@ MOD.langs = {
       ['overcharge'] = 'перезаряд',
       ['panels, mines per panel: lower only (more than the default crashes the game)'] = 'секции, мины на секцию: только уменьшать (больше значения по умолчанию — вылет игры)',
       ['phalanx'] = 'фаланга',
-      ['quieter for enemies (the noise of the game\'s suppressed guns); no suppressor model, same firing sound'] = 'тише для врагов (шум оружия с глушителем из игры); без модели глушителя, звук выстрела тот же',
       ['scout walker rider'] = 'пилот шатуна-разведчика',
       ['shared with'] = 'общее с',
       ['shotgun'] = 'дробовик',
@@ -13320,7 +13320,7 @@ local function resolve_gun(weapon, key)
         if (fv == 0 or fv == 1) and ({ [0] = true, [6] = true, [7] = true, [8] = true, [9] = true, [10] = true, [14] = true, [15] = true })[nv] then
             local r = add_row(weapon, 'Handling', 'suppressed', 'Suppressed', 'flag', { quiet, noise }, 0, 1, 1, 1)
             r.lead, r.suppression = true, true
-            r.note = "quieter for enemies (the noise of the game's suppressed guns); no suppressor model, same firing sound"
+            r.tip = { "Quieter for enemies: the noise of the game's suppressed guns. No suppressor model, same firing sound." }
         end
         MOD.spin_rows(weapon, data, record(TYPES.windup))
     end
@@ -13329,8 +13329,8 @@ local function resolve_gun(weapon, key)
         local p = part('one_handed', TYPES.equipment, equipment + 196, 'flag', 1)
         local v = default_of(p.field)
         if v == 0 or v == 1 then
-            add_row(weapon, 'Handling', 'one_handed', 'One-handed', 'flag', { p }, 0, 1, 1, 1).note =
-                'breaks the hip-fire animations on two-handed weapons'
+            add_row(weapon, 'Handling', 'one_handed', 'One-handed', 'flag', { p }, 0, 1, 1, 1).tip =
+                { 'The game treats the weapon as one-handed. On two-handed weapons it breaks the hip-fire animations.' }
         end
     end
     if weapon.key == key and weapon.slot == 'Support' then
