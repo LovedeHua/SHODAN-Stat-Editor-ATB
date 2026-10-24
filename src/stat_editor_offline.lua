@@ -380,6 +380,7 @@ MOD.round_names = {
 MOD.vehicle_parts = {
     [0x04361A85] = 'Left box 0',
     [0x0A3AD217] = 'Right side panel 1',
+    [0x1CA30E1F] = 'Front right wheel hub',
     [0x2374EAE2] = 'Back periscope side 8',
     [0x2739DFAC] = 'Front right cockpit',
     [0x28B43F0A] = 'Right front block',
@@ -413,6 +414,9 @@ MOD.vehicle_parts = {
     [0xCA47A7A9] = 'Front left cockpit',
     [0xD67B6D46] = 'Front hull',
     [0xD7533836] = 'Right box 1',
+    [0xDA4E893D] = 'Back right wheel hub',
+    [0xDCF4D6AF] = 'Back left wheel hub',
+    [0xDDA1B25E] = 'Front left wheel hub',
     [0xE1B844F5] = 'Rear cockpit',
     [0xECD09CBC] = 'Antenna',
     [0xEE2D8C68] = 'Left top block',
@@ -13192,7 +13196,7 @@ end
 
 -- A sentry's or emplacement's body (issue #44), by its entity (`key`): health +0 (with each zone that has a
 -- pool of its own the same size: the emplacements' one zone, 1000 of the HMG's 1000), the durable ratio
--- (+268, with the zones that have the same), then for each destruction level the demolition force that
+-- (+268, with the zones that have the same), the armor (+280, zones +216; sentries and emplacements), then for each destruction level the demolition force that
 -- destroys it (its tier; direct hits: the level's own when set).
 KINDS[TYPES.destruction].body_rows = function(entry, key, section, prefix)
     local ht = tables[TYPES.health]
@@ -13216,6 +13220,9 @@ KINDS[TYPES.destruction].body_rows = function(entry, key, section, prefix)
     local durable = add_row(entry, section, prefix .. 'durable', 'Durable ratio (0-1)', 'f32', follow('durable', 268, 204, 'f32', 1),
                             0, 1, 0.05, 0.1)
     durable.note = "0: hits deal their normal damage, 1: their durable damage (the weapon's lower one)"
+    if prefix == 'unit_' then   -- (issue #86; the deployers have their own Armor row) +280, with the zones that match
+        add_row(entry, section, prefix .. 'armor', 'Armor', 'u32', follow('armor', 280, 216, 'u32', 10), 0, 10, 1, 1)
+    end
     local spec = KINDS[TYPES.destruction]
     local n = spec.ready() and tables[TYPES.destruction_map].index[key]
     local block = n and spec.found[n + 1]
