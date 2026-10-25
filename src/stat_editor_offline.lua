@@ -996,6 +996,144 @@ MOD.langs = {
       ['Arc Thrower'] = '电弧发射器',
       ['Arc chain edits in multiplayer'] = '多人模式下修改电弧连锁',
       ['Arc chains'] = '电弧连锁',
+    ['Lifetime (s)'] = '弹头寿命(秒)',
+    ['Lifetime variation period (s)'] = '寿命波动周期(秒)',
+    ['Stage 1 projectile (id)'] = '第1阶段弹头(ID)',
+    ['Stage 2 projectile (id)'] = '第2阶段弹头(ID)',
+    ['Turn fastest past (deg)'] = '超过该夹角后转得最快(度)',
+    ['Speed P factor'] = '速度 PID·P(直接项)',
+    ['Speed I factor'] = '速度 PID·I(累积项)',
+    ['Speed D factor'] = '速度 PID·D(变化项)',
+    ['Target update (s)'] = '目标刷新间隔(秒)',
+    ['Aim dot minimum (-1: off)'] = '瞄准点积下限(-1 关闭)',
+    ['Arcing flight (javelin)'] = '拱形弹道(标枪式)',
+    ['Stage 3 projectile (id)'] = '第3阶段弹头(ID)',
+    -- statuses added after ArmoryTuningBench's table (no published name)
+    ['Unnamed status 32'] = '未命名状态 32',
+    ['Unnamed status 71'] = '未命名状态 71',
+    ['Unnamed status 72'] = '未命名状态 72',
+    ['Unnamed status 73'] = '未命名状态 73',
+    -- status effect names (ArmoryTuningBench: the 69-entry table)
+    ['Blind'] = '致盲',
+    ['Bleed'] = '流血',
+    ['Deaf'] = '耳聋',
+    ['Confusion'] = '混乱',
+    ['Fire'] = '火焰',
+    ['Fire_Panic'] = '火焰恐慌',
+    ['Lava'] = '熔岩',
+    ['Slowed'] = '减速',
+    ['Rooted'] = '定身',
+    ['Acid Splash'] = '酸液溅射',
+    ['Acid Stream'] = '酸液喷射',
+    ['Thermite'] = '铝热剂',
+    ['Cyborg Fire'] = '机器人火焰',
+    ['Choked'] = '窒息',
+    ['Sand'] = '沙尘',
+    ['Mud'] = '泥沼',
+    ['Snow'] = '积雪',
+    ['Submerged'] = '浸没',
+    ['Thornbush'] = '荆棘丛',
+    ['Cactus'] = '仙人掌',
+    ['Barbwire'] = '铁丝网',
+    ['BushSmall'] = '小灌木丛',
+    ['BushLarge'] = '大灌木丛',
+    ['Pure Damage'] = '纯粹伤害',
+    ['Stim Fx'] = '兴奋剂效果',
+    ['Stim Stamina'] = '耐力兴奋剂',
+    ['Stim Heal'] = '治疗兴奋剂',
+    ['Stim Pistol Heal'] = '手枪治疗兴奋剂',
+    ['Stim Combat Drugs'] = '战斗药物兴奋剂',
+    ['Stim Cooldown'] = '兴奋剂冷却',
+    ['BurningLight'] = '轻度燃烧',
+    ['BurningHeavy'] = '重度燃烧',
+    ['RadiationLight'] = '轻度辐射',
+    ['RadiationHeavy'] = '重度辐射',
+    ['Electric'] = '电击',
+    ['Hidden'] = '隐匿',
+    ['Stun Small'] = '轻微眩晕',
+    ['Stun Medium'] = '中等眩晕',
+    ['Stun Large'] = '重度眩晕',
+    ['Stun Massive'] = '超大眩晕',
+    ['Stun Illuminate'] = '光明眩晕',
+    ['Gas'] = '毒气',
+    ['Gas'] = '毒气mk2',
+    ['Gas_Confusion'] = '混乱毒气',
+    ['Gas_Confusion'] = '混乱毒气mk2',
+    ['Inverted_Aim_Assist'] = '反向瞄准辅助',
+    ['Flashlighted'] = '被探照',
+    ['Smoke_Covered'] = '烟雾笼罩',
+    ['Backpack Chemicals'] = '背包化学品',
+    ['Intense Heat'] = '高温炙烤',
+    ['Extreme Cold'] = '极端寒冷',
+    ['Tremor'] = '地面震颤',
+    ['Sandstorm'] = '沙暴',
+    ['Blizzard'] = '暴风雪',
+    ['Acid Storm'] = '酸雨风暴',
+    ['Weather Insulated'] = '天气隔绝',
+    ['TornadoStun'] = '龙卷风眩晕',
+    ['Dark Fluid'] = '暗流体',
+    ['Death March'] = '死亡行军',
+    ['Hotshot Laser Rifle'] = '速射激光步枪',
+    ['Hotshot Laser Rifle'] = '速射激光步枪',
+    ['Hotshot Laser Rifle'] = '速射激光步枪',
+    ['Illuminate Scrambler'] = '光明干扰器',
+    ['Constitution'] = '体质强化',
+    ['Constitution Booster Armor Resistance'] = '体质强化免疫',
+    ['Post Mortem Explosion'] = '死后爆炸',
+    ['FlamerSlowed'] = '减速火焰',
+    ['Gloom'] = '阴霾',
+    ['Dark Fluid'] = '暗流体MK2',
+    ['Better stratagem bounce'] = '战备球弹跳优化',
+    ['better stratagem bounce'] = '战备球弹跳优化',
+    ['On: stratagem balls stick on more surfaces instead of bouncing off.'] = '开启：战备球会粘住更多表面，不再弹开。',
+    ['on: stratagem balls stick on more surfaces instead of bouncing off.'] = '开启：战备球会粘住更多表面，不再弹开。',
+    ['Foliage pass-through'] = '植被穿透',
+    ['foliage pass-through'] = '植被穿透',
+    ['On: your rockets, launcher rounds and stratagem ordnance fly through tree canopies and bushes.'] = '开启：你的火箭、发射器弹药与战备弹药会穿过树冠和灌木。',
+    ['on: your rockets, launcher rounds and stratagem ordnance fly through tree canopies and bushes.'] = '开启：你的火箭、发射器弹药与战备弹药会穿过树冠和灌木。',
+    ['Same code as {name}, which is in every mission: not set.'] = '与 {name} 相同，而它在每个任务里都会出现：不能这样设置。',
+    ["{name}'s code starts with that one, and it is in every mission: not set."] = '{name} 的代码以这段开头，而它在每个任务里都会出现：不能这样设置。',
+    ["That code starts with {name}'s, which is in every mission: not set."] = '这段代码以 {name} 的代码开头，而它在每个任务里都会出现：不能这样设置。',
+    ['Same code as {names}: bring only one of them.'] = '与 {names} 相同：只能带其中一个。',
+    ["{names} can't be called while this one is ready: their codes start with it."] = '这段就绪时 {names} 无法呼叫：它们的代码以这段开头。',
+    ["This one can't be called while {names} is ready: its code starts with theirs."] = '{names} 就绪时这段无法呼叫：它的代码以对方的开头。',
+    ['{list} and others'] = '{list} 等',
+    ['Back to the editor'] = '返回',
+    ['Write access'] = '写入权限',
+    ['Restart as administrator'] = '以管理员身份重启',
+    ['Install could not write into the game folder: Windows gave this program no permission.'] = '写入游戏时被系统拒绝：这个程序没有游戏目录的写权限。',
+    ['Restarting with the administrator\'s rights...'] = '正在以管理员身份重启……',
+    ['Could not restart:'] = '无法重启：',
+    ['Shield bash'] = '盾击',
+    ['Shield bash damage'] = '盾击伤害',
+    ['Shield bash durable damage'] = '盾击耐久伤害',
+    ['Theme'] = '主题',
+    ['Dark'] = '深色',
+    ['Light'] = '浅色',
+    ['Export'] = '导出',
+    ['From copy'] = '从副本',
+    ['No self damage (1 = the shooter is safe)'] = '无自伤(1=不伤射手)',
+    ['Arcs per shot'] = '电弧数量',
+    ['Arc speed'] = '电弧飞行速度',
+    ['Arc spread cap (deg)'] = '最大散布角(度)',
+    ['Arc linger time (s)'] = '电弧残留(秒)',
+    ['Shield bash stagger force'] = '盾击硬直力',
+    ['Config folder'] = '配置文件夹',
+    ['Change folder'] = '更换文件夹',
+    ['Default folder'] = '默认文件夹',
+    ['Config copies'] = '配置副本',
+    ['Export config'] = '导出配置',
+    ['Restore backup'] = '恢复上次',
+    ['From keep copy'] = '从副本恢复',
+    ['From export'] = '从导出恢复',
+    ['Export: a dated copy into exports. Restore: replace config.txt (a restart reads it).'] = '导出：把带日期的副本写进 exports；恢复：用选中文件替换 config.txt（重启后生效）。',
+    ['Restart to use:'] = '重启后使用：',
+    ['Could not change it:'] = '切换失败：',
+    ['Default folder next start'] = '下次启动改用默认文件夹',
+    ['Exported:'] = '已导出：',
+    ['Export failed:'] = '导出失败：',
+    ['Imported (restart to apply):'] = '已导入（重启后生效）：',
+    ['Import failed:'] = '导入失败：',
       ['Arc chains use the game\'s values while other players are in your game (see Settings).'] = '对局中有其他玩家时，电弧连锁使用游戏原值（详见设置）。',
       ['Arc damage taken'] = '受到的电弧伤害',
       ['Arc splits'] = '电弧分裂',
@@ -1158,6 +1296,10 @@ MOD.langs = {
       ['CQC-73 Entrenchment Tool'] = 'CQC-73 堑壕工具',
       ['CQC-9 Defoliation Tool'] = 'CQC-9 除叶工具',
       ['Calibre (mm)'] = '口径(毫米)',
+    ['Call-in code'] = '呼叫代码',
+    ['Record'] = '录制',
+    ['Done'] = '完成',
+    ['Enter the code...'] = '输入代码…',
       ['Call IN Destroyer'] = '呼叫驱逐舰',
       ['Caltrops'] = '铁蒺藜',
       ['Camera shake radius (m)'] = '镜头震动半径(米)',
@@ -1222,6 +1364,8 @@ MOD.langs = {
       ['Cool-down time, full heat (s)'] = '满热量冷却时间（秒）',
       ['Cooldown (s)'] = '冷却时间(秒)',
       ['Cooling (% per s)'] = '散热(每秒%)',
+    ['Cool rate (heat per second)'] = '散热速度(每秒)',
+    ['Cool rate after overheat (heat per second)'] = '过热后散热速度(每秒)',
       ['Copy'] = '复制',
       ['Countdown before delivery (s)'] = '投送前倒计时（秒）',
       ['Coyote'] = '野狼',
@@ -1928,6 +2072,32 @@ MOD.langs = {
       ['Outpost garrison size (x)'] = '前哨驻军规模 (x)',
       ['Outposts and spawners'] = '前哨与生成点',
       ['Overcharge limit (s)'] = '过载上限(秒)',
+      -- ArmoryTuningBench additions: the charge's firing behaviour
+      ['Fires by itself at full charge'] = '蓄满自动开火',
+      ['Explodes at the third charge time'] = '第三档蓄力时间爆炸',
+      ['Shots fired on release'] = '释放连发次数',
+      ['Interval between those shots (s)'] = '释放连发间隔(秒)',
+      -- ArmoryTuningBench additions: ricochet
+      ['Ricochet'] = '跳弹',
+      ['Surface impact effect (id)'] = '地表撞击特效(id)',
+      ['Ricochet impact effect (id)'] = '跳弹撞击特效(id)',
+      ['Max ricochets'] = '最大跳弹次数',
+      ['Ricochet threshold angle (deg)'] = '跳弹阈值角(度)',
+      ['Ricochet threshold speed (m/s)'] = '跳弹阈值速度(米/秒)',
+      ['Angle lost per ricochet (deg)'] = '每次跳弹损失角度(度)',
+      ['Ricochet spread, vertical (deg)'] = '跳弹纵向散布(度)',
+      ['Ricochet spread, horizontal (deg)'] = '跳弹横向散布(度)',
+      -- ArmoryTuningBench additions: fire modes + crosshair
+      ['Fire mode 1'] = '主开火模式',
+      ['Fire mode 2'] = '次开火模式',
+      ['Fire mode 3'] = '第三开火模式',
+      ['Rounds per burst'] = '连发数',
+      ['Fires every node at once'] = '同时击发（每节点各一发）',
+      ['Function input, left'] = '功能输入·左',
+      ['Function input, right'] = '功能输入·右',
+      ['Crosshair'] = '准星',
+      ['Crosshair type'] = '准星类型',
+      ['Always show the crosshair'] = '总是显示准星',
       ['Overheat threshold'] = '过热阈值',
       ['Overseer'] = '监视者',
       ['Overship'] = '统御舰',
@@ -2591,7 +2761,7 @@ MOD.langs = {
       ['Vox Engine'] = '噪轰引擎',
       ['W.A.S.P. Launcher'] = 'W.A.S.P.发射器',
       ['WEAPON STATS'] = '武器数值',
-      ['WIND-UP'] = '转管加速',
+      ['WIND-UP'] = '预热',
       ['Walk / run speed'] = '行走 / 奔跑速度',
       ['Walk speed (m/s)'] = '步行速度(米/秒)',
       ['Walking Barrage Smoke'] = '移动弹幕烟雾',
@@ -2610,10 +2780,10 @@ MOD.langs = {
       ['Weapon stats'] = '武器数值',
       ['Weaves'] = '蛇形飞行',
       ['What goes off when they die. Each explosion is shared by every enemy that uses it.'] = '它们死亡时引发的爆炸。每种爆炸由所有使用它的敌人共用。',
-      ['Wind-down time (s)'] = '转管减速时间（秒）',
+      ['Wind-down time (s)'] = '减速时间（秒）',
       ['Wind-down time, released (s)'] = '松开扳机后减速时间（秒）',
-      ['Wind-up'] = '转管加速',
-      ['Wind-up time (s)'] = '转管加速时间（秒）',
+      ['Wind-up'] = '预热',
+      ['Wind-up time (s)'] = '预热时间（秒）',
       ['Wings'] = '翼',
       ['Wretch'] = '悲怜体',
       ['Xenobite Ardent'] = '炽热异噬者',
@@ -4017,9 +4187,9 @@ MOD.langs = {
       ['weapon stats'] = '武器数值',
       ['weapon\'s fire rate, ammo, handling and heat. to tune the shot, edit the chosen weapon.'] = '射速、弹药、操控和热量保持不变。要调整弹丸，请编辑所选武器。',
       ['what each hit applies; the slots go in order'] = '每次命中施加的状态；状态槽需按顺序填写',
-      ['wind-down time (s)'] = '转管减速时间（秒）',
-      ['wind-up'] = '转管加速',
-      ['wind-up time (s)'] = '转管加速时间（秒）',
+      ['wind-down time (s)'] = '减速时间（秒）',
+      ['wind-up'] = '预热',
+      ['wind-up time (s)'] = '预热时间（秒）',
       ['wretch'] = '悲怜体',
       ['xenobite ardent'] = '炽热异噬者',
       ['your changes are off: turn them on in settings to edit.'] = '你的改动当前处于关闭状态：请在设置里开启后再编辑。',
@@ -4538,6 +4708,54 @@ MOD.langs = {
       ['Arc Thrower'] = '電弧發射器',
       ['Arc chain edits in multiplayer'] = '多人模式下修改電弧連鎖',
       ['Arc chains'] = '電弧連鎖',
+    ['Better stratagem bounce'] = '戰備球彈跳優化',
+    ['better stratagem bounce'] = '戰備球彈跳優化',
+    ['On: stratagem balls stick on more surfaces instead of bouncing off.'] = '開啟：戰備球會黏住更多表面，不再彈開。',
+    ['on: stratagem balls stick on more surfaces instead of bouncing off.'] = '開啟：戰備球會黏住更多表面，不再彈開。',
+    ['Foliage pass-through'] = '植被穿透',
+    ['foliage pass-through'] = '植被穿透',
+    ['On: your rockets, launcher rounds and stratagem ordnance fly through tree canopies and bushes.'] = '開啟：你的火箭、發射器彈藥與戰備彈藥會穿過樹冠和灌木。',
+    ['on: your rockets, launcher rounds and stratagem ordnance fly through tree canopies and bushes.'] = '開啟：你的火箭、發射器彈藥與戰備彈藥會穿過樹冠和灌木。',
+    ['Same code as {name}, which is in every mission: not set.'] = '與 {name} 相同，而它在每個任務裡都會出現：不能這樣設定。',
+    ['Back to the editor'] = '返回',
+    ['Write access'] = '寫入權限',
+    ['Restart as administrator'] = '以管理員身分重新啟動',
+    ['Install could not write into the game folder: Windows gave this program no permission.'] = '寫入遊戲時被系統拒絕：這個程式沒有遊戲資料夾的寫入權限。',
+    ['Restarting with the administrator\'s rights...'] = '正在以管理員身分重新啟動……',
+    ['Could not restart:'] = '無法重新啟動：',
+    ['Shield bash'] = '盾擊',
+    ['Shield bash damage'] = '盾擊傷害',
+    ['Shield bash durable damage'] = '盾擊耐久傷害',
+    ['Export'] = '匯出',
+    ['From copy'] = '從副本',
+    ['No self damage (1 = the shooter is safe)'] = '無自傷(1=不傷射手)',
+    ['Arcs per shot'] = '電弧數量',
+    ['Arc speed'] = '電弧飛行速度',
+    ['Arc spread cap (deg)'] = '最大散佈角(度)',
+    ['Arc linger time (s)'] = '電弧殘留(秒)',
+    ['Shield bash stagger force'] = '盾擊硬直力',
+    ['Config folder'] = '設定資料夾',
+    ['Change folder'] = '更換資料夾',
+    ['Default folder'] = '預設資料夾',
+    ['Config copies'] = '設定副本',
+    ['Export config'] = '匯出設定',
+    ['Restore backup'] = '還原上次',
+    ['From keep copy'] = '從副本還原',
+    ['From export'] = '從匯出還原',
+    ['Export: a dated copy into exports. Restore: replace config.txt (a restart reads it).'] = '匯出：把帶日期的副本寫進 exports；還原：用選中檔案替換 config.txt（重新啟動後生效）。',
+    ['Restart to use:'] = '重新啟動後使用：',
+    ['Could not change it:'] = '切換失敗：',
+    ['Default folder next start'] = '下次啟動改用預設資料夾',
+    ['Exported:'] = '已匯出：',
+    ['Export failed:'] = '匯出失敗：',
+    ['Imported (restart to apply):'] = '已匯入（重新啟動後生效）：',
+    ['Import failed:'] = '匯入失敗：',
+    ["{name}'s code starts with that one, and it is in every mission: not set."] = '{name} 的代碼以這段開頭，而它在每個任務裡都會出現：不能這樣設定。',
+    ["That code starts with {name}'s, which is in every mission: not set."] = '這段代碼以 {name} 的代碼開頭，而它在每個任務裡都會出現：不能這樣設定。',
+    ['Same code as {names}: bring only one of them.'] = '與 {names} 相同：只能帶其中一個。',
+    ["{names} can't be called while this one is ready: their codes start with it."] = '這段就緒時 {names} 無法呼叫：它們的代碼以這段開頭。',
+    ["This one can't be called while {names} is ready: its code starts with theirs."] = '{names} 就緒時這段無法呼叫：它的代碼以對方的開頭。',
+    ['{list} and others'] = '{list} 等',
       ['Arc chains use the game\'s values while other players are in your game (see Settings).'] = '對局中有其他玩家時，電弧連鎖使用遊戲原值（詳見設定）。',
       ['Arc damage taken'] = '受到的電弧傷害',
       ['Arc splits'] = '電弧分裂',
@@ -6133,7 +6351,7 @@ MOD.langs = {
       ['Vox Engine'] = '噪轟引擎',
       ['W.A.S.P. Launcher'] = 'W.A.S.P.火箭發射器',
       ['WEAPON STATS'] = '武器數值',
-      ['WIND-UP'] = '轉管加速',
+      ['WIND-UP'] = '預熱',
       ['Walk / run speed'] = '行走 / 奔跑速度',
       ['Walk speed (m/s)'] = '步行速度(米/秒)',
       ['Walking Barrage Smoke'] = '移動彈幕煙霧',
@@ -6152,10 +6370,10 @@ MOD.langs = {
       ['Weapon stats'] = '武器數值',
       ['Weaves'] = '蛇形飛行',
       ['What goes off when they die. Each explosion is shared by every enemy that uses it.'] = '它們死亡時引發的爆炸。每種爆炸由所有使用它的敵人共用。',
-      ['Wind-down time (s)'] = '轉管減速時間（秒）',
+      ['Wind-down time (s)'] = '減速時間（秒）',
       ['Wind-down time, released (s)'] = '鬆開扳機後減速時間（秒）',
-      ['Wind-up'] = '轉管加速',
-      ['Wind-up time (s)'] = '轉管加速時間（秒）',
+      ['Wind-up'] = '預熱',
+      ['Wind-up time (s)'] = '預熱時間（秒）',
       ['Wings'] = '翼',
       ['Wretch'] = '哀惡者',
       ['Xenobite Ardent'] = '熾燃地獄使者',
@@ -7559,9 +7777,9 @@ MOD.langs = {
       ['weapon stats'] = '武器數值',
       ['weapon\'s fire rate, ammo, handling and heat. to tune the shot, edit the chosen weapon.'] = '射速、彈藥、操控和熱量保持不變。要調整射彈，請編輯所選武器。',
       ['what each hit applies; the slots go in order'] = '每次命中施加的狀態；狀態槽需按順序填寫',
-      ['wind-down time (s)'] = '轉管減速時間（秒）',
-      ['wind-up'] = '轉管加速',
-      ['wind-up time (s)'] = '轉管加速時間（秒）',
+      ['wind-down time (s)'] = '減速時間（秒）',
+      ['wind-up'] = '預熱',
+      ['wind-up time (s)'] = '預熱時間（秒）',
       ['wretch'] = '哀惡者',
       ['xenobite ardent'] = '熾燃地獄使者',
       ['your changes are off: turn them on in settings to edit.'] = '你的改動當前處於關閉狀態：請在設定裡開啟後再編輯。',
@@ -8072,6 +8290,13 @@ MOD.langs = {
       ['Arc Thrower'] = '«Дуговой метатель»',
       ['Arc chain edits in multiplayer'] = 'Цепи дуги в мультиплеере',
       ['Arc chains'] = 'Цепи дуги',
+    ['Export'] = 'Экспорт',
+    ['From copy'] = 'Из копии',
+    ['No self damage (1 = the shooter is safe)'] = 'Без урона стрелку (1 = безопасно)',
+    ['Arcs per shot'] = 'Дуг за выстрел',
+    ['Arc speed'] = 'Скорость дуги',
+    ['Arc spread cap (deg)'] = 'Предел разброса дуги (град)',
+    ['Arc linger time (s)'] = 'Время жизни дуги (с)',
       ['Arc chains use the game\'s values while other players are in your game (see Settings).'] = 'Пока в вашей игре есть другие игроки, цепи дуги используют значения игры (см. Настройки).',
       ['Arc damage taken'] = 'Получаемый урон от дуги',
       ['Arc splits'] = 'Разветвления дуги',
@@ -9588,7 +9813,8 @@ MOD.langs = {
       ['Wind-down time (s)'] = 'Время замедления (с)',
       ['Wind-down time, released (s)'] = 'Время замедления после отпускания (с)',
       ['Wind-up'] = 'Раскрутка',
-      ['Wind-up time (s)'] = 'Время раскрутки (с)',
+      ['Back to the editor'] = 'Назад',
+    ['Wind-up time (s)'] = 'Время раскрутки (с)',
       ['Wings'] = 'Крылья',
       ['Wretch'] = 'Паскуда',
       ['Xenobite Ardent'] = 'Ксенобит-приверженец',
@@ -11327,16 +11553,95 @@ end
 local function hex(n) return string.format('0x%X', n) end
 
 -- ---------------------------------------------------------------- files and log
+MOD.data_dirs = MOD.data_dirs or {}   -- leaf -> resolved folder (false: nowhere writable)
+
+
 local function data_dir(leaf)
-    local base = os.getenv('LOCALAPPDATA')
-    if not base or base == '' then return nil end
-    -- offline: SHODAN\StatEditor (Logs inside), its own; in game: the loader's CowboyBingus\Helldivers2\<leaf>
-    local parts = MOD.offline and { 'SHODAN', 'StatEditor', leaf ~= 'StatEditor' and leaf or nil } or { 'CowboyBingus', 'Helldivers2', leaf }
-    for _, part in ipairs(parts) do
-        base = base .. '/' .. part
-        if not api.mkdir(base) then return nil end
+    -- Where the settings and the saved values live. Nothing inside the program's own folder: replacing
+    -- that folder on an update would take them with it (and this project's build scripts must never have
+    -- to know about them either).
+    local hit = MOD.data_dirs[leaf]
+    if hit ~= nil then return hit or nil end
+    local function writable(dir)
+        local probe = dir .. '/.write-probe'
+        local handle = io.open(probe, 'wb')
+        if not handle then return false end
+        handle:close()
+        os.remove(probe)
+        return true
     end
-    return base
+    local function ensure(dir)
+        if not dir or dir == '' then return nil end
+        if writable(dir) then return dir end
+        if api and api.mkdir then api.mkdir(dir) end                 -- (os.execute can hang in this process)
+        return writable(dir) and dir or nil
+    end
+    local profile = os.getenv('USERPROFILE') or ''
+    -- the folder the program sits in, and the one above it: only ever a last resort
+    local script = (debug.getinfo(1, 'S') or {}).source or ''
+    local own = script:match('^@(.*[/\\])')
+    local beside = own and (own .. '../../SHODAN-Config') or nil
+    local places = MOD.offline and {
+        -- the folder above the program comes first: it is the same one whether the program runs elevated or
+        -- not (the profile folders below are writable for only one of the two, which would split the config)
+        beside,
+        -- a fresh leaf next to upstream's: an existing SHODAN folder can refuse writes (an old install
+        -- under another account, Controlled Folder Access), a new name never does
+        (os.getenv('LOCALAPPDATA') or '') ~= '' and (os.getenv('LOCALAPPDATA') .. '/SHODAN-StatEditor') or nil,
+        (os.getenv('APPDATA') or '') ~= '' and (os.getenv('APPDATA') .. '/SHODAN-StatEditor') or nil,
+        profile ~= '' and (profile .. '/Documents/SHODAN Stat Editor') or nil,
+        (os.getenv('LOCALAPPDATA') or '') ~= '' and (os.getenv('LOCALAPPDATA') .. '/SHODAN/StatEditor') or nil,
+        (os.getenv('APPDATA') or '') ~= '' and (os.getenv('APPDATA') .. '/SHODAN/StatEditor') or nil,
+        'StatEditor',
+    } or { (os.getenv('LOCALAPPDATA') or '') .. '/CowboyBingus/Helldivers2' }
+    local legacy = {
+        profile ~= '' and (profile .. '/Documents/SHODAN Stat Editor/config.txt') or nil,
+        (os.getenv('APPDATA') or '') ~= '' and (os.getenv('APPDATA') .. '/SHODAN/StatEditor/config.txt') or nil,
+        (os.getenv('APPDATA') or '') ~= '' and (os.getenv('APPDATA') .. '/SHODAN-StatEditor/config.txt') or nil,
+        (os.getenv('LOCALAPPDATA') or '') ~= '' and (os.getenv('LOCALAPPDATA') .. '/SHODAN/StatEditor/config.txt') or nil,
+        beside and (beside .. '/config.txt') or nil,
+        own and (own .. '../config.txt') or nil,
+        'StatEditor/config.txt',
+    }
+    for n, base in ipairs(places) do
+        local dir = ensure(base)
+        if dir then
+            if MOD.offline and leaf ~= 'StatEditor' then dir = ensure(dir .. '/' .. leaf) end
+            if dir then
+                MOD.data_dirs[leaf] = dir
+                MOD.data_dir_used = dir
+                if n > 3 then MOD.data_fallback = true end
+                if MOD.offline and leaf == 'StatEditor' then
+                    local mine = io.open(dir .. '/config.txt', 'rb')
+                    if mine then mine:close() else
+                        -- first run in this folder: bring the newest earlier config along, wherever the
+                        -- older versions kept it, so an update never looks like a reset
+                        local best, best_at = nil, 0
+                        for _, path in ipairs(legacy) do
+                            local src = path and io.open(path, 'rb') or nil
+                            if src then
+                                local text = src:read('*a')
+                                src:close()
+                                if text and #text > 0 then
+                                    local at = 0
+                                    local probe = io.open(path, 'rb')
+                                    if probe then probe:close() end
+                                    if #text > best_at then best, best_at = { path, text }, #text end
+                                end
+                            end
+                        end
+                        if best then
+                            local out = io.open(dir .. '/config.txt', 'wb')
+                            if out then out:write(best[2]); out:close(); MOD.config_moved_from = best[1] end
+                        end
+                    end
+                end
+                return dir
+            end
+        end
+    end
+    MOD.data_dirs[leaf] = false
+    return nil
 end
 
 -- Saves write <file>.tmp, then swap it in (MoveFileExA: replace existing, write through), so a crash
@@ -11442,7 +11747,7 @@ local TYPES = { arc_weapon = 0xB87BA9ED, arc = 0xAFDF0267, health = 0xB3915DE3, 
                 rack = 0xA98BB156, charge = 0xEAC335A1, jumppack = 0x54270608, recharge = 0x1F42878E,
                 warp = 0xA7813546, deposit = 0xC435BA85, package = 0x7A858691, reload = 0x991D454E,
                 thrower = 0xA29A84D8, minefield = 0x74FEF89A, mine_spawner = 0x0697FED6, bombard = 0xCDBC43D8, eagle = 0x556FF68B,
-                seeking = 0xBF3A6789, windup = 0x84CE7EEE, laser = 0x32528174, avatar = 0x40EF204C }
+                seeking = 0xBF3A6789, targeting = 0x2C0968D2, motion = 0x695B3BE3, rotation = 0xFC7B189D, windup = 0x84CE7EEE, laser = 0x32528174, avatar = 0x40EF204C }
 local KINDS = {
     [T_WEAPON] = { name = 'weapon', stride = 1232, keyed = true, layouts = { { stride = 1240 } } },
     [T_MAGAZINE] = { name = 'magazine', stride = 160, keyed = true },
@@ -11550,6 +11855,13 @@ KINDS[TYPES.eagle] = { name = 'eagle', stride = 152, keyed = true,
 -- +68 launch, +72 minimum, +76 cruise speed, +80 acceleration, +88 / +92 turn speed at cruise / slowest.
 -- Records of 272 bytes (FileDiver's layout ends at 252; 264 also fits the table, read off by 8 bytes).
 KINDS[TYPES.seeking] = { name = 'seeking missile', stride = 272, keyed = true }
+-- The seeker grenades' tracking (G-50 Seeker, G-60 Anti-Tank Seeker): a TargetingComponent that ordinary
+-- grenades do not have at all (G-12/G-16/G-6/G-3/G-10/K-2 have no record in this table). 64 bytes; the
+-- 19 members sit exactly where the game typelib puts them, and the two seekers hold identical values, so
+-- the labels below are what the numbers suggest rather than measured behaviour.
+KINDS[TYPES.targeting] = { name = 'tracking', stride = 64, keyed = true }
+KINDS[TYPES.motion] = { name = 'drone motion', stride = 64, keyed = true }
+KINDS[TYPES.rotation] = { name = 'drone rotation', stride = 312, keyed = true }
 KINDS[TYPES.laser] = { name = 'laser designator', stride = 64, keyed = true }
 -- AvatarComponentData (the helldiver's): its move info's speeds and stamina (offsets in MOVE)
 KINDS[TYPES.avatar] = { name = 'avatar', stride = 852, keyed = true }
@@ -12084,6 +12396,54 @@ local function part(id, kind, offset, storage, limit)
     return { id = id, field = field_at(kind, offset, storage, limit) }
 end
 
+-- the ArcInfo rows the panel did not show: no-self-damage (+0x64), how many arcs (+0x60), their speed
+-- (+0x04), the spread cap (+0x14), demolition (+0x58) and how long they linger (+0x38). Both the arc
+-- weapons and explosions that throw arcs (the GL-52's grenade) read the same records.
+-- The "Breakthrough" exosuit's left arm is a shield: its bash goes through the melee ability, which no data
+-- table links to, but the damage it deals is the ordinary damage record 251 (500 / 500, direct armour pen 4,
+-- the other angles 0, demolition 30, stagger 45, push 20: the armory's own card). These rows point at it.
+function MOD.shield_bash_rows(entry)
+    local damage = tables[T_DAMAGE]
+    local drow = damage and damage.index and damage.index[251]
+    if not drow or not entry then return end
+    local name = tostring(entry.name or '')
+    local hash = tostring(entry.hash or ''):upper():gsub('^0X', '')
+    -- two pages carry this: the exosuit's own stratagem page, and the shield as a weapon ("… : 左臂").
+    -- The name alone is not enough: the right arm's page is called "… : Right arm" of the same exosuit.
+    local is_shield = hash == '65489809A8181B96'
+    local is_exosuit_page = entry.stratagem ~= nil and (name:find('Breakthrough') or name:find('突破')) ~= nil
+    if not (is_shield or is_exosuit_page) then return end
+    -- the whole damage record, as the Damage section of a weapon: damage, durable damage, the four armour
+    -- penetration angles, demolition, stagger and push
+    if not MOD.damage_rows then return end
+    MOD.damage_rows(entry, 'Shield bash', 'sb_', drow, 'Shield bash')
+    log('shield bash: 9 rows on ' .. name .. ' (damage record 251)')
+end
+
+function MOD.arc_extra(page, arow, prefix, section)
+    prefix, section = prefix or '', section or 'Arc'
+    -- A page can reach arcs twice (an arc component and an explosion that throws arcs, sometimes through two
+    -- different ArcSettings records with the same values): one row per stat per section, whatever record it
+    -- came from. A second 'Demolition' under 'Arc' only confuses.
+    page.arc_seen = page.arc_seen or {}
+    page.arc_listed = page.arc_listed or {}
+    page.arc_listed[arow] = true     -- (the callers use this to skip a record they have already listed)
+    local function add(id, label, offset, storage, max, small, big)
+        local key = section .. '|' .. label
+        if page.arc_seen[key] then return end
+        page.arc_seen[key] = true
+        local rid = prefix .. id
+        add_row(page, section, rid, label, storage, { part(rid, TYPES.arc, arow + offset, storage, 100000) },
+                0, max, small, big)
+    end
+    add('arc_no_self', '无自伤(1=不伤射手)', 100, 'flag', 1, 1, 1)
+    add('arc_count', '电弧数量', 96, 'u32', 64, 1, 5)
+    add('arc_speed', '电弧飞行速度', 4, 'f32', 20000, 50, 250)
+    add('arc_spread', '最大散布角(度)', 20, 'f32', 360, 1, 10)
+    add('arc_demolition', '拆毁力', 88, 'u32', 1000, 1, 5)
+    add('arc_linger', '电弧残留(秒)', 56, 'f32', 60, 0.1, 0.5)
+end
+
 local function read_text(address)
     local bytes = address and address > 65536 and api.read(address, 96)
     local text = bytes and bytes:match('^([^%z]*)%z')
@@ -12584,6 +12944,7 @@ local function damage_rows(entry, section, prefix, drow, what, count, strike)
     end
     return first
 end
+MOD.damage_rows = damage_rows   -- (MOD.shield_bash_rows, defined earlier, reaches it through here)
 
 -- Adds the rows of the gun whose entity hash is `key` (8 bytes) to `weapon` (a weapon, or a
 -- stratagem whose payload is a gun: sentries, emplacements).
@@ -12637,36 +12998,30 @@ function MOD.status.refused(row, target)
 end
 
 local function status_rows(entry, section, prefix, drow, per)
-    local strength_of = {}   -- slot -> its named strength row
-    for i = 0, 3 do
-        local kind = read_field(field_at(T_DAMAGE, drow + 44 + i * 8, 'u32', 100000))
-        if not kind or kind == 0 then break end
-        local srow = tables[T_STATUS] and tables[T_STATUS].index[kind]
-        local sid = srow and read_field(field_at(T_STATUS, srow + 44, 'u32', 100000))
-        local qrow = sid and sid > 0 and tables[T_DAMAGE] and tables[T_DAMAGE].index[sid]
-        local stun = srow and not qrow and KINDS[T_STATUS].stuns[kind]
-        if qrow or stun then
-            local name, key = stun or KINDS[T_STATUS].names[kind] or ('Status ' .. kind), prefix .. 'status' .. kind
-            strength_of[i] = add_row(entry, section, key .. '_strength', name .. ' applied per ' .. per, 'f32',
-                                     { part(key .. '_strength', T_DAMAGE, drow + 48 + i * 8, 'f32', 100000) }, 0, 1000, 0.1, 1)
-            local first = qrow and damage_rows(entry, name, key .. '_', qrow, name, 6)   -- no forces: a status has none
-            local duration = add_row(entry, name, key .. '_duration', name .. ' duration (s)', 'f32',
-                                     { part(key .. '_duration', T_STATUS, srow + 40, 'f32', 100000) }, 0, 600, 0.5, 5)
-            local by = qrow and '(other weapons, strikes, hazards, enemies)' or '(other weapons, grenades, strikes)'
-            ;(first or duration).note = 'every ' .. name:lower() .. ' source shares ' .. (qrow and 'these ' or 'this ') .. by
-        end
-    end
-    -- which status each of the four slots applies (SHODAN Offline Integration: all four shown, filled in order)
-    local own = section == 'Damage' and 'Status effects' or ('Status effects (' .. section .. ')')
+    -- Only the slots: which status a hit applies and how strongly. Each status used to get a block of
+    -- its own (its damage row under the status's name: damage, armour penetration, duration), which
+    -- duplicated rows the Records tab already has and made the weapon page very long. ArmoryTuningBench.
+    local own = section == 'Damage' and '状态效果' or ('状态效果（' .. section .. '）')
     for i = 0, 3 do
         local id = prefix .. 'slot' .. (i + 1)
         local row = add_row(entry, own, id, 'Status effect ' .. (i + 1) .. ' (choice)', 'u32',
                             { part(id, T_DAMAGE, drow + 44 + i * 8, 'u32', 100000) }, 0, 100000, 1, 1)
-        row.choice, row.drow, row.slot = 'status', drow, i
-        row.label_of = function() return 'Applies: ' .. MOD.status.name(read_field(row.parts[1].field) or 0) end
-        if i == 0 then row.note = 'what each hit applies; the slots go in order' end
-        row.strength = strength_of[i] or add_row(entry, own, id .. '_strength', 'Status effect ' .. (i + 1) .. ' strength per ' .. per,
-                                                 'f32', { part(id .. '_strength', T_DAMAGE, drow + 48 + i * 8, 'f32', 100000) }, 0, 1000, 0.1, 1)
+        -- `choice` owns the write (the slot-order guard, the usual strength, the message), exactly as
+        -- the - / + buttons did; `pick_list` only makes the panel offer the same list as a drop-down and
+        -- the pick routes through change() with an exact value, so it lands in that same branch.
+        row.choice, row.pick_list, row.drow, row.slot = 'status', 'status', drow, i
+        row.label_of = function() return MOD.status.label_applies(read_field(row.parts[1].field) or 0) end
+        if i == 0 then row.note = '每次命中施加什么；槽位按顺序读取（最多 4 个）' end
+        local strength = add_row(entry, own, id .. '_strength',
+            'Status effect ' .. (i + 1) .. ' strength per ' .. per,
+            'f32', { part(id .. '_strength', T_DAMAGE, drow + 48 + i * 8, 'f32', 100000) }, 0, 1000, 0.1, 1)
+        strength.label_of = function()
+            local k = read_field(field_at(T_DAMAGE, drow + 44 + i * 8, 'u32', 100000)) or 0
+            if k == 0 then return '状态 ' .. (i + 1) .. ' 强度（未选状态）' end
+            local v = read_field(strength.parts[1].field) or 0
+            return MOD.status.label_strength(k, per) .. (v == 0 and '（强度 0 = 无效）' or '')
+        end
+        row.strength = strength
     end
 end
 
@@ -12758,10 +13113,10 @@ local function resolve_gun(weapon, key)
         drow = id and tables[T_DAMAGE] and tables[T_DAMAGE].index[id]
     end
     -- beam weapons: beam component (+0 beam type) -> beam row (+12) -> damage row
-    local beam = not drow and record(T_BEAM_WEAPON)
+    local beam, brow = not drow and record(T_BEAM_WEAPON), nil
     if beam then
         local kind = read_field(field_at(T_BEAM_WEAPON, beam, 'u32', 100000))
-        local brow = kind and tables[T_BEAM] and tables[T_BEAM].index[kind]
+        brow = kind and tables[T_BEAM] and tables[T_BEAM].index[kind]
         local id = brow and read_field(field_at(T_BEAM, brow + 12, 'u32', 100000))
         drow = id and tables[T_DAMAGE] and tables[T_DAMAGE].index[id]
     end
@@ -12782,9 +13137,12 @@ local function resolve_gun(weapon, key)
         local id = read_field(field_at(T_MELEE, melee + 12, 'u32', 100000))
         drow = id and tables[T_DAMAGE] and tables[T_DAMAGE].index[id]
     end
+    -- the "Breakthrough" exosuit's left arm: a melee shield, whose bash damage is damage record 251
+    MOD.shield_bash_rows(weapon)
     -- arc weapons: arc component (+0 arc type, +4 fire rate) -> arc row (+8 range, +28 chain
     -- length, +32 chain split, +36 damage row)
-    local arc = not drow and record(TYPES.arc_weapon)
+    -- (looked up even when the projectile already gave a damage row: the arc row is only a fallback)
+    local arc = record(TYPES.arc_weapon)
     local arow = nil
     if arc then
         local kind = read_field(field_at(TYPES.arc_weapon, arc, 'u32', 100000))
@@ -12816,13 +13174,63 @@ local function resolve_gun(weapon, key)
                 0, 20, 1, 1)
         add_row(weapon, 'Arc', 'arc_split', 'Chain split', 'u32', { MOD.solo(part('arc_split', TYPES.arc, arow + 32, 'u32', 1000)) },
                 0, 20, 1, 1)
+        MOD.arc_extra(weapon, arow)
+        -- (the six rows come from MOD.arc_extra now: adding them here as well made every arc weapon
+        -- list them twice, once from the component and once from the explosion that throws arcs)
         local rate = read_field(field_at(TYPES.arc_weapon, arc + 4, 'f32', 100000))
         if rate and rate > 0 then
             add_row(weapon, 'Fire', 'arc_rpm', 'Fire rate (RPM)', 'f32', { part('arc_rpm', TYPES.arc_weapon, arc + 4, 'f32', 100000) },
                     1, 6000, 1, 10)
         end
     end
-    local blasts = {}
+    -- beam weapons: BeamInfo itself (length, radius...) and the beam weapon's overheat figures
+    -- (ArmoryTuningBench beam_fields.py: typelib-pinned offsets)
+    if brow then
+        for _, r in ipairs({
+            { 'beam_length', '光束长度(米)', 8, 20000, 10, 100 },
+            { 'beam_radius', '光束半径(米)', 4, 100, 0.05, 0.25 },
+            { 'beam_focal', '肩射焦距宽度', 16, 100, 0.5, 2 },
+            { 'beam_decal', '弹痕尺寸', 40, 10, 0.01, 0.05 },
+            { 'beam_danger', '危险等级', 104, 15, 1, 5 },
+        }) do
+            local id = r[1]
+            add_row(weapon, '光束', id, r[2], 'f32', { part(id, T_BEAM, brow + r[3], 'f32', 100000) }, 0, r[4], r[5], r[6])
+        end
+    end
+    if beam then
+        -- the beam component's own overheat figures. A cap of 0 means this component does not overheat at
+        -- all (the case on ordinary lasers): the other three then do nothing, so they are left out.
+        local cap = read_field(field_at(T_BEAM_WEAPON, beam + 20, 'f32', 100000))
+        if cap and cap > 0 then
+            for _, r in ipairs({
+                { 'beam_heat_shot', '每次射击热量(光束)', 16, 1000, 0.1, 1 },
+                { 'beam_heat_max', '最大热量(光束)', 20, 10000, 5, 25 },
+                { 'beam_heat_bleed', '散热速度(光束)', 24, 1000, 0.5, 5 },
+                { 'beam_heat_delay', '停火后散热延迟(光束)', 28, 100, 0.1, 1 },
+            }) do
+                local id = r[1]
+                add_row(weapon, '光束', id, r[2], 'f32', { part(id, T_BEAM_WEAPON, beam + r[3], 'f32', 100000) }, 0, r[4], r[5], r[6])
+            end
+        end
+    end
+    -- laser weapons' heat (WeaponHeatComponent 592 B): cooling rate, gains, thresholds, charge
+    -- (ArmoryTuningBench HEAT_FIELDS.md)
+    local heat = record(T_HEAT)
+    if heat then
+        -- the panel's own Heat section already reads +0x60 capacity, +0x74/+0x78 heat gains,
+        -- +0x80 cooling, +0x94/+0x98 wind-up: only the three it leaves out go here
+        for _, r in ipairs({
+            { 'warn_temp', '警告温度', 104, 10000, 5, 25 },
+            { 'emission_temp', '冒烟温度', 108, 10000, 5, 25 },
+        }) do
+            local id = r[1]
+            add_row(weapon, '散热 · 补充', id, r[2], 'f32', { part(id, T_HEAT, heat + r[3], 'f32', 100000) }, 0, r[4], r[5], r[6])
+        end
+        -- (no post-overheat cooling row here: the panel's Heat section already reads +0x8C for it, and
+        -- the user confirmed that offset is the right one over ArmoryTuningBench's +0x84)
+        add_row(weapon, '散热 · 补充', 'reload_when_hot', '过热后需换弹', 'flag',
+                { part('reload_when_hot', T_HEAT, heat + 144, 'flag', 1) }, 0, 1, 1, 1)
+    end    local blasts = {}
     -- the ids of rows from..to, taken by `prefix` .. their id past `listed` (its prefix): another shot's
     -- for the same memory (listed once), kept so saved values and presets that name them still apply
     local function alias_rows(from, to, listed, prefix)
@@ -12846,6 +13254,9 @@ local function resolve_gun(weapon, key)
             add_row(weapon, section, idp .. id, label, 'f32', { part(idp .. id, T_PROJECTILE, p + offset, 'f32', 100000) },
                     0, max, small, big)
         end
+        -- the round's bore (ProjectileInfo +24, mm): the Records page lists it too, the weapon page did not
+        proj('calibre', 'Calibre (mm)', 24, 1000, 0.1, 1)
+        proj('mass', 'Mass (kg)', 36, 1000000, 0.1, 1)   -- +36, also only on the Records page before
         add_row(weapon, section, idp .. 'pellets', 'Projectiles per shot', 'u32',
                 { part(idp .. 'pellets', T_PROJECTILE, p + 28, 'u32', 1000) }, 1, 100, 1, 5)
         if idp == '' and weapon.missile then
@@ -12856,6 +13267,10 @@ local function resolve_gun(weapon, key)
             proj('gravity', 'Gravity factor', 44, 100, 0.05, 0.5)
         end
         proj('pen_slowdown', 'Penetration slowdown', 64, 100, 0.05, 0.25)
+        -- the same two the Records page lists: +52 the lifetime itself, +56 only the period its random
+        -- variation spans (FileDiver names them the other way round; measured here: 0..240 s vs 0..0.7)
+        proj('lifetime', 'Lifetime (s)', 52, 1000000, 1, 10)
+        proj('lifetime_variation', 'Lifetime variation period (s)', 56, 1000, 0.1, 1)
         local impact = read_field(field_at(T_PROJECTILE, p + 144, 'u32', 100000))
         local expiry = read_field(field_at(T_PROJECTILE, p + 156, 'u32', 100000))
         -- the explosions it sets off, as choices (+144 on impact, +156 on expiry; 0: none), and its fuse: above 0
@@ -12886,6 +13301,11 @@ local function resolve_gun(weapon, key)
             angle.note = MOD.records.NOTES.weapon_angle
         end
         if expiry then blast_id('expiry_explosion', 'Expiry explosion (id)', 156) end
+        -- how far it must fly before its fuse arms (+160; the Records page lists the same field). 0: no
+        -- arming, it can go off at once
+        local arm = add_row(weapon, section, idp .. 'arming', 'Arming distance (m)', 'f32',
+                            { part(idp .. 'arming', T_PROJECTILE, p + 160, 'f32', 100000) }, 0, 200, 0.1, 1)
+        arm.note = '飞不到这个距离之前不会起爆；0 = 无需解除保险'
         local first = #blasts
         if impact and impact > 0 then blasts[#blasts + 1] = { id = impact, prefix = idp .. 'blast', section = xsection, damage = true } end
         if expiry and expiry > 0 and expiry ~= impact then
@@ -12927,12 +13347,17 @@ local function resolve_gun(weapon, key)
                 local arc = tables[TYPES.arc] and tables[TYPES.arc].index[read_field(field_at(T_EXPLOSION, xrow + 120, 'u32', 100000)) or -1]
                 if arc then
                     local section, pre = blast.section == 'Explosion' and 'Arc' or (blast.section .. ' arc'), blast.prefix .. '_arc_'
+                    -- (the same record may already be listed through the weapon's arc component: then only
+                    -- the damage rows below are new)
+                    if not (weapon.arc_listed and weapon.arc_listed[arc]) then
                     add_row(weapon, section, pre .. 'range', 'Range (m)', 'f32', { part(pre .. 'range', TYPES.arc, arc + 8, 'f32', 100000) },
                             0, 1000, 1, 5)
                     add_row(weapon, section, pre .. 'chain', 'Chain length', 'u32', { MOD.solo(part(pre .. 'chain', TYPES.arc, arc + 28, 'u32', 1000)) },
                             0, 20, 1, 1)
                     add_row(weapon, section, pre .. 'split', 'Chain split', 'u32', { MOD.solo(part(pre .. 'split', TYPES.arc, arc + 32, 'u32', 1000)) },
                             0, 20, 1, 1)
+                    MOD.arc_extra(weapon, arc, pre, section)
+                    end
                     local aid = read_field(field_at(TYPES.arc, arc + 36, 'u32', 100000))
                     local arow = aid and tables[T_DAMAGE] and tables[T_DAMAGE].index[aid]
                     if arow then
@@ -13065,10 +13490,35 @@ local function resolve_gun(weapon, key)
                                 { part('charge_' .. s, TYPES.charge, charge + (s - 1) * 24, 'f32', 100000) }, 0, 600, 0.05, 0.25)
             if s == 1 then row.note = note end
         end
+        -- how the charge fires (ArmoryTuningBench additions): +184 fires by itself at full charge,
+        -- +185 explodes at the third charge's time, +188 the shots a release fires and +192 the
+        -- seconds between them (the Purifier's 2 shots 0.12 s apart, verified on build 25988413)
+        for _, f in ipairs({ { 'charge_autofire', 184, 'Fires by itself at full charge' },
+                             { 'charge_explode_third', 185, 'Explodes at the third charge time' } }) do
+            if read_field(field_at(TYPES.charge, charge + f[2], 'flag', 1)) then
+                add_row(weapon, 'Charge', f[1], f[3], 'flag',
+                        { part(f[1], TYPES.charge, charge + f[2], 'flag', 1) }, 0, 1, 1, 1)
+            end
+        end
+        if read_field(field_at(TYPES.charge, charge + 188, 'u32', 64)) then
+            add_row(weapon, 'Charge', 'charge_burst_count', 'Shots fired on release', 'u32',
+                    { part('charge_burst_count', TYPES.charge, charge + 188, 'u32', 64) }, 0, 64, 1, 2)
+        end
+        if read_field(field_at(TYPES.charge, charge + 192, 'f32', 100000)) then
+            add_row(weapon, 'Charge', 'charge_burst_span', 'Interval between those shots (s)', 'f32',
+                    { part('charge_burst_span', TYPES.charge, charge + 192, 'f32', 100000) }, 0, 10, 0.05, 0.25)
+        end
+        -- the overload: +0xD0 is how long it burns after it is overcharged, +0xC8 the explosion it makes.
+        -- 0 is not "no overload": the Railgun has 0 and goes off at once, so the row shows whenever the
+        -- record names an explosion, and says what 0 means.
         local limit = default_of(cf(208))
-        if limit and limit > 0 then
-            add_row(weapon, 'Charge', 'charge_limit', 'Overcharge limit (s)', 'f32',
+        local explodes = default_of(field_at(TYPES.charge, charge + 200, 'u32', 100000))
+        if (limit and limit > 0) or (explodes and explodes > 0) then
+            local r = add_row(weapon, 'Charge', 'charge_limit', 'Overcharge limit (s)', 'f32',
                     { part('charge_limit', TYPES.charge, charge + 208, 'f32', 100000) }, 0, 600, 0.05, 0.25)
+            if r and (not limit or limit <= 0) then
+                r.note = '0 = 过充后立即自爆（磁轨炮就是这样）；填大数值 = 延后或取消自爆'
+            end
         end
         for _, m in ipairs(KINDS[TYPES.charge].MULTIPLIERS) do
             if not m.arc or record(TYPES.arc_weapon) then
@@ -13195,21 +13645,15 @@ local function resolve_gun(weapon, key)
             local v = read_field(hb(g[3]))
             if v and v > 0 then row('Heat', g[1], g[2], 'f32', hf(g[1], g[3]), 0, 100000, 0.1, 1) end
         end
-        -- cool-down times: the heat to shed over the cooling rate; setting a time sets the rate
-        local capacity, recover = hb(96), hb(100)
-        local function span(recovered, read)
-            local c, r = read(capacity), recovered and read(recover) or 0
-            return c and r and c - r
+        -- the cooling rate itself, per second (+128 is the field): the time to shed a full charge is
+        -- that heat over this rate, so a rate row is the same value without the conversion, and it can be
+        -- set directly (user's request, 2026-10-23: the time row showed 6.67 s, the rate is what is stored)
+        for _, c in ipairs({
+            { 'heat_cool', 'Cool rate (heat per second)', 128 },
+            not sinks and { 'heat_cool_overheated', 'Cool rate after overheat (heat per second)', 140 } or nil,
+        }) do
+            row('Heat', c[1], c[2], 'f32', hf(c[1], c[3]), 0, 1000, 0.5, 5)
         end
-        local function cool(id, label, offset, recovered)
-            local s = span(recovered, read_field)
-            local r = s and s > 0 and row('Heat', id, label, 'f32', hf(id, offset), 0.1, 3600, 0.5, 5)
-            if not r then return end
-            r.span = function() return span(recovered, read_field) end
-            r.span_default = function() return span(recovered, default_of) end
-        end
-        cool('heat_cool', 'Cool-down time, full heat (s)', 128, false)
-        if not sinks then cool('heat_cool_overheated', 'Cool-down time after overheat (s)', 140, true) end
         -- wind-up (Sickles, Scythe, Quasar...): +148 the charge it needs to fire, +152 the charge gained
         -- per second holding the trigger, +156 lost per second once let go; times: that charge over the rate
         local needed = hb(148)
@@ -13322,6 +13766,23 @@ local function resolve_gun(weapon, key)
             r.lead, r.suppression = true, true
             r.tip = { "Quieter for enemies: the noise of the game's suppressed guns. No suppressor model, same firing sound." }
         end
+        -- fire modes, function inputs and the crosshair type (ArmoryTuningBench): each edited as a list of the
+        -- game's own values, stepped with the arrows or picked from the drop-down
+        local function u(id, offset) return part(id, T_WEAPON, data + offset, 'u32', 100000) end
+        local function enum_row(section, id, label, list, offset, min, max)
+            local row = add_row(weapon, section, id, label, 'u32', { u(id, offset) }, min, max, 1, 1)
+            row.enum_list = list
+            return row
+        end
+        enum_row('Fire', 'fire_mode_1', 'Fire mode 1', 'fire_mode', 144, 0, 7)
+        enum_row('Fire', 'fire_mode_2', 'Fire mode 2', 'fire_mode', 148, 0, 7)
+        enum_row('Fire', 'fire_mode_3', 'Fire mode 3', 'fire_mode', 152, 0, 7)
+        add_row(weapon, 'Fire', 'burst_rounds', 'Rounds per burst', 'u32', { u('burst_rounds', 140) }, 1, 64, 1, 1)
+        enum_row('Fire', 'function_left', 'Function input, left', 'function_input', 184, 0, 12)
+        enum_row('Fire', 'function_right', 'Function input, right', 'function_input', 188, 0, 12)
+        enum_row('Crosshair', 'crosshair_type', 'Crosshair type', 'crosshair', 404, 0, 21)
+        add_row(weapon, 'Crosshair', 'always_crosshair', 'Always show the crosshair', 'flag',
+                { part('always_crosshair', T_WEAPON, data + 200, 'flag', 1) }, 0, 1, 1, 1)
         MOD.spin_rows(weapon, data, record(TYPES.windup))
     end
     local equipment = weapon.key == key and record(TYPES.equipment)
@@ -13495,16 +13956,9 @@ function MOD.tweaks.collect(defs)
             B.rows[#B.rows + 1] = { kind = def.kind, off = def.off + 368, size = 1, game = flags, want = flags - 2 }
         end
     end
-    local R, wt = MOD.tweaks.reticle, tables[T_WEAPON]
-    R.rows = {}
-    local xoff = KINDS[T_WEAPON].stride == 1240 and 404 or 400
-    for key, off in pairs(wt and wt.index or {}) do
-        local kind = R.original[key] or peek4(wt.copies[1] + HEADER_BYTES + off + xoff)
-        if kind == 3 then
-            R.original[key] = kind
-            R.rows[#R.rows + 1] = { kind = T_WEAPON, off = off + xoff, size = 4, game = 3, want = 0 }
-        end
-    end
+    local R = MOD.tweaks.reticle
+    R.rows = {}   -- (upstream's third-person sniper crosshair switch is not offered: the weapon pages' own
+                  --  crosshair type rows are the one place that field is changed)
     F.rows = {}
     local pt = tables[T_PROJECTILE]
     for ptype, name in pairs(F.TARGETS) do
@@ -13516,12 +13970,12 @@ function MOD.tweaks.collect(defs)
             F.rows[#F.rows + 1] = { kind = T_PROJECTILE, off = off + 248, size = 4, game = 0, want = F.NO_FOLIAGE }
         end
     end
-    log(string.format('switches: stratagem bounce %d stratagems, sniper crosshair %d weapons, foliage pass-through %d of %d projectiles',
-        #B.rows, #R.rows, #F.rows, (function() local n = 0 for _ in pairs(F.TARGETS) do n = n + 1 end return n end)()))
+    log(string.format('switches: stratagem bounce %d stratagems, foliage pass-through %d of %d projectiles',
+        #B.rows, #F.rows, (function() local n = 0 for _ in pairs(F.TARGETS) do n = n + 1 end return n end)()))
     MOD.tweaks.apply()
 end
 function MOD.tweaks.apply()
-    for _, name in ipairs({ 'bounce', 'reticle', 'foliage' }) do
+    for _, name in ipairs({ 'bounce', 'foliage' }) do
         local T = MOD.tweaks[name]
         for _, r in ipairs(T.rows) do
             local value = T.on and r.want or r.game
@@ -13615,6 +14069,7 @@ local function build_stratagems()
                         stratagem = { id = id, family = family, def = def, payloads = keys, nodes = nodes, guns = guns,
                                       drone = drone, vehicle = vehicle } }
         list[#list + 1] = entry
+        MOD.shield_bash_rows(entry)
         return entry
     end
     for _, s in ipairs(STRATAGEMS) do
@@ -14196,6 +14651,15 @@ end
 -- base-5 digit (Up Right = 12 in base 5 = 7), so it is saved, preset and reset like any other value.
 -- Recorded with the arrow keys or WASD, like the game's own entry.
 MOD.code = { ARROWS = { '↑', '→', '↓', '←' }, MAX = 9 }
+-- One message from a whole-sentence template, so the dictionary can hold a whole Chinese sentence: the
+-- names are put in after the translation. `{name}` / `{names}` / `{list}` are the slots.
+function MOD.code.say(template, values)
+    local text = settings.tr(template)
+    for key, value in pairs(values or {}) do
+        text = text:gsub('{' .. key .. '}', (tostring(value):gsub('%%', '%%%%')))
+    end
+    return text
+end
 function MOD.code.native(def)
     local b = api.read(def.at + 64, 16)
     if not b then return nil end
@@ -14262,18 +14726,34 @@ function MOD.code.check(def, arrows)
             if hit then
                 if MOD.code.ALWAYS[c.name] then
                     local name = c.name == 'Reinforcement Beacon' and 'Reinforce' or c.name == 'Sos Beacon' and 'SOS Beacon' or c.name
-                    if hit == same then return nil, 'Same code as ' .. name .. ', which is in every mission: not set.' end
-                    if hit == under then return nil, name .. "'s code starts with that one, and it is in every mission: not set." end
-                    return nil, 'That code starts with ' .. name .. "'s, which is in every mission: not set."
+                    if hit == same then
+                        return nil, MOD.code.say('Same code as {name}, which is in every mission: not set.', { name = name })
+                    end
+                    if hit == under then
+                        return nil, MOD.code.say("{name}'s code starts with that one, and it is in every mission: not set.",
+                                                 { name = name })
+                    end
+                    return nil, MOD.code.say("That code starts with {name}'s, which is in every mission: not set.",
+                                             { name = name })
                 end
                 hit[#hit + 1] = c.name
             end
         end
     end
-    local function names(t) return table.concat(t, ', ', 1, math.min(#t, 3)) .. (#t > 3 and ' and others' or '') end
-    if #same > 0 then return true, 'Same code as ' .. names(same) .. ': bring only one of them.' end
-    if #under > 0 then return true, names(under) .. " can't be called while this one is ready: their codes start with it." end
-    if #over > 0 then return true, "This one can't be called while " .. names(over) .. ' is ready: its code starts with theirs.' end
+    local function names(t)
+        local joined = table.concat(t, ', ', 1, math.min(#t, 3))
+        if #t > 3 then joined = MOD.code.say('{list} and others', { list = joined }) end
+        return joined
+    end
+    if #same > 0 then return true, MOD.code.say('Same code as {names}: bring only one of them.', { names = names(same) }) end
+    if #under > 0 then
+        return true, MOD.code.say("{names} can't be called while this one is ready: their codes start with it.",
+                                  { names = names(under) })
+    end
+    if #over > 0 then
+        return true, MOD.code.say("This one can't be called while {names} is ready: its code starts with theirs.",
+                                  { names = names(over) })
+    end
     return true
 end
 function MOD.code.row(entry, def)
@@ -14448,8 +14928,105 @@ local function resolve_throwable(entry, placed)
                                               { 'throw_supply', 'From supply', 108 } }) do
             add_row(entry, 'Throwable', r[1], r[2], 'u32', { part(r[1], TYPES.throwable, th + r[3], 'u32', 10000) }, 0, 999, 1, 5)
         end
-        add_row(entry, placed and 'Charge' or 'Throwable', 'throw_distance', 'Max throw distance (m)', 'f32',
+        -- ThrowableComponent: the official schema has TWO distances (+0x0C min, +0x10 max) plus the
+        -- thrower-velocity terms that decide how much your own movement adds to the throw. The max is the
+        -- data baseline (20 m for most grenades, 11 for the G-48), not the in-game reach.
+        local thsec = placed and 'Charge' or 'Throwable'
+        add_row(entry, thsec, 'throw_min', '最小投掷距离(米)', 'f32',
+                { part('throw_min', TYPES.throwable, th + 12, 'f32', 100000) }, 0, 200, 0.5, 5)
+        local drow = add_row(entry, thsec, 'throw_distance', '最大投掷距离(米)', 'f32',
                 { part('throw_distance', TYPES.throwable, th + 16, 'f32', 100000) }, 0, 200, 0.5, 5)
+        drow.note = '数据基准值；实际落点还会叠加投掷者的移动速度（下面三项）'
+        add_row(entry, thsec, 'throw_vel_add', '投掷者速度加成', 'f32',
+                { part('throw_vel_add', TYPES.throwable, th + 72, 'f32', 100000) }, 0, 5, 0.05, 0.25)
+        add_row(entry, thsec, 'throw_vel_sub', '投掷者速度衰减', 'f32',
+                { part('throw_vel_sub', TYPES.throwable, th + 76, 'f32', 100000) }, 0, 5, 0.05, 0.25)
+        add_row(entry, thsec, 'throw_vel_dead', '投掷者速度死区', 'f32',
+                { part('throw_vel_dead', TYPES.throwable, th + 80, 'f32', 100000) }, 0, 50, 0.05, 0.5)
+        -- impact trigger: off for every ordinary grenade, on for exactly the four impact ones
+        -- (G-16 / G-48 / G-13 / G-89). +0x54 carries the same pattern and is not named in the schema.
+        local impact = add_row(entry, thsec, 'thr_impact', '撞击触发(碰炸)', 'flag',
+                { part('thr_impact', TYPES.throwable, th + 92, 'flag', 1) }, 0, 1, 1, 1)
+        impact.note = '推断：4 个真撞击雷=1，其余全部=0（ArmoryTuningBench 的实测结论）'
+        add_row(entry, thsec, 'thr_impact_b', '撞击开关 B (+0x54，未定名)', 'flag',
+                { part('thr_impact_b', TYPES.throwable, th + 84, 'flag', 1) }, 0, 1, 1, 1)
+        add_row(entry, thsec, 'throw_interact', '取用交互延迟(秒)', 'f32',
+                { part('throw_interact', TYPES.throwable, th + 96, 'f32', 100000) }, -1, 60, 0.1, 0.5)
+        add_row(entry, thsec, 'throw_sticky_delay', '粘附延迟(秒)', 'f32',
+                { part('throw_sticky_delay', TYPES.throwable, th + 88, 'f32', 100000) }, 0, 60, 0.1, 0.5)
+        -- the explosive itself: fuse mode and delays (official ExplosiveComponent schema; the +0x0C
+        -- arming delay reads 2.40 for the G-6 and 0 for the impact ones, which is its 2.4 s fuse)
+        local thx = tables[TYPES.explosive] and tables[TYPES.explosive].index[entry.key]
+        if thx then
+            local mode = add_row(entry, thsec, 'fuse_mode', '引信方式', 'u32',
+                    { part('fuse_mode', TYPES.explosive, thx + 0, 'u32', 100) }, 0, 4, 1, 1)
+            mode.enum_list = 'explosive_mode'
+            mode.note = '实测对应：0=定时(G-6)  2=外部触发(G-16/G-50)  3=定时状态(G-123)  4=地雷触碰(G/40-K/TM-1)'
+            add_row(entry, thsec, 'fuse_arm', '武装延迟(秒)', 'f32',
+                    { part('fuse_arm', TYPES.explosive, thx + 12, 'f32', 100000) }, -1, 60, 0.1, 0.5)
+            add_row(entry, thsec, 'fuse_delay', '引信延迟(秒)', 'f32',
+                    { part('fuse_delay', TYPES.explosive, thx + 16, 'f32', 100000) }, -1, 60, 0.1, 0.5)
+            add_row(entry, thsec, 'fuse_impact_dist', '撞击检测距离(米)', 'f32',
+                    { part('fuse_impact_dist', TYPES.explosive, thx + 28, 'f32', 100000) }, 0, 200, 0.5, 5)
+            add_row(entry, thsec, 'fuse_airburst', '空爆检测距离(米)', 'f32',
+                    { part('fuse_airburst', TYPES.explosive, thx + 32, 'f32', 100000) }, 0, 200, 0.5, 5)
+            add_row(entry, thsec, 'fuse_exp_type', '爆炸类型(编号)', 'u32',
+                    { part('fuse_exp_type', TYPES.explosive, thx + 36, 'u32', 100000) }, 0, 100000, 1, 10)
+        end
+        -- The seeker grenades (G-50 Seeker / G-60 Anti-Tank Seeker) are drone units, not missiles: their
+        -- tracking is spread over five components. Offsets, ranges and names come from ArmoryTuningBench's
+        -- drone_fields.py (its sensor distance 50 -> 100 was verified in game; the five Targeting defaults
+        -- 90/180/1/1/5 matched the schema, which is how those offsets were pinned there).
+        local function drone(id, comp, section, rows)
+            local tbl = tables[comp]
+            local at = tbl and tbl.index[entry.key]
+            if not at then return end
+            for _, r in ipairs(rows) do
+                local rid = id .. '_' .. r[1]
+                add_row(entry, section, rid, r[3], 'f32',
+                        { part(rid, comp, at + r[2], 'f32', 1000000) }, r[4], r[5], r[6] or 0.5, r[7] or 5)
+            end
+        end
+        drone('eye', TYPES.sensor, '追踪 · 索敌视野', {
+            { 'distance', 0, '索敌距离(米)', 0.1, 2000, 5, 25 },
+            { 'peripheral', 4, '侧方视野距离(米，-1 用索敌距离)', -1, 2000, 5, 25 },
+            { 'back', 8, '后方视野距离(米，-1 用索敌距离)', -1, 2000, 5, 25 },
+            { 'angle_h', 12, '水平视锥角(度)', 0, 360, 1, 10 },
+            { 'angle_v', 16, '垂直视锥角(度)', 0, 360, 1, 10 },
+            { 'foliage_out', 36, '忽略草丛遮挡的距离(米)', 0, 500, 1, 5 },
+            { 'foliage_in', 40, '判定「在草丛内」的距离(米)', 0, 500, 1, 5 },
+        })
+        drone('det', TYPES.detector, '追踪 · 侦测节奏', {
+            { 'time_min', 0, '侦测间隔下限(秒)', 0.01, 60, 0.05, 0.5 },
+            { 'time_max', 4, '侦测间隔上限(秒)', 0.01, 60, 0.05, 0.5 },
+            { 'los_memory', 8, '失去视线后索敌记忆(秒)', 0, 600, 1, 10 },
+            { 'noise_clear', 12, '噪点清除时间(秒)', 0, 600, 1, 10 },
+            { 'vision_rate', 16, '视野强度增长速率', 0, 1000, 1, 10 },
+            { 'vision_decay', 20, '视野强度衰减速率(0=永不遗忘)', 0, 1000, 1, 10 },
+        })
+        drone('mov', TYPES.motion, '追踪 · 飞行', {
+            { 'hover', 16, '悬浮高度(米)', 0, 500, 0.5, 5 },
+            { 'max_speed', 20, '最大飞行速度(米/秒)', 0, 500, 1, 5 },
+            { 'pos_lerp', 32, '位置追随强度', 0, 1000, 1, 10 },
+            { 'max_deviation', 36, '允许偏离预测位置上限', 0, 1000, 1, 10 },
+        })
+        drone('rot', TYPES.rotation, '追踪 · 转向', {
+            { 'turn_speed', 0, '转向速率(度/秒)', 0, 3600, 5, 25 },
+            { 'accel', 4, '转向加速度(0=瞬间到速)', 0, 3600, 5, 25 },
+            { 'decel', 8, '转向减速度(0=瞬间停)', 0, 3600, 5, 25 },
+        })
+        drone('aim', TYPES.targeting, '追踪 · 瞄准力', {
+            { 'drag', 8, '瞄准阻力', 0, 1000, 0.5, 5 },
+            { 'mult', 12, '瞄准力倍率', 0, 1000, 0.5, 5 },
+            { 'max_speed', 16, '瞄准方向最大转速(度/秒)', 0, 3600, 5, 25 },
+            { 'max_angle', 20, '应用瞄准力的最大夹角(度)', 0, 360, 1, 10 },
+        })
+        local tgt = tables[TYPES.targeting] and tables[TYPES.targeting].index[entry.key]
+        if tgt then
+            local row = add_row(entry, '追踪 · 瞄准力', 'aim_use', '启用瞄准力追踪', 'flag',
+                    { part('aim_use', TYPES.targeting, tgt + 24, 'flag', 1) }, 0, 1, 1, 1)
+            row.note = '原版两台都是「关」：不打开它，上面四格改了也没用'
+        end
     end
     KINDS[TYPES.shield].rows(entry, entry.hash)   -- the G/SH-39's shield
     local sticky = record(TYPES.sticky)
@@ -14478,6 +15055,7 @@ local function resolve_throwable(entry, placed)
             add_row(entry, 'Arc', 'arc_range', 'Range (m)', 'f32', { part('arc_range', TYPES.arc, arc + 8, 'f32', 100000) }, 0, 1000, 1, 5)
             add_row(entry, 'Arc', 'arc_chain', 'Chain length', 'u32', { MOD.solo(part('arc_chain', TYPES.arc, arc + 28, 'u32', 1000)) }, 0, 20, 1, 1)
             add_row(entry, 'Arc', 'arc_split', 'Chain split', 'u32', { MOD.solo(part('arc_split', TYPES.arc, arc + 32, 'u32', 1000)) }, 0, 20, 1, 1)
+            MOD.arc_extra(entry, arc)
             local q = damage(read_field(field_at(TYPES.arc, arc + 36, 'u32', 100000)))
             if q then damage_rows(entry, 'Arc', 'arc_', q, 'Arc') end
         end
@@ -14531,6 +15109,12 @@ KINDS[TYPES.seeking].flight = function(weapon, seek, steered)
         { 'lost_angle', 'Loses its target past (deg)', 28, 180, 1, 10, true },
         { 'lifetime', 'Max flight time (s)', 64, 600, 1, 5 },
         { 'guidance_after', 'Guidance on after (s)', 12, 60, 0.1, 0.5, true },
+        -- the rest of ArmoryTuningBench's anchor-verified layout (SEEKING_MISSILE.md)
+        { 'max_angle', 'Turn fastest past (deg)', 84, 180, 1, 10 },
+        { 'pid_p', 'Speed P factor', 96, 100, 0.05, 0.5 },
+        { 'pid_i', 'Speed I factor', 100, 100, 0.05, 0.5 },
+        { 'pid_d', 'Speed D factor', 104, 100, 0.05, 0.5 },
+        { 'update_interval', 'Target update (s)', 108, 10, 0.1, 0.5 },
     }) do
         local id = 'missile_' .. r[1]
         if steered ~= false or not r[7] then
@@ -14552,6 +15136,11 @@ KINDS[TYPES.seeking].flight = function(weapon, seek, steered)
         local row = add_row(weapon, 'Missile flight', 'missile_deviation', 'Deviation', 'f32', parts, 0.1, 1000, 1, 5)
         row.lead = true   -- the others scale with it
     end
+    add_row(weapon, 'Missile flight', 'missile_dot', 'Aim dot minimum (-1: off)', 'f32',
+            { part('missile_dot', TYPES.seeking, seek + 168, 'f32', 100000) }, -1, 1, 0.05, 0.25)
+    -- +0xAC is one byte: +0xAD is another switch, so it must be written as a flag, not 4 bytes
+    add_row(weapon, 'Missile flight', 'missile_javelin', 'Arcing flight (javelin)', 'flag',
+            { part('missile_javelin', TYPES.seeking, seek + 172, 'flag', 1) }, 0, 1, 1, 1)
 end
 
 -- A weapon that fires a missile: its fire mode's projectile entity (+40: spawned instead of a projectile;
@@ -15588,7 +16177,10 @@ KINDS[T_PROJECTILE].swap_row = function(weapon, sources, shots, fire, extra)
         end
         return row
     end
-    local row = swap('projectile', 'Projectile fired (id)', parts)
+    -- a charge weapon fires a different projectile per stage: it gets no single "projectile fired" row
+    -- (one row per stage below instead), so the stages cannot be forced onto the same shot by accident
+    local row = nil
+    if not shots then row = swap('projectile', 'Projectile fired (id)', parts) end
     local alt = fire and field_at(T_FIRE, fire + 576, 'u32', 100000)
     local second = alt and default_of(alt)
     if second and second > 0 then
@@ -15601,6 +16193,21 @@ KINDS[T_PROJECTILE].swap_row = function(weapon, sources, shots, fire, extra)
         local row_parts = { { id = id, field = ammo.field } }
         if ammo.delta then row_parts[2] = { id = id .. '_ammo', field = ammo.delta } end
         row = swap(id, ammo.name .. ' fire (id)', row_parts)
+    end
+    -- a charge weapon fires a different projectile per stage (`+4` of each 24-byte stage): one row per
+    -- stage, so the stages can be mixed. The row above still changes all of them at once; 0 makes that
+    -- stage fall back to the fire mode's projectile.
+    if shots then
+        for s = 1, 3 do
+            for _, src in ipairs(sources) do
+                if src.id == 'proj_c' .. s then
+                    local r = swap('proj_stage' .. s, 'Stage ' .. s .. ' projectile (id)',
+                                   { { id = 'proj_stage' .. s, field = src.field } })
+                    r.min = 0
+                    row = r
+                end
+            end
+        end
     end
     -- under the last row: what a swap changes and what it keeps (drawn below it, `after_h` units)
     row.after = { "Swapping makes the shot the chosen weapon's, your edits to it included: damage,",
@@ -15722,7 +16329,7 @@ function MOD.records.name(kind, id)
     local u = MOD.records.users()
     if kind == T_PROJECTILE then return MOD.round_names and MOD.round_names[id] or (u.shots[id] or {})[1]
     elseif kind == T_EXPLOSION then return (u.blasts[id] or {})[1] or u.rounds[id] end
-    if state.lang and state.lang() == 'zh-Hans' and MOD.status.by[id] then return MOD.status.by[id].name end
+    if state.lang and state.lang() == 'zh-Hans' then return MOD.status.name_cn(id) end
     return KINDS[T_STATUS].names[id] or KINDS[T_STATUS].stuns[id]
 end
 -- A choice's label in a note: '#12 · 10g Sabot' (the name in the panel's language), 'none (no explosion)'.
@@ -15750,6 +16357,20 @@ function MOD.records.ids_last(weapon)
         list[#list + 1] = row
     end
     for _, row in ipairs(last) do rows[#rows + 1] = row end
+    -- each section shown once: some are filled in pieces (the fire modes are added after the handling
+    -- rows, which left a second '开火' block further down). Group by section, keeping the order the
+    -- sections first appeared in and each section's own row order.
+    local order, rank = {}, {}
+    for _, row in ipairs(rows) do
+        if not rank[row.section] then
+            order[#order + 1] = row.section
+            rank[row.section] = #order
+        end
+    end
+    local keyed = {}
+    for i, row in ipairs(rows) do keyed[i] = { at = rank[row.section], i = i, row = row } end
+    table.sort(keyed, function(a, b) if a.at ~= b.at then return a.at < b.at end return a.i < b.i end)
+    for i, k in ipairs(keyed) do rows[i] = k.row end
     weapon.rows = rows
 end
 -- An explosion's shrapnel rows (explosion row `xrow`, ids `pre` ..): the projectile every piece is, then how many.
@@ -15770,7 +16391,10 @@ function MOD.records.rows(page)
     page.rows, page.by_id = {}, {}
     if not at then return end
     local function num(section, id, label, off, storage, max, small, big)
-        return add_row(page, section, id, label, storage, { part(id, kind, at + off, storage, 100000) }, 0, max, small, big)
+        -- the field's own plausibility limit: a row whose max is above 100000 (a status that never
+        -- ends, a sentinel mass) must not be rejected as "layout moved"
+        return add_row(page, section, id, label, storage, { part(id, kind, at + off, storage, math.max(max, 100000)) },
+                       0, max, small, big)
     end
     local function hurt(off, section, what, count)
         local d = read_field(field_at(kind, at + off, 'u32', 100000))
@@ -15781,9 +16405,13 @@ function MOD.records.rows(page)
     end
     if kind == T_PROJECTILE then
         for _, r in ipairs({ { 'calibre', 'Calibre (mm)', 24, 'f32', 1000, 0.1, 1 }, { 'pellets', 'Projectiles per shot', 28, 'u32', 200, 1, 5 },
-                             { 'velocity', 'Velocity (m/s)', 32, 'f32', 100000, 10, 100 }, { 'mass', 'Mass (kg)', 36, 'f32', 10000, 0.1, 1 },
+                             { 'velocity', 'Velocity (m/s)', 32, 'f32', 100000, 10, 100 }, { 'mass', 'Mass (kg)', 36, 'f32', 1000000, 0.1, 1 },
                              { 'drag', 'Drag factor', 40, 'f32', 100, 0.05, 0.5 }, { 'gravity', 'Gravity factor', 44, 'f32', 100, 0.05, 0.5 },
-                             { 'lifetime', 'Lifetime (s)', 56, 'f32', 1000, 0.1, 1 },
+                             -- +52 the lifetime itself, +56 only the period its random variation spans
+                             -- (FileDiver calls them UnkFloat / LifeTime, which has them the other way
+                             -- round; in game the first one is the lifetime — confirmed by the user)
+                             { 'lifetime', 'Lifetime (s)', 52, 'f32', 1000000, 1, 10 },
+                             { 'lifetime_variation', 'Lifetime variation period (s)', 56, 'f32', 1000, 0.1, 1 },
                              { 'pen_slowdown', 'Penetration slowdown', 64, 'f32', 100, 0.05, 0.25 } }) do
             num('Projectile', r[1], r[2], r[3], r[4], r[5], r[6], r[7])
         end
@@ -15802,6 +16430,15 @@ function MOD.records.rows(page)
         expiry.choice = 'explosion'
         num('Explosion id', 'arming', 'Arming distance (m)', 160, 'f32', 200, 0.1, 1)
         num('Explosion id', 'blast_angle', 'Blast angle (deg)', 136, 'f32', 360, 1, 10).note = MOD.records.NOTES.angle
+        -- ricochet (our addition): the surface / ricochet impact effects, then the values and spreads
+        num('Ricochet', 'surface_impact', 'Surface impact effect (id)', 172, 'u32', 100000, 1, 10)
+        num('Ricochet', 'ricochet_impact', 'Ricochet impact effect (id)', 176, 'u32', 100000, 1, 10)
+        num('Ricochet', 'max_ricochets', 'Max ricochets', 180, 'u32', 100, 1, 1)
+        num('Ricochet', 'ricochet_angle', 'Ricochet threshold angle (deg)', 184, 'f32', 360, 1, 10)
+        num('Ricochet', 'ricochet_speed', 'Ricochet threshold speed (m/s)', 188, 'f32', 10000, 1, 10)
+        num('Ricochet', 'ricochet_loss', 'Angle lost per ricochet (deg)', 192, 'f32', 360, 0.05, 0.25)
+        num('Ricochet', 'ricochet_spread_v', 'Ricochet spread, vertical (deg)', 196, 'f32', 360, 0.5, 5)
+        num('Ricochet', 'ricochet_spread_h', 'Ricochet spread, horizontal (deg)', 200, 'f32', 360, 0.5, 5)
     elseif kind == T_EXPLOSION then
         hurt(4, 'Explosion', 'Explosion')
         for _, r in ipairs({ { 'inner', 'Inner radius (m)', 16 }, { 'outer', 'Outer radius (m)', 20 },
@@ -15814,7 +16451,7 @@ function MOD.records.rows(page)
     else
         local name = MOD.records.name(kind, page.id) or 'Status'
         hurt(44, name, name, 6)   -- no forces: a status has none
-        num(name, 'duration', name .. ' duration (s)', 40, 'f32', 600, 0.5, 5)
+        num(name, 'duration', name .. ' duration (s)', 40, 'f32', 1000000, 0.5, 5)
     end
 end
 -- An unnamed record still needs something readable beside its number. Use the loaded
@@ -16012,7 +16649,7 @@ local config_dirty_at = nil
 -- enemy_last: the editor left in; lang: the panel's language, 'en'
 -- or the id of a translation: fixed by the build (a language's release, MOD.lang), not a choice; offline (every
 -- language built in) a choice, saved as 'lang'.
-local settings = { changes = true, block_input = true, size = 80, side = 'right', opacity = 90,
+local settings = { changes = true, block_input = true, size = 80, side = 'right', opacity = 90, theme = 'dark',
                    arc_mp = true, updates = 'ask', update_channel = 'releases', stacks = {}, own_off = {}, hidden = {}, lang = MOD.lang or MOD.offline and rawget(_G, 'SHODAN_OFFLINE_LANG') or 'en',
                    last = { stat = {}, enemy = {} }, enemy_last = false,
                    GITHUB = 'https://github.com/SHODAN-HORAI/SHODAN-Stat-Editor',
@@ -16115,8 +16752,11 @@ function settings.unlock_all(on)
     for _, item in ipairs(settings.UNLOCKS) do settings.unlocks[item.id] = on end
 end
 
+-- The folder chosen on the Settings page wins: SHODAN-Config-location.txt beside the program says where
+-- (read once, at the top of the file). Only an existing folder is taken, so a stale pointer cannot make the
+-- panel write nowhere.
 local function config_path()
-    local dir = data_dir('StatEditor')
+    local dir = MOD.config_dir_hint or data_dir('StatEditor')
     return dir and dir .. '/config.txt'
 end
 
@@ -16145,7 +16785,7 @@ local function save_config()
     local function onoff(v) return v and 'on' or 'off' end
     for _, line in ipairs({ 'changes ' .. onoff(settings.changes), 'block_input ' .. onoff(settings.block_input),
                             'panel_size ' .. settings.size, 'panel_side ' .. settings.side,
-                            'panel_opacity ' .. settings.opacity,
+                            'panel_opacity ' .. settings.opacity, 'theme ' .. (settings.theme or 'dark'),
                             'arc_chains_multiplayer ' .. onoff(settings.arc_mp) }) do
         lines[#lines + 1] = line
     end
@@ -16175,7 +16815,6 @@ local function save_config()
     lines[#lines + 1] = 'several_vehicles ' .. onoff(MOD.vehicles.on)
     lines[#lines + 1] = 'stratagem_bounce ' .. onoff(MOD.tweaks.bounce.on)
     lines[#lines + 1] = 'foliage_pass_through ' .. onoff(MOD.tweaks.foliage.on)
-    lines[#lines + 1] = 'sniper_crosshair ' .. onoff(MOD.tweaks.reticle.on)
     -- hide_tabs <tab>,<tab>...: the tabs Settings > Tabs shown turned off
     local hidden = {}
     for tab in pairs(settings.hidden) do hidden[#hidden + 1] = tab end
@@ -16193,16 +16832,228 @@ local function save_config()
         lines[#lines + 1] = o.hash .. ' ' .. o.id .. ' ' .. number_text(o.value) ..
                             (weapon and ('   # ' .. weapon.name) or '')
     end
-    local ok, why = MOD.write_text(path, table.concat(lines, '\r\n') .. '\r\n')
-    if not ok then log('could not write ' .. path .. ': ' .. why) end
+    local text = table.concat(lines, '\r\n') .. '\r\n'
+    local ok, why = MOD.write_text(path, text)
+    if ok then
+        local before = io.open(path .. '.bak', 'wb')
+        if before then before:write(text); before:close() end
+        local keep = MOD.keep_dir_of(path)
+        if keep and api and api.mkdir(keep) then
+            MOD.write_text(keep .. '/config.txt', text)
+            if #overrides > 0 then
+                MOD.write_text(keep .. '/config-' .. os.date('%Y%m%d') .. '.txt', text)
+            end
+        end
+        log(string.format('config saved: %d value(s)', #overrides))
+    else log('could not write ' .. path .. ': ' .. why) end
+end
+
+function MOD.values_in(text)
+    local n = 0
+    for line in (text or ''):gmatch('[^\r\n]+') do
+        if line:match('^%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x ') then n = n + 1 end
+    end
+    return n
+end
+
+function MOD.keep_dir_of(path)
+    if not path or path == '' then return nil end
+    local dir = path:gsub('[/\\][^/\\]*$', '')
+    local parent = dir:gsub('[/\\][^/\\]*$', '')
+    if parent == dir or parent == '' then return nil end
+    return parent .. '/SHODAN-Config-backup'
+end
+
+function MOD.cfg_beside()
+    local script = (debug.getinfo(1, 'S') or {}).source or ''
+    local own = script:match('^@(.*[/\\])')
+    return own and (own .. '../../SHODAN-Config') or nil
+end
+
+function MOD.cfg_pointer() return MOD.cfg_beside() and (MOD.cfg_beside() .. '-location.txt') or nil end
+
+function MOD.cfg_set_pointer(dir)
+    local path = MOD.cfg_pointer()
+    if not path then return false, 'no place beside the program' end
+    if not dir then os.remove(path); return true end
+    local f = io.open(path, 'wb')
+    if not f then return false, 'could not write ' .. path end
+    f:write(dir .. '\r\n'); f:close()
+    return true
+end
+
+-- a path with . and .. folded away (the beside folder is held as app/../../SHODAN-Config)
+function MOD.cfg_clean(dir)
+    if not dir or dir == '' then return '?' end
+    local parts = {}
+    for part in (dir:gsub('\\', '/')):gmatch('[^/]+') do
+        if part == '..' then
+            if #parts > 1 then parts[#parts] = nil end
+        elseif part ~= '.' then
+            parts[#parts + 1] = part
+        end
+    end
+    return table.concat(parts, '/')
+end
+
+-- the head of a long path is noise (and the panel's font has no glyphs for a Chinese folder name):
+-- keep the drive and the last folders, which is where the settings actually are
+function MOD.cfg_short(dir)
+    if not dir or dir == '' then return '?' end
+    local parts = {}
+    for part in (dir:gsub('\\', '/')):gmatch('[^/]+') do parts[#parts + 1] = part end
+    if #parts <= 3 then return table.concat(parts, '/') end
+    return parts[1] .. '/…/' .. parts[#parts - 1] .. '/' .. parts[#parts]
+end
+
+function MOD.cfg_current()
+    local path = config_path()
+    if not path then return '?' end
+    return MOD.cfg_clean(path:gsub('[/\\][^/\\]*$', ''))
+end
+
+function MOD.cfg_candidates()
+    local out = {}
+    local profile = os.getenv('USERPROFILE') or ''
+    for _, dir in ipairs({
+        (os.getenv('LOCALAPPDATA') or '') ~= '' and (os.getenv('LOCALAPPDATA') .. '/SHODAN-StatEditor') or nil,
+        (os.getenv('APPDATA') or '') ~= '' and (os.getenv('APPDATA') .. '/SHODAN-StatEditor') or nil,
+        profile ~= '' and (profile .. '/Documents/SHODAN Stat Editor') or nil,
+        MOD.cfg_beside(),
+    }) do if dir and dir ~= '' then out[#out + 1] = dir end end
+    return out
+end
+
+function MOD.cfg_writable(dir)
+    if not dir or dir == '' then return false end
+    local probe = io.open(dir .. '/.write-probe', 'wb')
+    if not probe then
+        if api and api.mkdir then api.mkdir(dir) end
+        probe = io.open(dir .. '/.write-probe', 'wb')
+        if not probe then return false end
+    end
+    probe:close(); os.remove(dir .. '/.write-probe')
+    return true
+end
+
+function MOD.cfg_copy_config(from, to)
+    if not to or from == to then return true end
+    if not MOD.cfg_writable(to) then return false, 'that folder is not writable' end
+    local src = io.open((from or '') .. '/config.txt', 'rb')
+    if not src then return true end                        -- nothing to carry over yet
+    local text = src:read('*a') or ''
+    src:close()
+    for _, leaf in ipairs({ 'config.txt', 'config.txt.bak' }) do
+        local out = io.open(to .. '/' .. leaf, 'wb')
+        if out then out:write(text); out:close() end
+    end
+    return true
+end
+
+function MOD.cfg_cycle()   -- the next writable folder of the list, wrapping around
+    local current = MOD.cfg_current()
+    local usable = {}
+    for _, dir in ipairs(MOD.cfg_candidates()) do if MOD.cfg_writable(dir) then usable[#usable + 1] = dir end end
+    if #usable == 0 then return false, 'no writable folder found' end
+    local next_at = 1
+    for k, dir in ipairs(usable) do if dir == current then next_at = k % #usable + 1 break end end
+    local target = usable[next_at]
+    local ok, why = MOD.cfg_copy_config(current, target)
+    if not ok then return false, why end
+    ok, why = MOD.cfg_set_pointer(target)
+    if not ok then return false, why end
+    MOD.data_dirs['StatEditor'], MOD.data_dir_used = target, target
+    return true, target
+end
+
+function MOD.cfg_use_default()
+    MOD.cfg_set_pointer(nil)
+    return true, 'the first writable folder of the list'
+end
+
+function MOD.cfg_exports_dir() return MOD.cfg_current() .. '/exports' end
+
+function MOD.cfg_export()
+    local dir = MOD.cfg_exports_dir()
+    if not MOD.cfg_writable(dir) then return false, 'could not create ' .. dir end
+    local src = io.open(config_path() or '', 'rb')
+    if not src then return false, 'config.txt is not there' end
+    local text = src:read('*a') or ''
+    src:close()
+    local name = 'config-' .. os.date('%Y%m%d-%H%M%S') .. '.txt'
+    local out = io.open(dir .. '/' .. name, 'wb')
+    if not out then return false, 'could not write ' .. name end
+    out:write(text); out:close()
+    local index = io.open(dir .. '/index.txt', 'ab')
+    if index then index:write(name .. '\r\n'); index:close() end
+    return true, dir .. '/' .. name
+end
+
+-- where an import comes from: the previous save, the copy kept beside the folder, or the newest export
+function MOD.cfg_import_source(kind)
+    local dir, path = MOD.cfg_current(), config_path()
+    if kind == 'bak' then return path and (path .. '.bak') or nil end
+    if kind == 'keep' then
+        local keep = MOD.keep_dir_of(path)
+        return keep and (keep .. '/config.txt') or nil
+    end
+    local index = io.open(MOD.cfg_exports_dir() .. '/index.txt', 'rb')
+    local name
+    if index then
+        local text = index:read('*a') or ''
+        index:close()
+        for line in text:gmatch('[^\r\n]+') do if line:match('%S') then name = line end end
+    end
+    return name and (dir .. '/exports/' .. name) or nil
+end
+
+function MOD.cfg_import(kind)   -- the imported file replaces config.txt; the panel reads it at the next start
+    local path = config_path()
+    local from = MOD.cfg_import_source(kind)
+    if not path or not from then return false, 'nothing to import' end
+    local src = io.open(from, 'rb')
+    if not src then return false, 'could not read ' .. from end
+    local text = src:read('*a') or ''
+    src:close()
+    if not text:find('%S') then return false, 'that file is empty' end
+    local cur = io.open(path, 'rb')
+    local old = cur and (cur:read('*a') or '') or nil
+    if cur then cur:close() end
+    if old and old ~= '' then
+        local bak = io.open(path .. '.bak', 'wb')
+        if bak then bak:write(old); bak:close() end
+    end
+    local out = io.open(path, 'wb')
+    if not out then return false, 'could not write ' .. path end
+    out:write(text); out:close()
+    return true, from
 end
 
 local function load_config()
     local path = config_path()
     local handle = path and io.open(path, 'rb')
+    if not handle then
+        local keep = MOD.keep_dir_of(path)
+        local at = keep and io.open(keep .. '/config.txt', 'rb')
+        if at then log('config.txt was missing: reading the copy in ' .. keep) end
+        handle = at
+    end
     if not handle then save_config(); return end
     local text = handle:read('*a') or ''
     handle:close()
+    do   -- the copy beside the folder may hold more values (a lost or half-written config.txt)
+        local keep = MOD.keep_dir_of(path)
+        local alt = keep and io.open(keep .. '/config.txt', 'rb')
+        if alt then
+            local other = alt:read('*a') or ''
+            alt:close()
+            if MOD.values_in(other) > MOD.values_in(text) then
+                log(string.format('config.txt had %d value(s), the copy has %d: using the copy',
+                                  MOD.values_in(text), MOD.values_in(other)))
+                text = other
+            end
+        end
+    end
     local count = 0
     for at, line in MOD.lines_of(text) do
         line = line:gsub('#.*$', '')
@@ -16241,6 +17092,10 @@ local function load_config()
         elseif (name == 'panel_size' or name == 'panel_opacity') and MOD.parse_number(value) then
             settings.set_percent(name:sub(7), MOD.parse_number(value))
             known = true
+        elseif name == 'theme' and (value == 'dark' or value == 'light') then
+            settings.theme = value
+            rawset(_G, 'SHODAN_THEME', value)
+            known = true
         elseif name == 'panel_side' and (value == 'left' or value == 'right') then
             settings.side = value
             known = true
@@ -16264,8 +17119,10 @@ local function load_config()
         elseif name == 'several_vehicles' then
             MOD.vehicles.on = value == 'on'; MOD.vehicles.apply()
             known = true
-        elseif name == 'stratagem_bounce' or name == 'foliage_pass_through' or name == 'sniper_crosshair' then
-            MOD.tweaks[name == 'stratagem_bounce' and 'bounce' or name == 'sniper_crosshair' and 'reticle' or 'foliage'].on = value == 'on'
+        elseif name == 'sniper_crosshair' then
+            known = true   -- (older configs carry it: the switch is gone, its line is ignored)
+        elseif name == 'stratagem_bounce' or name == 'foliage_pass_through' then
+            MOD.tweaks[name == 'stratagem_bounce' and 'bounce' or 'foliage'].on = value == 'on'
             MOD.tweaks.apply()
             known = true
         elseif name == 'unlock_unused' then
@@ -16308,6 +17165,10 @@ local function set_override(weapon, p, value)
     end
     if value ~= nil then kept[#kept + 1] = { hash = weapon.hash, id = p.id, value = value } end
     overrides = kept
+    if value ~= nil then
+        log(string.format('override recorded: %s %s = %s (%d total)',
+            tostring(weapon.hash), tostring(p.id), tostring(value), #overrides))
+    end
     if p.field and p.field.storage == 'grenade' then MOD.queue_grenade(weapon, p, value) end
     mark_config_dirty()
 end
@@ -17170,6 +18031,250 @@ local function fmt(v, storage)
     return (string.format('%.2f', v):gsub('0+$', ''):gsub('%.$', ''))
 end
 
+-- The light theme (ArmoryTuningBench): every colour the dark theme draws, mapped to the light one's.
+-- Anything not listed flips by luminance, so a colour added later still reads.
+MOD.light_palette = {
+    -- taken from the DSH desktop GUI's own light theme (sampled: #f9fafb canvas, #ffffff surfaces,
+    -- #eceef0 borders, #0f1115 text, #81858c muted, #4176e6 accent)
+    [ 8 * 65536 + 11 * 256 + 15 ] = { 255, 255, 255 },    -- the window's backdrop
+    [ 16 * 65536 + 21 * 256 + 28 ] = { 255, 255, 255 },
+    [ 20 * 65536 + 26 * 256 + 34 ] = { 244, 245, 247 },    -- row/cell base: light grey
+    [ 28 * 65536 + 34 * 256 + 42 ] = { 232, 234, 238 },    -- buttons, scrollbar tracks, the search box
+    [ 30 * 65536 + 38 * 256 + 48 ] = { 238, 240, 243 },    -- the row under the cursor
+    [ 40 * 65536 + 52 * 256 + 64 ] = { 255, 255, 255 },    -- hover / typing / selected (swapped with the base)
+    [ 46 * 65536 + 60 * 256 + 76 ] = { 255, 255, 255 },    -- drop-down hover
+    [ 52 * 65536 + 66 * 256 + 80 ] = { 213, 217, 223 },    -- button hover
+    [ 70 * 65536 + 82 * 256 + 94 ] = { 229, 231, 235 },    -- separators
+    [ 95 * 65536 + 108 * 256 + 120 ] = { 168, 171, 176 },  -- dim text
+    [ 110 * 65536 + 124 * 256 + 138 ] = { 143, 144, 146 },
+    [ 153 * 65536 + 171 * 256 + 184 ] = { 129, 133, 140 },  -- muted text
+    [ 238 * 65536 + 242 * 256 + 246 ] = { 15, 17, 21 },     -- text
+    [ 255 * 65536 + 213 * 256 + 0 ] = { 65, 118, 230 },     -- gold -> DSH's accent blue
+    [ 255 * 65536 + 72 * 256 + 60 ] = { 217, 45, 32 },      -- red
+    [ 120 * 65536 + 200 * 256 + 255 ] = { 65, 118, 230 },   -- info
+    [ 255 * 65536 + 150 * 256 + 60 ] = { 217, 119, 6 },     -- warn
+    [ 255 * 65536 + 106 * 256 + 61 ] = { 194, 65, 12 },     -- section names (orange-red)
+    [ 120 * 65536 + 220 * 256 + 140 ] = { 22, 163, 74 },    -- good
+    [ 96 * 65536 + 20 * 256 + 16 ] = { 253, 232, 230 },     -- the active button, enemy editor
+    [ 90 * 65536 + 74 * 256 + 8 ] = { 223, 231, 251 },      -- the active button (accent tint)
+}
+
+function MOD.light_of(r, g, b)
+    local hit = MOD.light_palette[r * 65536 + g * 256 + b]
+    if hit then return hit[1], hit[2], hit[3] end
+    local l = (0.299 * r + 0.587 * g + 0.114 * b) / 255
+    if l < 0.45 then
+        local lift = (1 - l) * 0.85
+        return math.floor(r + (255 - r) * lift), math.floor(g + (255 - g) * lift), math.floor(b + (255 - b) * lift)
+    end
+    local drop = l * 0.8
+    return math.floor(r * (1 - drop)), math.floor(g * (1 - drop)), math.floor(b * (1 - drop))
+end
+
+
+-- modes). { value, short name (the value box), long name (the row's note) }; the short names are
+-- kept under 8 characters because the value box is 84 px wide.
+-- ArmoryTuningBench: value lists, edited as a list instead of a free number (crosshair styles, fire
+MOD.value_lists = {
+    crosshair = {
+        { 0, 'Default', 'Default: the weapon\'s own style' },
+        { 1, 'Never', 'CrosshairNever: no crosshair at all' },
+        { 2, 'Always', 'CrosshairAlways: always shown' },
+        { 3, 'Lex. only', 'CrosshairDamageIndicatorOnly: no aiming crosshair (the APW-1\'s)' },
+        { 4, 'Assault', 'AssaultRifle style' },
+        { 5, 'Halo AR', 'HaloAssaultRifle style' },
+        { 6, 'Pump', 'PumpShotgun style' },
+        { 7, 'AutoSg', 'AutoShotgun style' },
+        { 8, 'Pistol', 'Pistol style' },
+        { 9, 'Revolver', 'Revolver style' },
+        { 10, 'Laser', 'Laser style' },
+        { 11, 'LasCan', 'LaserCannon style' },
+        { 12, 'LasPulse', 'LaserPulseCannon style' },
+        { 13, 'PlsSpin', 'PlasmaBlasterSpin style' },
+        { 14, 'Plasma', 'PlasmaBlaster style' },
+        { 15, 'Railgun', 'Railgun style' },
+        { 16, 'Javelin', 'Javelin style' },
+        { 17, 'Throw', 'Throwable style' },
+        { 18, 'Physgun', 'Physgun style' },
+        { 19, 'Unk19', 'Unnamed member (19)' },
+        { 20, 'None', 'None' },
+        { 21, 'Count', 'Count: the enum\'s sentinel, not a style' },
+    },
+    -- FireMode (FileDiver enum). Chinese short labels, like explosive_mode and function_input above:
+    -- the box is 84 px wide, so 4 characters at most ('Burst' is already a translated word elsewhere,
+    -- which is why these carry their own text rather than going through the dictionary).
+    fire_mode = {
+        { 0, '无', 'None (no fire mode)' },
+        { 1, '全自动', 'Automatic' },
+        { 2, '单发', 'Single shot' },
+        { 3, '连发', 'Burst' },
+        { 4, '齐射', 'Volley (salvo)' },
+        { 5, '蓄力保险', 'Charge, safety on' },
+        { 6, '蓄力过载', 'Charge, overcharge allowed' },
+        { 7, '全射', 'All barrels' },
+    },
+    -- ExplosiveMode (FileDiver enum): how a throwable's explosive goes off
+    explosive_mode = {
+        { 0, '定时', 'Timed' },
+        { 1, '撞击', 'Impact' },
+        { 2, '外部触发', 'External' },
+        { 3, '定时状态', 'TimedStatusEffect' },
+        { 4, '触碰引信(地雷)', 'ProximityTriggered' },
+    },
+    -- WeaponFunctionType: the official member names (community RawData v1.007.100 = this build), plus
+    -- 12, a runtime-only value the typelib's Count(12) leaves out (the G-11 Caltrops' right function,
+    -- measured in the data: its HUD icon is firemode_caltrops_narrow / _wide)
+    function_input = {
+        { 0, '无', 'None' },
+        { 1, '归零', 'Zeroing' },
+        { 2, '射速', 'ROF' },
+        { 3, '开火模式', 'Firemode' },
+        { 4, '弹匣', 'Magazine' },
+        { 5, '灯光模式', 'LightMode' },
+        { 6, '激光指引', 'LaserGuide' },
+        { 7, '初速', 'MuzzleVelocity' },
+        { 8, '编程弹药', 'ProgrammableAmmo' },
+        { 9, '激光棱镜', 'LaserPrism' },
+        { 10, '引爆', 'Detonate' },
+        { 11, '下挂武器', 'UnderBarrelWeapon' },
+        { 12, '铁蒺藜', 'Caltrops spread' },
+    },
+}
+-- Status effect names (ArmoryTuningBench): our build's id -> { English, 中文 }.
+-- ATB's offline/status_effect_names.json is written for the build before ours: it is one id
+-- lower from 33 on (it has BurningLight at 31, which moved the rest by one; 32 was added later
+-- still). Anchors that prove the shift: ATB 32 BurningHeavy = our 33 'Heavy burning', ATB 42 Gas =
+-- our 43, ATB 44 Gas_Confusion = our 45, ATB 67 FlamerSlowed = our 68, ATB 37 StunSmall = our 38.
+-- 32 is the status added at 26088801 and 71..73 came after ATB's table: no published name, so they
+-- are labelled as unnamed rather than guessed.
+MOD.status_names = {
+    [1] = { 'Blind', '致盲' },
+    [2] = { 'Bleed', '流血' },
+    [3] = { 'Deaf', '耳聋' },
+    [4] = { 'Confusion', '混乱' },
+    [5] = { 'Fire', '火焰' },
+    [6] = { 'Fire_Panic', '火焰恐慌' },
+    [7] = { 'Lava', '熔岩' },
+    [8] = { 'Slowed', '减速' },
+    [9] = { 'Rooted', '定身' },
+    [10] = { 'Acid Splash', '酸液溅射' },
+    [11] = { 'Acid Stream', '酸液喷射' },
+    [12] = { 'Thermite', '铝热剂' },
+    [13] = { 'Cyborg Fire', '机器人火焰' },
+    [14] = { 'Choked', '窒息' },
+    [15] = { 'Sand', '沙尘' },
+    [16] = { 'Mud', '泥沼' },
+    [17] = { 'Snow', '积雪' },
+    [18] = { 'Submerged', '浸没' },
+    [19] = { 'Thornbush', '荆棘丛' },
+    [20] = { 'Cactus', '仙人掌' },
+    [21] = { 'Barbwire', '铁丝网' },
+    [22] = { 'BushSmall', '小灌木丛' },
+    [23] = { 'BushLarge', '大灌木丛' },
+    [24] = { 'Pure Damage', '纯粹伤害' },
+    [25] = { 'Stim Fx', '兴奋剂效果' },
+    [26] = { 'Stim Stamina', '耐力兴奋剂' },
+    [27] = { 'Stim Heal', '治疗兴奋剂' },
+    [28] = { 'Stim Pistol Heal', '手枪治疗兴奋剂' },
+    [29] = { 'Stim Combat Drugs', '战斗药物兴奋剂' },
+    [30] = { 'Stim Cooldown', '兴奋剂冷却' },
+    [31] = { 'BurningLight', '轻度燃烧' },
+    [32] = { 'Unnamed status 32', '未命名状态 32' },
+    [33] = { 'BurningHeavy', '重度燃烧' },
+    [34] = { 'RadiationLight', '轻度辐射' },
+    [35] = { 'RadiationHeavy', '重度辐射' },
+    [36] = { 'Electric', '电击' },
+    [37] = { 'Hidden', '隐匿' },
+    [38] = { 'Stun Small', '轻微眩晕' },
+    [39] = { 'Stun Medium', '中等眩晕' },
+    [40] = { 'Stun Large', '重度眩晕' },
+    [41] = { 'Stun Massive', '超大眩晕' },
+    [42] = { 'Stun Illuminate', '光明眩晕' },
+    [43] = { 'Gas', '毒气' },
+    [44] = { 'Gas', '毒气mk2' },
+    [45] = { 'Gas_Confusion', '混乱毒气' },
+    [46] = { 'Gas_Confusion', '混乱毒气mk2' },
+    [47] = { 'Inverted_Aim_Assist', '反向瞄准辅助' },
+    [48] = { 'Flashlighted', '被探照' },
+    [49] = { 'Smoke_Covered', '烟雾笼罩' },
+    [50] = { 'Backpack Chemicals', '背包化学品' },
+    [51] = { 'Intense Heat', '高温炙烤' },
+    [52] = { 'Extreme Cold', '极端寒冷' },
+    [53] = { 'Tremor', '地面震颤' },
+    [54] = { 'Sandstorm', '沙暴' },
+    [55] = { 'Blizzard', '暴风雪' },
+    [56] = { 'Acid Storm', '酸雨风暴' },
+    [57] = { 'Weather Insulated', '天气隔绝' },
+    [58] = { 'TornadoStun', '龙卷风眩晕' },
+    [59] = { 'Dark Fluid', '暗流体' },
+    [60] = { 'Death March', '死亡行军' },
+    [61] = { 'Hotshot Laser Rifle', '速射激光步枪' },
+    [62] = { 'Hotshot Laser Rifle', '速射激光步枪' },
+    [63] = { 'Hotshot Laser Rifle', '速射激光步枪' },
+    [64] = { 'Illuminate Scrambler', '光明干扰器' },
+    [65] = { 'Constitution', '体质强化' },
+    [66] = { 'Constitution Booster Armor Resistance', '体质强化免疫' },
+    [67] = { 'Post Mortem Explosion', '死后爆炸' },
+    [68] = { 'FlamerSlowed', '减速火焰' },
+    [69] = { 'Gloom', '阴霾' },
+    [70] = { 'Dark Fluid', '暗流体MK2' },
+    [71] = { 'Unnamed status 71', '未命名状态 71' },
+    [72] = { 'Unnamed status 72', '未命名状态 72' },
+    [73] = { 'Unnamed status 73', '未命名状态 73' },
+}
+
+function MOD.status.name_cn(kind)
+    if kind == 0 then return '无' end
+    local d = MOD.status_names[kind]
+    if d then return d[2] end
+    local c = MOD.status.by[kind]
+    return c and (c.cn or c.name) or MOD.status.name(kind)
+end
+function MOD.status.label_applies(kind)
+    return '施加状态：' .. MOD.status.name_cn(kind)
+end
+function MOD.status.label_strength(kind, per)
+    return MOD.status.name_cn(kind) .. ' 每次' .. (per == 'hit' and '命中' or '爆炸') .. '强度'
+end
+
+-- The panel reads `KINDS[T_STATUS].names` for a status's name (the Records tab, the damage rows and
+-- their groups). It only had 4 entries, so every other status was nameless: fill it from the same
+-- 73-entry table (ArmoryTuningBench).
+for id, nm in pairs(MOD.status_names) do
+    KINDS[T_STATUS].names[id] = KINDS[T_STATUS].names[id] or nm[1]
+end
+
+-- the status choices as a list too: a damage record's four slots pick from these with the same
+-- drop-down (0 = none). `check_choice` below still runs the slot-order guard.
+MOD.value_lists.status = { { 0, '无', 'none' } }
+for id, nm in pairs(MOD.status_names) do
+    -- every status this build has (73 of them), not just the 11 the panel curates
+    MOD.value_lists.status[#MOD.value_lists.status + 1] = { id, nm[2], nm[1] }
+end
+table.sort(MOD.value_lists.status, function(a, b) return a[1] < b[1] end)
+function MOD.enum_index(list, value)
+    for i, e in ipairs(list) do if e[1] == value then return i end end
+end
+-- (kept on MOD, not as file locals: the main chunk is at LuaJIT's 200-local limit)
+-- the list a row offers: an enum row's own (crosshair, fire mode), or a status slot's
+function MOD.pick_list(row)
+    if not row then return nil end
+    return MOD.value_lists[row.enum_list or row.pick_list]
+end
+function MOD.enum_shown(row, value)
+    local list = MOD.pick_list(row)
+    if not list or value == nil then return nil end
+    local i = MOD.enum_index(list, value)
+    if i then return list[i][2] end
+    -- a status the short list does not offer (data says another one): still show its real name
+    if row.enum_list == 'status' or row.pick_list == 'status' then return MOD.status.name_cn(value) end
+    return nil
+end
+function MOD.shown(row, value)
+    if value == nil then return '?' end
+    return MOD.enum_shown(row, value) or fmt(value, row.storage)
+end
+
 local function step_of(row, value, big)
     local step = big and row.big or row.small
     if row.storage == 'f32' and value and value > 0 and value < row.small then
@@ -17223,6 +18328,34 @@ local function change(row, delta_sign, big, exact)
     if row.suppression then   -- the flag and the noise template together (MOD.suppress)
         local target = math.max(0, math.min(1, math.floor((exact or current + delta_sign) + 0.5)))
         if target ~= current then MOD.suppress(weapon, row, target) end
+        return
+    end
+    if row.enum_list then
+        -- a value list (crosshair style, fire mode): step through the game's own values only
+        local list = MOD.value_lists[row.enum_list]
+        local i = exact and MOD.enum_index(list, math.floor(exact + 0.5)) or MOD.enum_index(list, current)
+        local pick
+        if exact then
+            pick = i
+        else
+            i = i or 1
+            pick = i + (delta_sign > 0 and 1 or -1)
+            if pick < 1 then pick = #list elseif pick > #list then pick = 1 end
+        end
+        if not pick then
+            ui.message = { text = row.label .. ': no value ' .. tostring(math.floor((exact or 0) + 0.5)) .. ' in this list.',
+                           till = api.now() + 4 }
+            return
+        end
+        local target = list[pick][1]
+        if target == current then return end
+        for _, p in ipairs(row.parts) do
+            local d = default_of(p.field)
+            local ok, why = write_field(p.field, target)
+            if ok then set_override(weapon, p, unless_default(target, d))
+            else log('write refused: ' .. weapon.name .. ' ' .. p.id .. ': ' .. why) end
+        end
+        ui.version = ui.version + 1
         return
     end
     if row.choice then
@@ -17585,7 +18718,16 @@ do
     local function full_preset_file(n, enemy) return preset_file(presets.file_name(n, enemy)) end
 
     local function write_lines(path, lines)
-        local ok, why = MOD.write_text(path, table.concat(lines, '\r\n') .. '\r\n')
+        -- one step of undo: the file as it was before this save, so an update or a bad edit costs at most the
+    -- last change instead of everything
+    local before = io.open(path, 'rb')
+    if before then
+        local old = before:read('*a')
+        before:close()
+        local copy = io.open(path .. '.bak', 'wb')
+        if copy then copy:write(old or ''); copy:close() end
+    end
+    local ok, why = MOD.write_text(path, table.concat(lines, '\r\n') .. '\r\n')
         if not ok then log('could not write ' .. tostring(path) .. ': ' .. why) end
         return ok
     end
@@ -17976,13 +19118,22 @@ local function draw(width, height)
     local Gui, Vector3, Vector2, Color = sr.Gui, sr.Vector3, sr.Vector2, sr.Color
     local s = height / 1080 * (MOD.offline and 100 or settings.size) / 100   -- panel units -> 1080p units (offline: the window is the panel's)
     local ox, oy = settings.side == 'left' and 30 * s or width - (W + 30) * s, (height - H * s) / 2
+    -- screen gui -> the panel's own gui units: the mouse handler reports the former, the drawing
+    -- (and so the value box's 780) is in the latter
+    MOD.to_local = function(gx) return (gx - ox) / s end
+    MOD.to_screen = function(x) return ox + x * s end   -- the other way, for tests
     local gui = ui.gui
     local regions = {}
     local shared_overlay = nil   -- set while the cursor is on a cut-short 'shared with' list
     local tip_overlay = nil      -- set while the cursor is on a row with a tip (row.tip: its lines)
     local ink_font, ink_material = font.font, font.material
 
-    local function color(r, g, b, a) return Color(a or 255, r, g, b) end
+    -- Theme (ArmoryTuningBench): 'light' maps the dark palette to a light one, so every colour the
+    -- panel draws goes through one place (MOD.light_of).
+    local function color(r, g, b, a)
+        if settings.theme == 'light' then r, g, b = MOD.light_of(r, g, b) end
+        return Color(a or 255, r, g, b)
+    end
     local function vx(v)
         for _, get in ipairs({ function() return Vector2.x(v) end, function() return Vector3.x(v) end,
                                function() return v[1] end }) do
@@ -17993,6 +19144,8 @@ local function draw(width, height)
     end
     local GOLD, WHITE, MUTED, DIM = MOD.enemy.on and color(255, 72, 60) or color(255, 213, 0), color(238, 242, 246), color(153, 171, 184), color(95, 108, 120)
     MOD.enemy.ALL_INK = MOD.enemy.ALL_INK or color(120, 200, 255)   -- a value only an 'All <faction>' row changed
+    -- the section names ('伤害', '开火'): orange-red, told apart from the rows at a glance
+    local SECTION = color(255, 106, 61)
     local WARN, GOOD = color(255, 150, 60), color(120, 220, 140)
 
     local function rect(x, y, w, h, c, z)
@@ -18021,6 +19174,7 @@ local function draw(width, height)
         return measure
     end
     local function width(value, size) return measure_text(settings.tr(value), size) end
+    MOD.width_of = width   -- for the click-to-caret mapping, which runs outside draw
     local function text(value, x, y, size, c, limit, align_right, z)
         if value == nil or value == '' or not ink_font then return end
         value = settings.tr(value)
@@ -18269,10 +19423,32 @@ local function draw(width, height)
 
     -- stats of the selected weapon
     local weapon = ui.weapon
+    -- publish the theme every frame: the window's chrome (offline/host.lua) reads SHODAN_THEME, and doing
+    -- it here means it can never lag behind whatever the panel is drawing with
+    rawset(_G, 'SHODAN_THEME', settings.theme or 'dark')
     local x0 = 356
     if ui.settings then
-        text('Settings', x0, 94, 22, GOLD)
-        local y = 132
+        -- This page is the only one that is taller than the panel. Everything it draws goes through these
+        -- clipped versions, so a row scrolled out of the band is simply not drawn: it cannot paint over the
+        -- tab bar above or the panel's foot below (the other pages fit, so they never needed this).
+        text('Settings', x0, 94, 22, GOLD)   -- drawn before the clipping below: it sits above the band
+        local view_top, view_bottom = 122, H - 74     -- under that heading, above the foot's line (H - 64)
+        local text0, button0, rect0, outline0 = text, button, rect, outline
+        -- the 30 leaves room for the tallest row (a button is 28): a row never straddles the edge
+        local function shown(y) return y >= view_top and y <= view_bottom - 30 end
+        local function text(value, x, y, size, c, limit, align_right, z)
+            if shown(y) then text0(value, x, y, size, c, limit, align_right, z) end
+        end
+        local function button(key, label, x, y, w, h, enabled, active, ink, z)
+            if shown(y) then button0(key, label, x, y, w, h, enabled, active, ink, z) end
+        end
+        local function rect(x, y, w, h, c, z)
+            if shown(y) then rect0(x, y, w, h, c, z) end
+        end
+        local function outline(x, y, w, h, c, z)
+            if shown(y) then outline0(x, y, w, h, c, z) end
+        end
+        local y = 132 - (ui.set_scroll or 0)
         local function choice(label, key, options, current)
             text(label, x0, y + 6, 16, WHITE, 270)
             for k, o in ipairs(options) do
@@ -18300,7 +19476,33 @@ local function draw(width, height)
         text(settings.changes and ('On: your ' .. #overrides .. ' change(s) are applied.')
              or ('Off: the game\'s values everywhere; your ' .. #overrides .. ' change(s) are kept for when you turn them on.'),
              x0 + 16, y - 6, 14, settings.changes and MUTED or WARN, W - x0 - 40)
-        y = y + 14
+        y = y + 26
+        -- the panel's colours (ArmoryTuningBench): dark (the default) or light
+        text('Theme', x0, y + 6, 16, WHITE, 270)
+        button('set:theme:dark', 'Dark', 640, y, 82, 28, true, (settings.theme or 'dark') == 'dark')
+        button('set:theme:light', 'Light', 728, y, 82, 28, true, settings.theme == 'light')
+        y = y + 36
+
+        -- the folder the settings and the values live in, and the copies of them
+        text('Config folder', x0, y + 6, 16, WHITE, 270)
+        button('set:cfg:cycle', 'Change folder', 548, y, 108, 28, true)
+        button('set:cfg:default', 'Default folder', 664, y, 108, 28, true)
+        y = y + 36
+        text('Config copies', x0, y + 6, 16, WHITE, 270)
+        button('set:cfg:export', 'Export', 548, y, 84, 28, true)
+        button('set:cfg:import:bak', 'Restore backup', 640, y, 112, 28, true)
+        button('set:cfg:import:keep', 'From copy', 760, y, 100, 28, true)
+        button('set:cfg:import:last', 'From export', 868, y, 104, 28, true)
+        y = y + 34
+        text(MOD.cfg_short(MOD.cfg_current()), x0 + 16, y, 12, DIM, W - x0 - 40)
+        y = y + 18
+        if ui.cfg_note then
+            text(ui.cfg_note.key .. ' ' .. tostring(ui.cfg_note.extra or ''), x0 + 16, y, 12, MUTED, W - x0 - 40)
+        else
+            text('Export: a dated copy into exports. Restore: replace config.txt (a restart reads it).',
+                 x0 + 16, y, 12, MUTED, W - x0 - 40)
+        end
+        y = y + 20
         local function percent(label, key)
             text(label, x0, y + 6, 16, WHITE, 270)
             local r = settings.RANGE[key]
@@ -18310,7 +19512,9 @@ local function draw(width, height)
                 rect(680, y, 80, 28, typing and color(20, 26, 34) or color(40, 52, 64), 951)
                 outline(680, y, 80, 28, GOLD)
             end
-            text(typing and (ui.value.text .. '_') or (settings[key] .. '%'), 754, y + 6, 17, WHITE, 70, true)
+            local at2 = typing and (ui.value.pos or (#ui.value.text + 1)) or 0
+            text(typing and (ui.value.text:sub(1, at2 - 1) .. '|' .. ui.value.text:sub(at2))
+                 or (settings[key] .. '%'), 754, y + 6, 17, WHITE, 70, true)
             region('value:' .. key, 680, y, 80, 28)
             button('set:' .. key .. ':up', '>', 764, y, 36, 28, settings[key] < r[2])
             y = y + 36
@@ -18357,9 +19561,8 @@ local function draw(width, height)
         text('On: your rockets, launcher rounds and stratagem ordnance fly through tree canopies and bushes.',
              x0 + 16, y - 6, 14, MUTED, W - x0 - 40)
         y = y + 14
-        choice('Sniper crosshair in third person', 'reticle', ONOFF, onoff(MOD.tweaks.reticle.on))
-        text('On: sniper rifles show a crosshair when you aim in third person.', x0 + 16, y - 6, 14, MUTED, W - x0 - 40)
-        y = y + 14
+        -- (the "Sniper crosshair in third person" switch of upstream is gone: it wrote the same
+        -- WeaponData crosshair type the weapon pages expose, so it fought those rows)
         if not MOD.offline then   -- (the game's item list exists only while it runs)
         choice('Unlock unused items', 'unlock_all', ONOFF, onoff(settings.unlock_any()))
         local names = {}
@@ -18378,10 +19581,10 @@ local function draw(width, height)
         end
         -- the tabs: each on / off, wrapped under the label (one stays on)
         text('Tabs shown', x0, y + 6, 16, WHITE, 270)
-        local tx = 640
+        local tx = 548
         for _, tab in ipairs(TABS) do
-            local w = math.max(#tab * 7 + 8, width(tab, 15) + 18)
-            if tx + w > W - 16 then tx, y = 640, y + 34 end
+            local w = math.max(#tab * 5 + 10, width(tab, 15) + 12)
+            if tx + w > W - 16 then tx, y = 548, y + 32 end
             button('set:tab:' .. tab, tab, tx, y, w, 28, true, not settings.hidden[tab])
             tx = tx + w + 4
         end
@@ -18389,14 +19592,22 @@ local function draw(width, height)
         local sure_reset = ui.confirm and ui.confirm.kind == 'reset_all'
         button('reset_all', sure_reset and 'Sure?' or 'Reset all values', x0, y, 188, 28, #overrides > 0, sure_reset)
         text('Resets all values from the current preset to default.', x0 + 16, y + 30, 14, MUTED, W - x0 - 40)
-        y = y + 50
-        y = y + 16
+        if state.needs_admin then   -- Install was refused write access: offer the elevated restart
+            y = y + 56              -- below the "reset all" row and its note (this block used to start on it)
+            text('Write access', x0, y + 6, 16, WHITE, 270)
+            button('set:elevate', 'Restart as administrator', 548, y, 220, 28, true)
+            text('Install could not write into the game folder: Windows gave this program no permission.',
+                 x0 + 16, y + 34, 13, MUTED, W - x0 - 40)
+            y = y + 54
+        end
+        y = y + 36
+        y = y + 12
         rect(x0, y, W - x0 - 16, 1, color(70, 82, 94), 951)
-        y = y + 14
+        y = y + 12
         text(MOD.title .. ' v' .. MOD.version, x0, y, 18, GOLD)
-        text('Made by SHODAN', x0, y + 30, 16, WHITE)
-        if not MOD.offline then text('Bingus Shared Loader by CowboyBingus', x0, y + 54, 16, MUTED) end
-        y = y + (MOD.offline and 68 or 92)
+        text('Made by SHODAN', x0 + 270, y + 2, 16, WHITE)
+        if not MOD.offline then text('Bingus Shared Loader by CowboyBingus', x0, y + 24, 15, MUTED) end
+        y = y + (MOD.offline and 32 or 56)
         text('GitHub', x0, y + 6, 16, WHITE)
         text(settings.GITHUB:gsub('^https://', ''), x0 + 90, y + 7, 15, MUTED, 340)
         button('link:github_open', 'Open', 800, y, 88, 28, true)
@@ -18407,8 +19618,32 @@ local function draw(width, height)
         text(MOD.offline and 'Logs and Presets' or 'Log file', x0, y + 6, 16, WHITE)
         button('link:log_copy', 'Copy', 800, y, 88, 28, true)
         button('link:log_open', 'Folder', 896, y, 88, 28, true)
-        text(MOD.offline and (data_dir('StatEditor') or ''):gsub('/', '\\') or log_dir .. '\\' .. MOD.log,
+        text(MOD.offline and MOD.cfg_short(MOD.cfg_clean(data_dir('StatEditor') or '')) or log_dir .. '\\' .. MOD.log,
              x0, y + 36, 14, MUTED, W - x0 - 16)
+
+        -- this page is longer than the panel: it scrolls with the wheel, and the bar on the right shows
+        -- where it is (the rows that scroll above the viewport are covered so they cannot paint over the head)
+        -- the page stops well above the panel's foot: the left column's own block and the "write to the game"
+        -- line live down there, and content reaching into them makes the two overlap
+        local reach = view_bottom - 30          -- the lowest y a row may have and still be drawn
+        local content_bottom = y + 52           -- the last line sits at y + 36, about 16 high
+        ui.set_max = math.max(0, content_bottom - reach)
+        if MOD.set_debug ~= content_bottom then   -- one line per layout: what the numbers came out as
+            MOD.set_debug = content_bottom
+            log(string.format('settings page: content bottom %d, reach %d, band %d..%d',
+                              content_bottom, reach, view_top, view_bottom))
+        end
+        if (ui.set_scroll or 0) > ui.set_max then ui.set_scroll = ui.set_max end
+        if ui.set_max > 0 then
+            local top, len = view_top, reach - view_top
+            local th = math.max(30, math.min(len, len * len / (len + ui.set_max)))
+            local ty = top + (len - th) * math.min(1, (ui.set_scroll or 0) / ui.set_max)
+            rect(989, top, 5, len, color(28, 34, 42), 951)
+            rect(989, ty, 5, th, color(110, 124, 138), 952)
+        else
+            ui.set_scroll = 0
+        end
+
     elseif presets_tab then
         -- drawn above
     elseif not weapon then
@@ -18453,9 +19688,12 @@ local function draw(width, height)
         end
         ui.last_visible = #weapon.rows
         local top = y
+        local pick_anchor = nil
         for n, row in ipairs(weapon.rows) do
             if n >= ui.scroll then
-                if y + pitch + (row.section ~= section and 24 or 0) + (row.after_h or 0) > bottom then
+                -- only the row itself must fit: a long explanation below it is clipped instead, so a
+                -- page never ends early and leaves a blank strip (rows used to be skipped whole)
+                if y + pitch + (row.section ~= section and 24 or 0) > bottom then
                     ui.last_visible = n - 1
                     break
                 end
@@ -18475,7 +19713,7 @@ local function draw(width, height)
                             if k == 1 or not ink_font or width(note, 14 * s) <= room * s then break end
                         end
                     end
-                    text(section:upper(), x0, y + 4, 15, MUTED)
+                    text(section:upper(), x0, y + 4, 15, SECTION)
                     if note ~= '' then text(note, x0 + nx, y + 4, 14, WARN, room) end
                     -- a list cut short: hovering it shows every name
                     if #others > shown then   -- (a note of its own lists none)
@@ -18525,14 +19763,23 @@ local function draw(width, height)
                 else
                     text(was and ('was ' .. fmt(default, row.storage)) or '', 690, y + bh / 2 - 7, 14, DIM, 90, true)
                     local typing = ui.value and ui.value.n == n and ui.value.weapon == weapon
-                    if typing or (ui.hover == 'value:' .. n and value ~= nil) then
+                    -- a row with a value list (crosshair, fire mode, a status slot) opens a drop-down
+                    -- instead of the typing box (ArmoryTuningBench)
+                    local is_pick = (row.enum_list ~= nil or row.pick_list ~= nil) and not typing
+                    if typing or (ui.hover == (is_pick and 'pick:' or 'value:') .. n and value ~= nil) then
                         rect(696, y, 88, bh, typing and color(20, 26, 34) or color(40, 52, 64), 951)
                         outline(696, y, 88, bh, GOLD)
                     end
+                    if is_pick and ui.pick and ui.pick.n == n and ui.pick.weapon == weapon then
+                        pick_anchor = { y = y, bh = bh }     -- where its list hangs from
+                    end
                     if typing then
-                        text(ui.value.text .. '_', 780, y + bh / 2 - 8, 17, WHITE, 84, true)
+                        local at = ui.value.pos or (#ui.value.text + 1)
+                    text(ui.value.text:sub(1, at - 1) .. '|' .. ui.value.text:sub(at),
+                         780, y + bh / 2 - 8, 17, WHITE, 84, true)
                     else
-                        text(fmt(value, row.storage), 780, y + bh / 2 - 8, 17, ink, 84, true)
+                        text(is_pick and MOD.shown(row, value) or fmt(value, row.storage),
+                             780, y + bh / 2 - 8, 17, ink, 84, true)
                     end
                     local ok = value ~= nil
                     button('dec_big:' .. n, '--', 790, y, 40, bh, ok)
@@ -18541,13 +19788,61 @@ local function draw(width, height)
                     button('inc_big:' .. n, '++', 914, y, 40, bh, ok)
                     button('reset:' .. n, 'R', 958, y, 26, bh, changed)
                     region('row:' .. n, x0 - 6, y - 1, 430, pitch - 1)
-                    region('value:' .. n, 696, y, 88, bh, ok)
+                    if is_pick then region('pick:' .. n, 696, y, 88, bh, ok)
+                    else region('value:' .. n, 696, y, 88, bh, ok) end
                 end
                 y = y + pitch
-                for k, line in ipairs(row.after or {}) do text(line, x0, y + 2 + (k - 1) * 16, 14, MUTED, W - x0 - 20) end
+                for k, line in ipairs(row.after or {}) do
+                    if y + 2 + k * 16 <= bottom then text(line, x0, y + 2 + (k - 1) * 16, 14, MUTED, W - x0 - 20) end
+                end
                 y = y + (row.after_h or 0)
             end
         end
+        -- a value list as a drop-down (ArmoryTuningBench): click the cell of a list row to open it, then an
+        -- entry to set it. Drawn after the rows, so its hit regions are the first the cursor meets.
+        if pick_anchor and ui.pick and ui.pick.weapon == weapon and ui.pick.n then
+            local prow = weapon.rows[ui.pick.n]
+            local list = MOD.pick_list(prow)
+            if list and #list > 0 then
+                local cur = row_value(prow)
+                local rowh, pad = 20, 4
+                -- never taller than the panel leaves room for (the list used to run off it)
+                local room = math.max(rowh * 4, math.min(320, H - 24))
+                local shown_n = math.min(#list, math.max(4, math.floor((room - pad * 2) / rowh)))
+                local span = math.max(1, #list - shown_n + 1)
+                ui.pick.span, ui.pick.shown = span, shown_n
+                if not ui.pick.top then   -- first draw: centre on the current value
+                    local at = cur and (MOD.enum_index(list, cur) or 1) or 1
+                    ui.pick.top = math.max(1, math.min(span, at - math.floor(shown_n / 2)))
+                    ui.version = ui.version + 1
+                end
+                local first = math.max(1, math.min(span, ui.pick.top or 1))
+                local ph, pw = shown_n * rowh + pad * 2, 200
+                local px = math.max(8, math.min(W - pw - 8, 596))
+                local py = pick_anchor.y - ph - 2
+                if py < 8 then py = pick_anchor.y + pick_anchor.bh + 2 end
+                py = math.max(8, math.min(H - ph - 8, py))
+                rect(px, py, pw, ph, color(16, 21, 28), 970)
+                outline(px, py, pw, ph, GOLD, 971)
+                for k = 1, shown_n do
+                    local opt = list[first + k - 1]
+                    -- the first entry at the top, the rest downwards: 0 at the top of the status list,
+                    -- not at its bottom (scrolling then matches the order on screen)
+                    local iy = py + pad + (k - 1) * rowh
+                    local key = 'pickitem:' .. ui.pick.n .. ':' .. opt[1]
+                    local hot = ui.hover == key
+                    if hot then rect(px + 2, iy - 2, pw - 4, rowh, color(46, 60, 76), 972) end
+                    text(string.format('%d  %s', opt[1], opt[2]), px + 8, iy + 2, 15,
+                         (cur ~= nil and opt[1] == cur) and GOLD or hot and WHITE or MUTED, pw - 16, false, 973)
+                    region(key, px + 2, iy - 2, pw - 4, rowh)
+                end
+                if #list > shown_n then
+                    text(string.format('%d / %d', first + shown_n - 1, #list), px + pw - 62, py + 2, 12, DIM, 56, true, 974)
+                end
+            end
+        end
+        log(string.format('layout: H=%d top=%d bottom=%d pitch=%d rows=%d scroll=%d visible=%d',
+            H, top, bottom, pitch, #weapon.rows, ui.scroll, ui.last_visible))
         ui.sbar, ui.last_page = nil, nil
         if scrolling then
             -- scroll bar: a thin track at the panel's right edge, its thumb the part in view (drag it,
@@ -18738,16 +20033,52 @@ function MOD.restore_last()
     end
 end
 
+-- Where a click at gui x lands in the text of the typing box: the caret goes there. The box's text
+-- starts at x 780, size 17, clipped at 84 gui units (see the row's draw); MOD.width_of is draw's own
+-- measurement, so the index matches what is on screen. On MOD, not locals: the main chunk is at
+-- LuaJIT's 200-local limit.
+-- The value's text is drawn RIGHT-ALIGNED, ending at x 780 (see text(..., 780, ..., 84, true)), so the
+-- box the text occupies is [780 - its width, 780]; a click maps to the nearest character boundary.
+MOD.value_box = { right = 780, size = 17 }
+function MOD.caret_at(text, x)
+    text = text or ''
+    local box, w = MOD.value_box, MOD.width_of
+    if not w then return 1 end
+    local total = w(text, box.size)
+    local left = box.right - total
+    local dx = (x or box.right) - left
+    if dx <= 0 then return 1 end
+    if dx >= total then return #text + 1 end
+    local best, best_d = 1, dx
+    for i = 1, #text do
+        local d = math.abs(dx - w(text:sub(1, i), box.size))
+        if d < best_d then best, best_d = i + 1, d end
+    end
+    return best
+end
+
 local function click(key)
-    if not key then return end
     local weapon = ui.weapon
-    local kind, arg = key:match('^([%w_]+):?(.*)$')
-    -- clicking anything else while naming keeps the name typed so far
+    local kind, arg = nil, nil
+    if key then kind, arg = key:match('^([%w_]+):?(.*)$') end
+    -- a click anywhere but the open list (or its own cell) closes it, and that includes a click that
+    -- lands on nothing at all (it used to need one that hit some control)
+    if ui.pick and kind ~= 'pick' and kind ~= 'pickitem' then
+        ui.pick = nil
+        ui.version = ui.version + 1
+    end
+    -- Clicking anywhere else closes what is open, a click that lands on nothing at all included (the
+    -- typing box used to stay open when the click missed every control, unlike the drop-down lists).
+    -- Clicking the control that is open keeps it: its own cell, its own row, the search box itself.
     if ui.editing and kind ~= 'name' then presets.finish_rename(true) end
-    if ui.search.active and kind ~= 'search' then ui.search.active = false end
+    if ui.search.active and kind ~= 'search' then ui.search.active = false; ui.version = ui.version + 1 end
     if ui.value and key ~= 'value:' .. ui.value.n then finish_value(true) end
     if ui.code and key ~= 'code:' .. ui.code.n then MOD.code.finish(false) end
     if kind ~= 'set' then ui.binding = nil end
+    if not key then
+        ui.version = ui.version + 1
+        return
+    end
     if kind == 'tab' then
         ui.tab, ui.page, ui.search, ui.settings = arg, 1, { text = '', active = false }, false
         local last = settings.last[MOD.enemy.on and 'enemy' or 'stat']
@@ -18778,7 +20109,7 @@ local function click(key)
         elseif name == 'arc_mp' then settings.arc_mp, settings.arc.next_check = value == 'on', 0
         elseif name == 'vehicles' then
             MOD.vehicles.on = value == 'on'; MOD.vehicles.apply()
-        elseif name == 'bounce' or name == 'foliage' or name == 'reticle' then
+        elseif name == 'bounce' or name == 'foliage' then
             MOD.tweaks[name].on = value == 'on'; MOD.tweaks.apply()
         elseif name == 'unlock_all' then
             settings.unlock_all(value == 'on'); settings.unlock.next_check = 0
@@ -18788,7 +20119,43 @@ local function click(key)
             local v = settings[name]
             settings.set_percent(name, value == 'up' and math.floor(v / 5) * 5 + 5 or math.ceil(v / 5) * 5 - 5)
         elseif name == 'size' or name == 'opacity' then settings.set_percent(name, tonumber(value) or settings[name])
+        elseif name == 'theme' and (value == 'dark' or value == 'light') then
+            settings.theme = value
+            rawset(_G, 'SHODAN_THEME', value)
+            ui.version = ui.version + 1
+            mark_config_dirty()
         elseif name == 'side' then settings.side = value
+        elseif name == 'elevate' then
+            if type(state.relaunch_elevated) == 'function' then
+                local ok, err = state.relaunch_elevated()
+                state.needs_admin = not ok
+                ui.cfg_note = ok and { key = 'Restarting with the administrator\'s rights...', extra = '' }
+                                   or { key = 'Could not restart:', extra = tostring(err or '') }
+                ui.version = ui.version + 1
+            end
+        elseif name == 'cfg' then
+            local exported
+            if value == 'cycle' then
+                local ok, res = MOD.cfg_cycle()
+                ui.cfg_note = ok and { key = 'Restart to use:', extra = tostring(res or '') }
+                                   or { key = 'Could not change it:', extra = tostring(res or '') }
+            elseif value == 'default' then
+                MOD.cfg_use_default()
+                ui.cfg_note = { key = 'Default folder next start', extra = '' }
+            elseif value == 'export' then
+                local ok, res = MOD.cfg_export()
+                ui.cfg_note = ok and { key = 'Exported:', extra = tostring(res or '') }
+                                   or { key = 'Export failed:', extra = tostring(res or '') }
+                exported = ok
+            else
+                local kind = value and value:match('^import:(%a+)$')
+                if kind then
+                    local ok, res = MOD.cfg_import(kind)
+                    ui.cfg_note = ok and { key = 'Imported (restart to apply):', extra = tostring(res or '') }
+                                       or { key = 'Import failed:', extra = tostring(res or '') }
+                end
+            end
+            ui.version = ui.version + 1
         elseif name == 'tab' then
             local on = 0
             for _, tab in ipairs(TABS) do if not settings.hidden[tab] then on = on + 1 end end
@@ -18868,6 +20235,24 @@ local function click(key)
     elseif kind == 'scroll' and weapon then
         local page = math.max(1, (ui.last_visible or ui.scroll) - ui.scroll)
         ui.scroll = math.max(1, math.min(#weapon.rows, ui.scroll + (arg == 'down' and page or -page)))
+    elseif kind == 'pick' and tonumber(arg) and weapon and weapon.rows[tonumber(arg)] then
+        -- a value list's cell was clicked: open it, or close it when it is already open
+        local n = tonumber(arg)
+        ui.row = n
+        if not MOD.pick_list(weapon.rows[n]) then return end
+        if ui.pick and ui.pick.n == n and ui.pick.weapon == weapon then ui.pick = nil
+        else ui.pick = { n = n, weapon = weapon } end
+    elseif kind == 'pickitem' then
+        -- <row>:<value> from the drop-down: write it and close (its arg is not a plain number, so it
+        -- must stay outside the row-key guard below)
+        local n, v = arg:match('^(%d+):(%-?%d+)$')
+        n, v = tonumber(n), tonumber(v)
+        local prow = n and weapon and weapon.rows[n]
+        if prow and MOD.pick_list(prow) and v then
+            ui.pick = nil   -- close first: a failing write must not leave the list stuck open
+            local ok, err = pcall(change, prow, nil, false, v)
+            if not ok then ui.message = { text = 'internal: ' .. tostring(err), till = api.now() + 8 } end
+        end
     elseif weapon and tonumber(arg) and weapon.rows[tonumber(arg)] then
         local row = weapon.rows[tonumber(arg)]
         ui.row = tonumber(arg)
@@ -18879,6 +20264,12 @@ local function click(key)
         elseif kind == 'code' and row.code then
             if ui.code then MOD.code.finish(true) else MOD.code.start(tonumber(arg)) end
         elseif kind == 'value' and row.code then MOD.code.start(tonumber(arg))
+        elseif kind == 'value' and ui.value and ui.value.n == tonumber(arg) and ui.value.weapon == weapon then
+            -- a click inside the box that is being typed in: the caret goes where the click landed
+            local gx = ui.cursor_gx
+            if gx and MOD.to_local then gx = MOD.to_local(gx) end
+            ui.value.pos, ui.value.fresh = MOD.caret_at(ui.value.text, gx), false
+            ui.version = ui.version + 1
         elseif kind == 'value' and not ui.value and row_value(row) ~= nil then
             ui.value = { n = tonumber(arg), weapon = weapon, text = fmt(row_value(row), row.storage), fresh = true }
         end
@@ -18887,6 +20278,9 @@ end
 
 -- the window's titles (offline/host.lua): which editor is shown, and a click on the other one's title
 state.enemy_on = function() return MOD.enemy.on end
+-- the theme, for the host's window chrome (offline/host.lua)
+state.theme_of = function() return settings.theme end
+rawset(_G, 'SHODAN_THEME', settings.theme or 'dark')   -- what the host's window chrome follows
 state.switch_editor = function(enemy)
     if enemy ~= MOD.enemy.on then click('enemy_mode'); ui.version = ui.version + 1 end
 end
@@ -18899,6 +20293,19 @@ local function pressed(name, now)
     if not down then held[name] = nil; return false end
     if not h then held[name] = { next = now + 0.4 }; return true end
     if now >= h.next then h.next = now + 0.08; return true end
+    return false
+end
+
+-- The same, but repeating sooner and faster: a text cursor has to move at the speed of the key rather
+-- than wait 0.4 s and then step every 0.08 s (ArmoryTuningBench). On MOD, not a local: the main chunk
+-- is at LuaJIT's 200-local limit.
+MOD.held_fast = {}
+function MOD.pressed_fast(name, now)
+    local down = key_down(VK[name])
+    local h = MOD.held_fast[name]
+    if not down then MOD.held_fast[name] = nil; return false end
+    if not h then MOD.held_fast[name] = { next = now + 0.18 }; return true end
+    if now >= h.next then h.next = now + 0.028; return true end
     return false
 end
 
@@ -18979,16 +20386,43 @@ local function keyboard(now)
     end
     if ui.value then
         local edit = ui.value
+        if pressed('Escape', now) and ui.pick then ui.pick = nil; return end
         if pressed('Escape', now) then finish_value(false); return end
         if pressed('Enter', now) then finish_value(true); return end
-        if pressed('Backspace', now) then
-            edit.text = edit.fresh and '' or edit.text:sub(1, -2)
+        -- A text cursor (ArmoryTuningBench): the box is edited at the caret, not only appended to.
+        -- Left / Right / Home / End move it; Backspace and Delete take the character out at it.
+        if edit.pos == nil then edit.pos = #edit.text + 1 end
+        local function caret()
+            edit.pos = math.max(1, math.min(#edit.text + 1, edit.pos or (#edit.text + 1)))
+            return edit.pos
+        end
+        if MOD.pressed_fast('Left', now) then edit.pos = caret() - 1; edit.fresh = false; caret() end
+        if MOD.pressed_fast('Right', now) then edit.pos = caret() + 1; edit.fresh = false; caret() end
+        if MOD.pressed_fast('Home', now) then edit.pos, edit.fresh = 1, false end
+        if MOD.pressed_fast('End', now) then edit.pos, edit.fresh = #edit.text + 1, false end
+        if MOD.pressed_fast('Delete', now) and not edit.fresh and caret() <= #edit.text then
+            edit.text = edit.text:sub(1, edit.pos - 1) .. edit.text:sub(edit.pos + 1)
+        end
+        if MOD.pressed_fast('Backspace', now) then
+            if edit.fresh then
+                edit.text, edit.pos = '', 1
+            else
+                local at = caret()
+                if at > 1 then
+                    edit.text = edit.text:sub(1, at - 2) .. edit.text:sub(at)
+                    edit.pos = at - 1
+                end
+            end
             edit.fresh = false
         end
         local function add(c)
             if c:find('^[%d%.,%-]$') then
-                if edit.fresh then edit.text, edit.fresh = '', false end
-                if #edit.text < 16 then edit.text = edit.text .. c end
+                if edit.fresh then edit.text, edit.pos, edit.fresh = '', 1, false end
+                local at = caret()
+                if #edit.text < 16 then
+                    edit.text = edit.text:sub(1, at - 1) .. c .. edit.text:sub(at)
+                    edit.pos = at + 1
+                end
             end
         end
         if poll then
@@ -19127,6 +20561,21 @@ function ui.scroll_drag(gy)
 end
 
 function ui.wheel_scroll(notches)
+    if ui.pick and ui.pick.span then
+        -- a drop-down is open: the wheel moves its window, not the page behind it. The redraw is gated
+        -- on `ui.version` (the signature does not include ui.pick.top), so bump it or nothing moves.
+        local top = math.max(1, math.min(ui.pick.span, (ui.pick.top or 1) - notches * 4))
+        if top ~= ui.pick.top then
+            ui.pick.top, ui.version = top, ui.version + 1
+        end
+        return
+    end
+    if ui.settings and (ui.set_max or 0) > 0 then
+        local before = ui.set_scroll or 0
+        ui.set_scroll = math.max(0, math.min(ui.set_max, before - notches * 48))
+        if ui.set_scroll ~= before then ui.version = ui.version + 1 end
+        return
+    end
     local left = ui.cursor_gx and ui.split_gx and ui.cursor_gx < ui.split_gx
     local b = left and ui.lbar or (not left and ui.weapon and ui.sbar)
     if b then ui[b.id] = math.max(1, math.min(b.span + 1, ui[b.id] - notches * 3)) end
@@ -19141,18 +20590,31 @@ local function mouse(window)
        or user.GetClientRect(window, ffi.cast('void *', rect)) == 0 then return end
     local cw, ch = rect[2] - rect[0], rect[3] - rect[1]
     local x, y = point[0], point[1]
-    if cw <= 0 or ch <= 0 or x < 0 or y < 0 or x >= cw or y >= ch then return end
+    local function button_down()
+        if cursor.raw.saved then return key_down(0x01) end   -- VK_LBUTTON: the engine gets no mouse input
+        local value = sr.Mouse.button(sr.Mouse.button_id('left'))
+        return value == true or (type(value) == 'number' and value > 0)
+    end
+    if cw <= 0 or ch <= 0 or x < 0 or y < 0 or x >= cw or y >= ch then
+        -- the pointer is outside the window: nothing is hovered any more, and a click out there must close
+        -- an open list just like any other click that misses it (this used to return without looking)
+        ui.hover = nil
+        local down = button_down()
+        if not down and mouse_was_down then
+            if ui.pick then ui.pick, ui.version = nil, ui.version + 1 end
+            -- a click out here is a click elsewhere: it closes the typing box too
+            if ui.value then finish_value(true) end
+            if ui.search.active then ui.search, ui.version = { text = '', active = false }, ui.version + 1 end
+            armed, ui.drag = nil, nil
+        end
+        mouse_was_down = down
+        return
+    end
     local width, height = sr.Gui.resolution()
     local gy = (ch - y) * height / ch
     ui.cursor_gx = x * width / cw
     ui.hover = hit(ui.cursor_gx, gy, true)
-    local down
-    if cursor.raw.saved then
-        down = key_down(0x01)   -- VK_LBUTTON: the engine gets no mouse input while the panel holds it
-    else
-        local value = sr.Mouse.button(sr.Mouse.button_id('left'))
-        down = value == true or (type(value) == 'number' and value > 0)
-    end
+    local down = button_down()
     if mouse_was_down ~= nil then
         if down and not mouse_was_down then
             armed = ui.hover
@@ -19161,7 +20623,13 @@ local function mouse(window)
         if down and ui.drag then ui.scroll_drag(gy) end
         if not down then ui.drag = nil end
         if not down and mouse_was_down then
-            if armed and armed == ui.hover then click(armed) end
+            if armed and armed == ui.hover then
+                click(armed)
+            else
+                -- pressed and released on nothing, on the window's own chrome, or on different things:
+                -- still a click elsewhere, which closes what is open (the typing box, a list, the search)
+                click(nil)
+            end
             armed = nil
         end
     end
@@ -19469,9 +20937,40 @@ local function panel_frame(now)
         local ok, why = pcall(cursor.hold_input, window, now)
         if not ok then log('input: ' .. tostring(why)); cursor.raw.failed = true end
     end
-    -- the mouse wheel scrolls the list or the stats (the half the cursor is over), 3 rows a notch
+    -- The mouse wheel scrolls the list or the stats (the half the cursor is over), 3 rows a notch.
+    -- Over a value box it steps that value with the wheel, but only while Ctrl is held (before, merely
+    -- hovering a box stepped it, which made accidental changes far too easy). While a box is being typed
+    -- in, a notch steps it with no modifier at all, and the box stays open. Shift makes the steps bigger.
     local ok, notches = pcall(cursor.wheel)
-    if ok and notches ~= 0 and not ui.value then ui.wheel_scroll(notches) end
+    if ok and notches ~= 0 then
+        local big = key_down(VK.Shift)
+        local typing = ui.value and ui.value.weapon and ui.value.weapon.rows[ui.value.n]
+        local hovered
+        if not typing and key_down(VK.Ctrl) and not ui.pick and ui.hover then
+            local n = ui.hover:match('^value:(%d+)$')
+            hovered = n and ui.weapon and ui.weapon.rows[tonumber(n)]
+        end
+        local row = typing or hovered
+        if row and row_value(row) ~= nil and (typing or hovered) then
+            local dir = notches > 0 and 1 or -1
+            local steps = math.min(10, math.abs(notches))
+            -- digits typed but not committed yet: write them first, then step from that value
+            local typed = tonumber(((ui.value and ui.value.text or ''):gsub('%s+', '')))
+            local cur = row_value(row)
+            if typed ~= nil and cur ~= nil and math.abs(typed - cur) > 1e-9 then change(row, nil, false, typed) end
+            for _ = 1, steps do change(row, dir, big) end
+            if typing then
+                local now = row_value(row)
+                if now ~= nil then
+                    local text = fmt(now, typing.storage)
+                    ui.value.text, ui.value.pos, ui.value.fresh = text, #tostring(text) + 1, false
+                end
+            end
+            ui.version = ui.version + 1
+        elseif not ui.value then
+            ui.wheel_scroll(notches)
+        end
+    end
     local main = sr.Application.main_world()
     local worlds = sr.Application.worlds() or {}
     if not same_worlds(worlds, ui.worlds) or main ~= ui.main then
@@ -19512,7 +21011,10 @@ local function panel_frame(now)
             log('mouse input off for this session: ' .. tostring(why))
         end
     end
-    if not ui.hover and not ui.drag then mouse_was_down, armed = nil, nil end
+    -- only forget what was armed: keeping `mouse_was_down` is what lets a press that started
+    -- outside every control (a click on the empty screen) still be seen as a release, which is how
+    -- an open drop-down gets closed there
+    if not ui.hover and not ui.drag then armed = nil end
     if window then keyboard(now) end
 
     -- redraw when anything shown changed
@@ -19521,11 +21023,11 @@ local function panel_frame(now)
     if ui.confirm and api.now() >= ui.confirm.till then ui.confirm = nil; ui.version = ui.version + 1 end
     local signature = table.concat({ width, height, state.phase, state.tables, ui.tab, ui.page, ui.row, ui.scroll,
                                      tostring(ui.hover), tostring(ui.drag ~= nil), ui.weapon and ui.weapon.hash or '-', ui.version,
-                                     tostring(ui.settings), tostring(ui.binding), hotkey_name,
+                                     tostring(ui.settings), tostring(ui.binding), hotkey_name, settings.theme,
                                      #overrides, ui.wslot, tostring(ui.fslot), ui.fpage,
                                      ui.message and ui.message.text or '', ui.editing and ui.editing.text or '-',
                                      ui.search.text, tostring(ui.search.active),
-                                     ui.value and (ui.value.n .. '=' .. ui.value.text) or '-' }, '|')
+                                     ui.value and (ui.value.n .. '=' .. ui.value.text .. '@' .. tostring(ui.value.pos or 0)) or '-' }, '|')
     if signature ~= ui.signature then
         -- a fresh gui each time: nothing drawn before can linger
         if ui.gui then
@@ -20694,8 +22196,7 @@ local ok, failure = pcall(function()
     assert(ffi_ok and ffi, 'LuaJIT FFI is unavailable')
     assert(ffi.abi('64bit'), 'Windows x64 is required')
     assert(type(update) == 'function', 'the game update hook is unavailable')
-    api = build_api()
-    local cell = ffi.new('float[1]')
+        local cell = ffi.new('float[1]')
     f32_bytes = function(value)
         cell[0] = value
         return ffi.string(cell, 4)
@@ -20733,6 +22234,10 @@ if not BUS then
 end
 BUS.jobs[MOD.global] = tick
 
+api = build_api()
+if not api then
+    error('could not set up the Windows API calls this needs')
+end
 local own = api.address_of(NEEDLE)
 local skip_low = (own or LUA_HEAP_LIMIT) < LUA_HEAP_LIMIT
 hub = rawget(_G, HUB_NAME)
