@@ -111,7 +111,68 @@ function M.migrate()
 end
 
 -- ---------------------------------------------------------------- the game
-M.home = (env('LOCALAPPDATA') or '.') .. '/SHODAN/StatEditor'
+-- The folder the originals (what Install replaces), the installed list and the log live in. A profile
+-- folder can exist and still refuse writes (an old install made under another account, Controlled Folder
+-- Access), and then every Install stops with "could not keep the original": take the first folder that
+-- really accepts a file instead, the same order the panel uses for its own files.
+local function usable(dir)
+    mkdirs(dir .. '/originals')
+    if not exists(dir .. '/originals') then return false end    -- the originals need a folder of their own
+    local probe = io.open(dir .. '/.write-probe', 'wb')
+    if not probe then return false end
+    probe:close()
+    os.remove(dir .. '/.write-probe')
+    return true
+end
+local function pick_home()
+    -- the folder above the program's own: a build can replace the program's folder, this one stays, and it
+    -- is the only place some setups allow (a profile that refuses writes for this program)
+    local source = (debug.getinfo(1, 'S') or {}).source or ''
+    local own = source:match('^@(.*[/\\])')
+    local function clean(path)   -- app/../../SHODAN-Config -> .../SHODAN-Config, so messages read properly
+        local parts = {}
+        for part in path:gsub('\\', '/'):gmatch('[^/]+') do
+            if part == '..' then
+                if #parts > 1 then parts[#parts] = nil end
+            elseif part ~= '.' then
+                parts[#parts + 1] = part
+            end
+        end
+        return table.concat(parts, '/')
+    end
+    local beside = own and clean(own .. '../../SHODAN-Config') or nil
+    if beside and not beside:match('^%a:') then beside = nil end   -- (no usable place when the script's path is relative)
+    -- the panel's "Change folder" leaves <beside>-location.txt: use that folder, if it still takes files
+    if beside then
+        local chosen = read(beside .. '-location.txt')
+        local line = chosen and chosen:match('^%s*(.-)%s*$')
+        if line and line ~= '' and line:match('^%a:') and usable((line:gsub('\\', '/'))) then
+            return (line:gsub('\\', '/'))
+        end
+    end
+    local list = {
+        beside,   -- FIRST: the same folder whether this program runs elevated or not (the profile folders
+                  -- below are writable for only one of the two, which split the originals in two places)
+        (env('LOCALAPPDATA') or '') .. '/SHODAN/StatEditor',      -- upstream's own place, kept when it works
+        (env('LOCALAPPDATA') or '') .. '/SHODAN-StatEditor',      -- a fresh leaf for when it does not
+        (env('APPDATA') or '') .. '/SHODAN-StatEditor',
+        (env('USERPROFILE') or '') .. '/Documents/SHODAN Stat Editor',
+        (env('LOCALAPPDATA') or '.') .. '/SHODAN/StatEditor',
+    }
+    for _, dir in ipairs(list) do
+        if dir and dir ~= '' and usable(dir) then
+            M.fallback_dirs = {}       -- an earlier elevated / normal run may have kept the originals elsewhere
+            for _, other in ipairs(list) do
+                if other and other ~= '' and other ~= dir then M.fallback_dirs[#M.fallback_dirs + 1] = other end
+            end
+            return dir
+        end
+    end
+    return (env('LOCALAPPDATA') or '.') .. '/SHODAN/StatEditor'
+end
+local default_home = (env('LOCALAPPDATA') or '.') .. '/SHODAN/StatEditor'
+M.home = pick_home()
+if M.home ~= default_home then M.legacy_home = default_home end   -- an earlier install's originals live there
 M.logs = M.home .. '/Logs'
 M.originals_dir = M.home .. '/originals'
 local LIST = M.home .. '/installed.txt'
@@ -181,10 +242,14 @@ end
 -- ---------------------------------------------------------------- installed.txt
 local function load_list()
     local list = {}
-    for line in (read(LIST) or ''):gmatch('[^\r\n]+') do
-        local name, hash = line:match('^(%S+)%s+(%x+)$')
-        if name then list[name] = list[name] or {}; list[name][hash] = true end
+    local function take(text)
+        for line in (text or ''):gmatch('[^\r\n]+') do
+            local name, hash = line:match('^(%S+)%s+(%x+)$')
+            if name then list[name] = list[name] or {}; list[name][hash] = true end
+        end
     end
+    take(read(LIST))
+    for _, dir in ipairs(M.fallback_dirs or {}) do take(read(dir .. '/installed.txt')) end
     return list
 end
 
@@ -202,31 +267,105 @@ end
 -- name -> sealed original for every generated_*.dl_bin, and which of them are ours now (written by an install).
 -- A game file that is not ours is the original, and replaces a kept one that differs (the game was updated).
 function M.originals(game)
+    -- The baseline every value is measured against is the game's own file, never another mod's:
+    -- a kept original (the copy taken before this editor first wrote a file) wins over what sits in
+    -- the game's folder now. Only when there is none is the current file taken as the original.
     local list, out, ours, problems = load_list(), {}, {}, {}
     local names = M.list_files(game, 'generated_*.dl_bin')
     local changed = false
     for _, name in ipairs(names) do
         local current = read(game .. '/' .. name)
         local kept = read(M.originals_dir .. '/' .. name)
+        if not kept then
+            for _, dir in ipairs(M.fallback_dirs or {}) do
+                kept = read(dir .. '/originals/' .. name)
+                if kept then break end
+            end
+        end
         if current and list[name] and list[name][hash_of(current)] then
             if kept then out[name], ours[name] = kept, true
             else problems[#problems + 1] = name .. ': written by an earlier install, and its original is gone' end
+        elseif kept then
+            out[name] = kept          -- another mod's file is in the folder: the kept copy is the game's
         elseif current then
             out[name] = current
             if list[name] then list[name], changed = nil, true end
-            if kept and kept ~= current then os.remove(M.originals_dir .. '/' .. name) end
+            if current ~= nil and M.keep_first_original then M.keep_first_original(name, current) end
         end
     end
     if changed then save_list(list) end
     return out, ours, problems, #names
 end
 
+-- The Settings page's "Choose folder": take config.txt, the installed list and THE GAME'S ORIGINALS
+-- (the baseline every value is measured against) into `to`. Without the originals the new folder would
+-- take whatever sits in the game's folder — another mod's file — for the game's own.
+function M.carry(from, to)
+    if not to or to == '' or from == to then return true end
+    mkdirs(to)
+    for _, leaf in ipairs({ 'config.txt', 'config.txt.bak', 'installed.txt', 'game folder.txt',
+                            'weapon_presets.txt' }) do
+        local data = read(from .. '/' .. leaf)
+        if data then write(to .. '/' .. leaf, data) end
+    end
+    local names = M.list_files(from .. '/originals', '*.dl_bin')
+    if #names > 0 then mkdirs(to .. '/originals') end
+    for _, name in ipairs(names) do
+        local data = read(from .. '/originals/' .. name)
+        if data then write(to .. '/originals/' .. name, data) end
+    end
+    return true
+end
+
+-- the game's own file, kept the first time we see it (the baseline the panel measures against)
+function M.keep_first_original(name, bytes)
+    if not bytes then return end
+    local path = M.originals_dir .. '/' .. name
+    if exists(path) then return end
+    mkdirs(M.originals_dir)
+    write(path, bytes)
+end
+
 -- ---------------------------------------------------------------- writing
+-- writes: name -> bytes (a changed file, or the original for one going back); originals: name -> original bytes
+-- Can this program write into the game's folder at all? A restricted token (launched from another program's
+-- sandbox) or an ACL gives "Permission denied" here, and the answer says what to do about it.
+function M.game_writable(game)
+    local probe = game .. '/.shodan-write-probe'
+    local handle = io.open(probe, 'wb')
+    if not handle then return false end
+    handle:write('x')
+    handle:close()
+    os.remove(probe)
+    return true
+end
+
+-- Start this program again with the administrator's rights (a UAC prompt). Success is "the prompt appeared";
+-- this process should then close, the elevated one takes over.
+function M.elevate()
+    pcall(ffi.cdef, 'void *ShellExecuteA(void *hwnd, const char *op, const char *file, const char *args, const char *dir, int show);')
+    local ok, shell = pcall(ffi.load, 'shell32')
+    if not ok or not shell then return nil, 'shell32 is not available' end
+    local path = ffi.new('char[1024]')
+    local n = kernel.GetModuleFileNameA(nil, path, 1024)
+    if n <= 0 then return nil, 'could not find its own path' end
+    local exe = ffi.string(path, n)
+    local result = shell.ShellExecuteA(nil, 'runas', exe, nil, nil, 1)
+    if result == nil or ffi.cast('intptr_t', result) <= 32 then
+        return nil, 'the administrator prompt was refused'
+    end
+    return true
+end
+
 -- writes: name -> bytes (a changed file, or the original for one going back); originals: name -> original bytes.
 -- A game file another tool changed after this editor read it (neither its original nor written by an install,
 -- issue #90) is never written over: skip_changed (Restore) leaves it be and returns its name, Install stops.
 function M.write_files(game, writes, originals, skip_changed)
     if M.game_running() then return nil, 'Helldivers 2 is running: close it first.' end
+    if not M.game_writable(game) then
+        return nil, 'this program is not allowed to write into the game\'s folder (' .. game ..
+                    '): run it as administrator (Settings, "Restart as administrator") or start it from Explorer'
+    end
     local list, changed = load_list(), {}
     for name in pairs(writes) do
         local current = read(game .. '/' .. name)

@@ -242,6 +242,9 @@ function M.pump()
         if msg.message == 0x0102 then   -- WM_CHAR: a character for the panel, an input method's own included
             M.push_typed(tonumber(msg.wparam))
         else
+            -- WM_KEYDOWN: queue it for the text cursor, but still translate it — TranslateMessage is what
+            -- turns a key into the WM_CHAR above, and swallowing it stops every character from arriving
+            if msg.message == 0x0100 then M.push_key(tonumber(msg.wparam)) end
             user.TranslateMessage(msg)
             user.DispatchMessageW(msg)
         end
@@ -268,6 +271,18 @@ function M.cursor()
     return x, y
 end
 function M.key_down(vk) return user.GetAsyncKeyState(vk) < 0 end
+
+-- Keys pressed since the last frame (WM_KEYDOWN): the arrows, Home/End/Delete/Backspace, which a text
+-- cursor needs and which WM_CHAR never carries. GetAsyncKeyState alone is not enough: it answers for
+-- the whole desktop, so the panel only trusted it while its own window was the foreground one.
+local keys = {}
+function M.push_key(vk) if #keys < 64 then keys[#keys + 1] = vk end end
+function M.take_keys()
+    if #keys == 0 then return nil end
+    local out = keys
+    keys = {}
+    return out
+end
 
 -- ---------------------------------------------------------------- painting
 -- The face: Windows' UI font for the panel's language (M.lang(): its id), the same for measuring and drawing.
@@ -389,6 +404,7 @@ function M.engine()
             can_get = function() return true end,
             -- the characters typed into the window (an input method's Chinese included; see take_typed)
             typed_text = function() return M.take_typed() end,
+    taken_keys = function() return M.take_keys() end,
         },
         World = {
             create_screen_gui = function(world)

@@ -72,7 +72,7 @@ end
 M.modded = {}   -- name -> true: a file another mod changed (built on, its changes kept)
 
 -- folder: data/game; originals: name -> sealed original (from the backups, else the game folder)
-function M.load(folder, originals)
+function M.load(folder, originals, currents)
     local dll = assert(read(folder .. '/game.dll'), 'game.dll not found in ' .. folder)
     local problems = {}
     for name, cipher in pairs(originals) do
@@ -81,7 +81,19 @@ function M.load(folder, originals)
             problems[#problems + 1] = name .. ': ' .. tostring(n)
         else
             local hash = G.murmur64(p, n)
-            if not G.game_dll_has(dll, hash) then
+            -- a kept original from an older game build: the file in the game's folder is what this
+            -- build ships, so that one becomes the baseline instead
+            if not G.game_dll_has(dll, hash) and currents and currents[name] and currents[name] ~= cipher then
+                ffi.C.VirtualFree(p, 0, MEM_RELEASE)
+                p, n = place(name, currents[name])
+                if p then
+                    log(name .. ': the kept original is from another build; using the game\'s file')
+                    hash = G.murmur64(p, n)
+                end
+            end
+            if not p then
+                problems[#problems + 1] = name .. ': could not be read'
+            elseif not G.game_dll_has(dll, hash) then
                 problems[#problems + 1] = name .. ': not the version this game expects'
                 ffi.C.VirtualFree(p, 0, MEM_RELEASE)
             else

@@ -125,7 +125,20 @@ local function main()
     shim.pump()
     local originals, ours, problems, count = I.originals(game)
     if count == 0 then fatal('No game data files in ' .. game) end
-    for _, p in ipairs(D.load(game, originals)) do problems[#problems + 1] = p end
+    -- read on demand: only a file whose kept original is stale is opened twice
+    local function bytes_at(path)
+        local handle = io.open(path, 'rb')
+        if not handle then return nil end
+        local data = handle:read('*a')
+        handle:close()
+        return data
+    end
+    local currents = setmetatable({}, { __index = function(t, name)
+        local data = bytes_at(game .. '/' .. name)
+        rawset(t, name, data)
+        return data
+    end })
+    for _, p in ipairs(D.load(game, originals, currents)) do problems[#problems + 1] = p end
     for _, p in ipairs(problems) do log('problem: ' .. p) end
     local loaded = 0
     for _ in pairs(D.files) do loaded = loaded + 1 end
@@ -153,6 +166,8 @@ local function main()
     stingray = shim.engine()
     function update(dt) end
     local editor = arg and arg[1] or here .. 'stat_editor.lua'
+    -- the panel resolves its config folder while loading, before it can see `state`: hand it over here
+    rawset(_G, 'SHODAN_OFFLINE_DATA', I.home)
     local chunk, why = loadfile(editor)
     if not chunk then fatal('Could not load ' .. editor .. ':\n' .. tostring(why)) end
     local ok, err = pcall(chunk)
@@ -161,15 +176,151 @@ local function main()
 current_state = state
     if type(state) ~= 'table' then fatal('Stat Editor did not start (no state).') end
     log('data folder: ' .. tostring(I.home))
+    -- the panel's config.txt lives where the host's files are (the folder the location file chose):
+    -- set the hint and the panel's own cache, since it resolved its folders while loading
+    state.carry_config = function(from, to) return I.carry(from, to) end   -- "Choose folder"
+    state.data_dir_hint = I.home
+    if type(state.data_dirs) == 'table' then
+        state.data_dirs['StatEditor'] = I.home
+        state.data_dir_used = I.home
+    end
     local build = U.build(here)   -- app/build.txt: version, commit, channel
     -- the build number goes in the title too: several ATB builds share the upstream version, and this is
     -- the quickest way to tell which one is running
-    local tag = ' [ATB' ..
-                (type(build.commit) == 'string' and build.commit ~= '' and (' ' .. build.commit) or '') ..
+    -- a commit of 'atb147' fills in as ' [ATB 147]', not ' [ATB atb147]'
+    local commit = type(build.commit) == 'string' and build.commit or ''
+    commit = commit:gsub('^%s*[Aa][Tt][Bb][ -]*', '')
+    local tag = ' [ATB' .. (commit ~= '' and (' ' .. commit) or '') ..
                 ']'   -- marks the ArmoryTuningBench build: dropdowns, ricochet, fire modes
     shim.set_title('SHODAN Stat Editor Offline v' .. tostring(state.version)
                    .. (build.channel == 'dev' and build.commit and ' (dev ' .. build.commit:sub(1, 7) .. ')' or '')
                    .. tag)
+    -- ------------------------------------------------------------ a file dialog (comdlg32)
+    -- Export / import of config.txt asks where: the panel calls this and gets a path, or nil when
+    -- the user backs out. Windows' own dialog, so it looks like every other file picker.
+    do
+        local okffi, ffi = pcall(require, 'ffi')
+        if okffi then
+            pcall(ffi.cdef, [[
+                typedef struct { unsigned int lStructSize; void *hwndOwner; void *hInstance;
+                    const void *lpstrFilter; void *lpstrCustomFilter; unsigned int nMaxCustFilter;
+                    unsigned int nFilterIndex; void *lpstrFile; unsigned int nMaxFile; void *lpstrFileTitle;
+                    unsigned int nMaxFileTitle; const void *lpstrInitialDir; const void *lpstrTitle;
+                    unsigned int Flags; unsigned short nFileOffset; unsigned short nFileExtension;
+                    const void *lpstrDefExt; long long lCustData; void *lpfnHook;
+                    const void *lpTemplateName; void *pvReserved; unsigned int dwReserved;
+                    unsigned int FlagsEx; } OPENFILENAMEW;
+                int GetOpenFileNameW(OPENFILENAMEW *);
+                int GetSaveFileNameW(OPENFILENAMEW *);
+                int MultiByteToWideChar(unsigned int, unsigned int, const char *, int, void *, int);
+                int WideCharToMultiByte(unsigned int, unsigned int, const void *, int, char *, int, const char *, int *);
+            ]])
+            local ok, comdlg = pcall(ffi.load, 'comdlg32')
+            local ok2, k32 = pcall(ffi.load, 'kernel32')
+            if ok and ok2 then
+                local function wide(text, size)   -- utf-8 -> a NUL-terminated wide buffer
+                    local buf = ffi.new('uint16_t[?]', size or (#text + 2))
+                    local n = k32.MultiByteToWideChar(65001, 0, text, #text, buf, size or (#text + 2))
+                    if n < 0 then n = 0 end
+                    if n < (size or (#text + 2)) then buf[n] = 0 end
+                    return buf
+                end
+                local function narrow(buf, chars)   -- wide buffer -> utf-8
+                    local out = ffi.new('char[?]', chars * 3 + 8)
+                    local n = k32.WideCharToMultiByte(65001, 0, buf, chars, out, chars * 3 + 8, nil, nil)
+                    if n <= 0 then return nil end
+                    return ffi.string(out, n)
+                end
+                local FILTER = 'Text files (*.txt)\0*.txt\0All files (*.*)\0*.*\0\0'
+                state.pick_file = function(save, title, initial_dir, default_name)
+                    local ofn = ffi.new('OPENFILENAMEW')
+                    local file = ffi.new('uint16_t[?]', 2048)
+                    local filter = wide(FILTER, #FILTER + 2)
+                    local wtitle = title and wide(title, #title + 2) or nil
+                    local wdir = initial_dir and wide(initial_dir, #initial_dir + 2) or nil
+                    local wext = wide('txt', 8)
+                    if default_name and #default_name > 0 then
+                        local start = wide(default_name, #default_name + 2)
+                        ffi.copy(file, start, (#default_name + 1) * 2)
+                    end
+                    ofn.lStructSize = ffi.sizeof('OPENFILENAMEW')
+                    ofn.lpstrFilter = filter
+                    ofn.nFilterIndex = 1
+                    ofn.lpstrFile = file
+                    ofn.nMaxFile = 2048
+                    ofn.lpstrTitle = wtitle
+                    ofn.lpstrInitialDir = wdir
+                    ofn.lpstrDefExt = wext
+                    -- OFN_EXPLORER | OFN_NOCHANGEDIR | (save: OVERWRITEPROMPT, HIDEREADONLY)
+                    ofn.Flags = 0x00080000 + 0x00000008 + (save and (0x00000002 + 0x00000004) or 0x00001000)
+                    local done = (save and comdlg.GetSaveFileNameW or comdlg.GetOpenFileNameW)(ofn)
+                    if done == 0 then return nil end
+                    local n = 0
+                    while n < 2047 and file[n] ~= 0 do n = n + 1 end
+                    if n == 0 then return nil end
+                    return narrow(file, n)
+                end
+                state.has_file_dialog = true
+                log('file dialog: comdlg32 ready')
+            else
+                log('file dialog: comdlg32 not available (' .. tostring(comdlg) .. ')')
+            end
+        end
+    end
+    -- ------------------------------------------------------------ a folder picker (shell32)
+    -- "Change folder" asks where the settings should live.
+    do
+        local okffi, ffi = pcall(require, 'ffi')
+        if okffi then
+            pcall(ffi.cdef, [[
+                typedef struct { void *hwndOwner; void *pidlRoot; uint16_t *pszDisplayName; const uint16_t *lpszTitle;
+                    unsigned int ulFlags; void *lpfn; long long lParam; int iImage; } BROWSEINFOW;
+                void *SHBrowseForFolderW(BROWSEINFOW *);
+                int SHGetPathFromIDListW(const void *pidl, uint16_t *path);
+                void CoTaskMemFree(void *memory);
+                long CoInitializeEx(void *reserved, unsigned int mode);
+                void CoUninitialize(void);
+                int MultiByteToWideChar(unsigned int, unsigned int, const char *, int, void *, int);
+            ]])
+            local ok, shell = pcall(ffi.load, 'shell32')
+            local ok2, ole = pcall(ffi.load, 'ole32')
+            local ok3, k32 = pcall(ffi.load, 'kernel32')
+            if ok and ok2 and ok3 then
+                local function wide(text, size)
+                    local buf = ffi.new('uint16_t[?]', size or (#text + 2))
+                    k32.MultiByteToWideChar(65001, 0, text, #text, buf, size or (#text + 2))
+                    buf[#text] = 0
+                    return buf
+                end
+                state.pick_folder = function(title, initial_dir)
+                    local title_w = wide(title or 'Choose a folder')
+                    local browse = ffi.new('BROWSEINFOW')
+                    browse.pszDisplayName = ffi.new('uint16_t[?]', 512)
+                    browse.lpszTitle = title_w
+                    -- BIF_RETURNONLYFSDIRS | BIF_NEWDIALOGSTYLE | BIF_USENEWUI
+                    browse.ulFlags = 0x00000001 + 0x00000040 + 0x00000010
+                    -- the new-style folder dialog is a COM one: without this it returns nothing at once
+                    ole.CoInitializeEx(nil, 2)   -- COINIT_APARTMENTTHREADED
+                    local pidl = shell.SHBrowseForFolderW(browse)
+                    ole.CoUninitialize()
+                    if pidl == nil then return nil end
+                    local buf = ffi.new('uint16_t[?]', 2048)
+                    local got = shell.SHGetPathFromIDListW(pidl, buf)
+                    ole.CoTaskMemFree(pidl)
+                    if got == 0 then return nil end
+                    local n = 0
+                    while n < 2047 and buf[n] ~= 0 do n = n + 1 end
+                    if n == 0 then return nil end
+                    local out = ffi.new('char[?]', n * 3 + 8)
+                    local m = k32.WideCharToMultiByte(65001, 0, buf, n, out, n * 3 + 8, nil, nil)
+                    if m <= 0 then return nil end
+                    return ffi.string(out, m)
+                end
+                state.has_folder_dialog = true
+                log('folder picker: shell32 ready')
+            end
+        end
+    end
     -- the host's own text in the panel's language, drawn with its font
     -- a way out of "Permission denied": start again with the administrator's rights
     state.relaunch_elevated = function() return I.elevate() end
